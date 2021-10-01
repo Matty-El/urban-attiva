@@ -45,7 +45,8 @@ background-repeat: no-repeat;
     width: 1.5rem;
 }
 
-.header-font {
+.header-font, 
+.logo-font {
     text-transform: uppercase;
 }
 
