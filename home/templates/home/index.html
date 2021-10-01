@@ -3,21 +3,12 @@
 
 
 {% block page_header %}
-<div class="container header-container">
-    <div>
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-</div>
-{% endblock %}
-
-{% block content %}
-<div class="container h-100">
-    <div class="row h-100">
+<header class="masthead">
+    <div class="container" id="home-masthead">
+      <div class="row align-items-center">
         <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                The best products for training and events
+            <h1 class="display-5 text-white header-font">
+                Train, Race, Recover...
             </h1>
             <div class="my-5">
                 <h4>
@@ -26,6 +17,71 @@
                 </h4>
             </div>
         </div>
+      </div>
     </div>
-</div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>RUNNING</h2>
+                <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at molestie justo, a lobortis justo. Vestibulum a euismod ante. Nullam consequat blandit tortor rhoncus pharetra.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>CYCLING</h2>
+                <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at molestie justo, a lobortis justo. Vestibulum a euismod ante. Nullam consequat blandit tortor rhoncus pharetra.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>SWIMMING</h2>
+                <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at molestie justo, a lobortis justo. Vestibulum a euismod ante. Nullam consequat blandit tortor rhoncus pharetra.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>NUTRITION</h2>
+                <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at molestie justo, a lobortis justo. Vestibulum a euismod ante. Nullam consequat blandit tortor rhoncus pharetra.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials-->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Customer Reviews</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/media/aggie.jpeg" alt="..." />
+                    <h5>John</h5>
+                    <p class="font-weight-light mb-0">"Great products and service"</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/media/jane-with-daisy.JPG" alt="..." />
+                    <h5>Jane</h5>
+                    <p class="font-weight-light mb-0">"Lovely"</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="/media/daisy-muddy-face-cropped-200.jpeg" alt="..." />
+                    <h5>Bob</h5>
+                    <p class="font-weight-light mb-0">"Great stuff"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
