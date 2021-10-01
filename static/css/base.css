@@ -2,7 +2,7 @@ html {
     height: 100%;
 }
 
-header.masthead {
+header.hero {
     background: rgba(0, 0, 0, 1.0);
     height: 75vh;
     width: 100vw;
@@ -11,17 +11,30 @@ header.masthead {
     padding-bottom: 20rem;
 }
 
-/* Home page showcase text */
-.showcase .showcase-text {
-    padding: 10rem;
+.image-hero {
+    position: relative;
+    background: cover;
+    background-image: url('/media/humber-swim.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  
+
+/* Home page product categories */
+.product-categories .product-categories-text {
+    padding: 5rem;
 }
   
-.showcase .showcase-img {
+.product-categories .product-categories-img {
 min-height: 10rem;
 background-size: cover;
 background-repeat: no-repeat;
 }
 
+.testimonials {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
 
 /* from Bulma */
 .icon {
@@ -40,10 +53,16 @@ background-repeat: no-repeat;
     width: fit-content;
 }
 
-.shop-now-button {
+.shop-now-button-hero {
     background: white;
     color: black;
-    min-width: 200px;
+    min-width: 150px;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 150px;
 }
 
 .btn-black {
@@ -63,8 +82,17 @@ background-repeat: no-repeat;
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.shop-now-button-hero:hover,
+.shop-now-button-hero:active,
+.shop-now-button-hero:focus, {
+    background: black;
     color: white;
+    border: 1px solid black;
 }
 
 .text-black {
