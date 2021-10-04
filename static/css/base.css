@@ -58,6 +58,11 @@ background-repeat: no-repeat;
     width: 1.5rem;
 }
 
+.social-media {
+    font-size: 20px;
+    color: white;
+}
+
 .header-font, 
 .logo-font {
     text-transform: uppercase;
@@ -127,6 +132,10 @@ background-repeat: no-repeat;
 	z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
 
 /* --------------------------------- Media queries */
 
