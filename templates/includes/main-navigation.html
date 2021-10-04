@@ -11,9 +11,9 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -36,11 +36,11 @@
                 Cycling
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cycling-link">
-                <a href="" class="dropdown-item">Cycling Wear</a>
+                <a href="{% url 'products' %}?category=cycling_wear" class="dropdown-item">Cycling Wear</a>
                 <a href="{% url 'products' %}?category=cycling_shoes" class="dropdown-item">Cycling Shoes</a>
-                <a href="" class="dropdown-item">Cycling Helmets</a>
-                <a href="" class="dropdown-item">Cycling Tech</a>
-                <a href="" class="dropdown-item">All Cycling</a>
+                <a href="{% url 'products' %}?category=cycling_helmets" class="dropdown-item">Cycling Helmets</a>
+                <a href="{% url 'products' %}?category=cycling_tech" class="dropdown-item">Cycling Tech</a>
+                <a href="{% url 'products' %}?category=cycling_wear,cycling_shoes,cycling_helmets,cycling_tech" class="dropdown-item">All Cycling</a>
             </div>
         </li>
 
@@ -49,11 +49,11 @@
                 Swimming
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="swimming-link">
-                <a href="" class="dropdown-item">Swimwear</a>
-                <a href="" class="dropdown-item">Wetsuits</a>
-                <a href="" class="dropdown-item">Swimming Tech</a>
-                <a href="" class="dropdown-item">Swimming Bags</a>
-                <a href="" class="dropdown-item">All Swimming</a>
+                <a href="{% url 'products' %}?category=swimwear" class="dropdown-item">Swimwear</a>
+                <a href="{% url 'products' %}?category=wetsuits" class="dropdown-item">Wetsuits</a>
+                <a href="{% url 'products' %}?category=swimming_tech" class="dropdown-item">Swimming Tech</a>
+                <a href="{% url 'products' %}?category=swimming_bags" class="dropdown-item">Swimming Bags</a>
+                <a href="{% url 'products' %}?category=swimwear,wetsuits,swimming_tech,swimming_bags" class="dropdown-item">All Swimming</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -61,11 +61,11 @@
                 Nutrition
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="nutrition-link">
-                <a href="" class="dropdown-item">Energy</a>
-                <a href="" class="dropdown-item">Hydration</a>
-                <a href="" class="dropdown-item">Protein</a>
-                <a href="" class="dropdown-item">Recovery</a>
-                <a href="" class="dropdown-item">All Nutrition</a>
+                <a href="{% url 'products' %}?category=energy" class="dropdown-item">Energy</a>
+                <a href="{% url 'products' %}?category=hydration" class="dropdown-item">Hydration</a>
+                <a href="{% url 'products' %}?category=protein" class="dropdown-item">Protein</a>
+                <a href="{% url 'products' %}?category=recovery" class="dropdown-item">Recovery</a>
+                <a href="{% url 'products' %}?category=energy,hydration,protein,recovery" class="dropdown-item">All Nutrition</a>
             </div>
         </li>
         <li class="nav-item dropdown">
