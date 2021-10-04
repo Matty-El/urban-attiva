@@ -23,11 +23,11 @@
                 Running
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="running-link">
-                <a href="" class="dropdown-item">Running Wear</a>
-                <a href="" class="dropdown-item">Running Shoes</a>
-                <a href="" class="dropdown-item">Running Tech</a>
-                <a href="" class="dropdown-item">Running Bags</a>
-                <a href="" class="dropdown-item">All Running</a>
+                <a href="{% url 'products' %}?category=running_wear" class="dropdown-item">Running Wear</a>
+                <a href="{% url 'products' %}?category=running_shoes" class="dropdown-item">Running Shoes</a>
+                <a href="{% url 'products' %}?category=running_tech" class="dropdown-item">Running Tech</a>
+                <a href="{% url 'products' %}?category=running_bags" class="dropdown-item">Running Bags</a>
+                <a href="{% url 'products' %}?category=running_wear,running_shoes,running_tech,running_bags" class="dropdown-item">All Running</a>
             </div>
         </li>
 
@@ -37,7 +37,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cycling-link">
                 <a href="" class="dropdown-item">Cycling Wear</a>
-                <a href="" class="dropdown-item">Cycling Shoes</a>
+                <a href="{% url 'products' %}?category=cycling_shoes" class="dropdown-item">Cycling Shoes</a>
                 <a href="" class="dropdown-item">Cycling Helmets</a>
                 <a href="" class="dropdown-item">Cycling Tech</a>
                 <a href="" class="dropdown-item">All Cycling</a>
