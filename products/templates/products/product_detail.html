@@ -32,22 +32,22 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="small mb-1">{{ product.sku }}</div>
                 <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
-                <div class="lead mb-0 text-left font-weight-bold">
+                <div class="lead mb-2 text-left font-weight-bold">
                     <span>£{{ product.price }}</span>
                 </div>
                 <p class="lead">{{ product.description }}</p>
                 {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                    5</small>
+                <p class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                    5</p>
                 {% else %}
-                <small class="text-muted">No Rating</small>
+                <p class="text-muted">No Rating</p>
                 {% endif %}
                 <br>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                    <input class="form-control text-center mr-3" id="inputQuantity" type="num" value="1"
                         style="max-width: 3rem" />
                     <button class="btn btn-outline-dark flex-shrink" type="button">
-                        <i class="fas fa-shopping-cart me-1"></i>
+                        <i class="fas fa-shopping-cart mr-1"></i>
                         Add to cart
                     </button>
                 </div>

@@ -124,8 +124,10 @@ background-repeat: no-repeat;
     }
   }
   
+
+  /* Remember to sort header when refactor navabar code */
   /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
       .fixed-top-desktop-only {
           position: fixed;
           top: 0;
@@ -138,6 +140,20 @@ background-repeat: no-repeat;
           padding-top: 164px;
       }
   }
+
+  @media (max-width: 768px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 150px;
+    }
+}
 
 #footer {
    position:relative;
