@@ -20,7 +20,7 @@
             <h2 class="logo-font pb-2">Products</h2>
             {% for category in current_categories  %}
             <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
-                <span class="p-2 badge badge-white text-black border border-dark">{{ category.friendly_name }}</span>
+                <span class="p-2 badge badge-white text-dark border border-dark">{{ category.friendly_name }}</span>
             </a>
             {% endfor %}
         </div>
@@ -137,9 +137,10 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-		$('.to-top-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
+    /* TO ADD FADE OUT WHEN IN VIEWPORT AND ADD SMOOTH SCROLL*/
+    $('.to-top-link').click(function(e) {
+        window.scrollTo(0,0)
+    });
 	</script>
     
     <script type="text/javascript">

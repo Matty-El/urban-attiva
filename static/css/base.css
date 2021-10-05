@@ -1,3 +1,5 @@
+/* Sticky footer https://css-tricks.com/couple-takes-sticky-footer/ */
+
 html, body {
     height: 100%;
   }
@@ -14,6 +16,8 @@ body {
 .footer {
     flex-shrink: 0;
 }
+
+/* Sticky footer end */
 
 .hero {
     background: rgba(0, 0, 0, 1.0);
@@ -89,19 +93,13 @@ background-repeat: no-repeat;
     color: white;
 }
 
-.btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colours for <a> elements */
-    border: 1px solid black;
-}
-
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: white;
+.search-button:hover,
+.search-button:active,
+.search-button:focus {
+    background: white !important;
     color: black;
     border: 1px solid black;
 }
@@ -114,15 +112,15 @@ background-repeat: no-repeat;
     border: 1px solid black;
 }
 
-.text-black {
-    color: #000 !important;
+.keep-shopping-button:hover,
+.keep-shopping-button:active,
+.keep-shopping-button:focus {
+    background: black;
+    color: white;
+    border: 1px solid black;
 }
 
-.border-black {
-    border: 1px solid black !important;
-}
-
-.std-backround {
+.std-background {
 	height: 100%;
 	width: 100%;
 	top: 0;
