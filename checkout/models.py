@@ -41,7 +41,7 @@ class Order(models.Model):
         if self.order_total < settings.FREE_SHIPPING_THRESHOLD:
             self.shipping_cost = self.order_total * settings.STANDARD_SHIPPING_PERCENTAGE / 100
         else:
-            self.delivery_cost = 0
+            self.shipping_cost = 0
         self.grand_total = self.order_total + self.shipping_cost
         self.save()
 
