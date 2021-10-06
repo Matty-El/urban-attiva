@@ -77,7 +77,7 @@ def update_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """ Update the quantity of a product in the shopping cart """
-    
+
     try:
         product = get_object_or_404(Product, pk=item_id)
         size = None
@@ -96,7 +96,7 @@ def remove_from_cart(request, item_id):
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
-    
+
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
