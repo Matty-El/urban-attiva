@@ -37,7 +37,8 @@ class Order(models.Model):
         Update grand total each time an order line item is added
         including shipping costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total_sum']
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_SHIPPING_THRESHOLD:
             self.shipping_cost = self.order_total * settings.STANDARD_SHIPPING_PERCENTAGE / 100
         else:
@@ -50,7 +51,6 @@ class Order(models.Model):
         Override original save method to set order number
         if not already set
         """
-
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
