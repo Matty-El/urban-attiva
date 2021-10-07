@@ -1,18 +1,17 @@
-from django import HttpResponse
+from django.http import HttpResponse
 
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
-def __init__(self, request):
-    self.request = request
+    def __init__(self, request):
+        self.request = request
 
-def handle_event(self, event):
-    """
-    Handle a generic/unkown/unexpected webhook event
-    """
+    def handle_event(self, event):
+        """
+        Handle a generic/unkown/unexpected webhook event
+        """
 
-    return HttpResponse(
-        content=f'Webhook received: {event["type"]}'',
-        status=200)
-    )
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200)
