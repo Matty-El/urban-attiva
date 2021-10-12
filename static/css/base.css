@@ -70,6 +70,10 @@
       height: 39px;
 }
 
+.profile-container {
+  margin-bottom: 40px;
+}
+
   /* ------------------- Top Banner ----------------------- */
   #top-banner {
     background: #4B5657;
@@ -330,17 +334,18 @@
 
 /* Sticky footer https://css-tricks.com/couple-takes-sticky-footer/ */
 
-html, body {
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    margin-top: 0px;
-  }
+
+html {
+  height: 100%;
+}
 
 body {
+    height: 100%;
+    overflow-x: hidden;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
-}
+  }
 
 .page-content {
     flex: 1 0 auto;
@@ -491,7 +496,7 @@ background-repeat: no-repeat;
 }
 
 
-.std-background {
+/*.std-background {
 	height: 100%;
 	width: 100%;
 	top: 0;
@@ -499,7 +504,7 @@ background-repeat: no-repeat;
 	position: fixed;
 	background: white;
 	z-index: -1;
-}
+}*/
 
 a.category-badge > span.badge:hover {
     background: #212529 !important;
@@ -616,7 +621,7 @@ input[name=q]::placeholder {
       }
   
       .header-container {
-          padding-top: 164px;
+          padding-top: 0px;
       }
   }
 
@@ -630,7 +635,7 @@ input[name=q]::placeholder {
     }
 
     .header-container {
-        padding-top: 150px;
+        padding-top: 0px;
     }
 }
 
@@ -704,6 +709,10 @@ select option[value=""] {
 }
 
 /* Allauth styling */
+
+.allauth-form-inner-content {
+  margin-bottom: 40px;
+}
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
