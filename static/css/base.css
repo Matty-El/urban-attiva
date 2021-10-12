@@ -711,7 +711,7 @@ select option[value=""] {
 /* Allauth styling */
 
 .allauth-form-inner-content {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .allauth-form-inner-content p {
@@ -721,7 +721,7 @@ select option[value=""] {
 
 .allauth-form-inner-content input {
     border-color: black;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -765,6 +765,8 @@ select option[value=""] {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+
 
 /* ----------------- Footer --------------- */
 
