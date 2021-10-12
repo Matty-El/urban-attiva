@@ -93,26 +93,26 @@
                         to homepage</span></a>
                 <div class="navbar-buttons">
                     <button type="button" data-toggle="collapse" data-target="#navigation"
-                        class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle
+                        class="btn btn-outline navbar-toggler"><span class="sr-only">Toggle
                             navigation</span><i class="fa fa-align-justify"></i></button>
                     <button type="button" data-toggle="collapse" data-target="#search"
-                        class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i
+                        class="btn btn-outline navbar-toggler"><span class="sr-only">Toggle search</span><i
                             class="fa fa-search"></i>
                     </button>
                     <a href="{% url 'view_cart' %}"
-                        class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i>
+                        class="btn btn-outline navbar-toggler"><i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
                 <div id="navigation" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
-                        <li class="nav-item dropdown"><a href="{% url 'home' %}" data-toggle="dropdown"
-                                data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Run<b
+                        <li class="nav-item dropdown product-menu"><a href="{% url 'home' %}" data-toggle="dropdown"
+                                data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Shop<b
                                     class="caret"></b></a>
-                            <ul class="dropdown-menu product-menu">
+                            <ul class="dropdown-menu product-menu-contained">
                                 <li>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-6 col-lg-3">
                                             <h5>Run</h5>
                                             <ul class="list-unstyled mb-3">
                                                 <li class="nav-item"><a
@@ -132,17 +132,7 @@
                                                         class="nav-link">All Run</a></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown"><a href="{% url 'home' %}" data-toggle="dropdown"
-                                data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Cycle<b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu product-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-6 col-lg-3">
                                             <h5>Cycle</h5>
                                             <ul class="list-unstyled mb-3">
                                                 <li class="nav-item"><a
@@ -162,17 +152,7 @@
                                                         class="nav-link">All Cycle</a></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown"><a href="{% url 'home' %}" data-toggle="dropdown"
-                                data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Swim<b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu product-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-6 col-lg-3">
                                             <h5>Swim</h5>
                                             <ul class="list-unstyled mb-3">
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=swimwear"
@@ -190,17 +170,7 @@
                                                         class="nav-link">All Swim</a></li>
                                             </ul>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown"><a href="{% url 'home' %}" data-toggle="dropdown"
-                                data-hover="dropdown" class="dropdown-toggle nav-link">Fuel<b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu product-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-6 col-lg-3">
                                             <h5>Fuel</h5>
                                             <ul class="list-unstyled mb-3">
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=energy"
@@ -220,14 +190,15 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a href="" class="nav-link">Blog</a></li>
                     </ul>
                     <div class="navbar-buttons d-flex justify-content-end">
                         <!-- /.nav-collapse-->
                         <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse"
-                            href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span
+                            href="#search" class="btn navbar-btn btn-outline d-none d-lg-inline-block"><span
                                 class="sr-only">Toggle search</span><i class="fa fa-search text-dark"></i></a>
                         <div class="navbar-collapse collapse d-none d-lg-block"><a
-                                href="{% url 'view_cart' %}" class="btn btn-primary navbar-btn"><i
+                                href="{% url 'view_cart' %}" class="btn btn-outline navbar-btn"><i
                                     class="fa fa-shopping-cart text-dark"></i><span class="text-dark">
                                     ({{ product_count }})
                                 </span></a>
@@ -243,7 +214,7 @@
                         <input type="text" placeholder="Search our site" class="form-control border border-dark"
                             name="q">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-primary search-btn form-control"><i
+                            <button type="submit" class="btn search-btn form-control"><i
                                     class="fa fa-search text-white"></i></button>
                         </div>
                     </div>
