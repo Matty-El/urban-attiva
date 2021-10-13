@@ -74,6 +74,10 @@
   margin-bottom: 40px;
 }
 
+html { 
+  scroll-behavior: smooth; 
+}
+
   /* ------------------- Top Banner ----------------------- */
   #top-banner {
     background: #4B5657;

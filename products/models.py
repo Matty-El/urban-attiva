@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 
 class Category(models.Model):
@@ -16,14 +17,48 @@ class Category(models.Model):
         return self.friendly_name
 
 
+SIZE_OPTIONS = (
+        ('UK 4', 'UK 4'),
+        ('UK 4.5', 'UK 4.5'),
+        ('UK 5', 'UK 5'),
+        ('UK 5.5', 'UK 5.5'),
+        ('UK 6', 'UK 6'),
+        ('UK 6.5', 'UK 6.5'),
+        ('UK 7', 'UK 7'),
+        ('UK 7.5', 'UK 7.5'),
+        ('UK 8', 'UK 8'),
+        ('UK 8.5', 'UK 8.5'),
+        ('UK 9', 'UK 9'),
+        ('UK 9.5', 'UK 9.5'),
+        ('UK 10', 'UK 10'),
+        ('UK 10.5', 'UK 10.5'),
+        ('UK 11', 'UK 11'),
+        ('UK 11.5', 'UK 11.5'),
+        ('UK 12', 'UK 12'),
+        ('UK 12.5', 'UK 12.5'),
+        ('XS', 'XS'),
+        ('S', 'S'),
+        ('M', 'M'),
+        ('L', 'L'),
+        ('XL', 'XL'),
+        ('XXL', 'XXL'),
+    )
+
+
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    on_sale = models.BooleanField(default=False)
+    discount_percent = models.DecimalField(
+        max_digits=4, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=4, decimal_places=2, null=True, blank=True)
+    size = MultiSelectField(
+        choices=SIZE_OPTIONS, null=True, blank=True)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
