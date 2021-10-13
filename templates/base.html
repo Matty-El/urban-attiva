@@ -200,8 +200,8 @@
                         </li>
                     </ul>
                     <div class="navbar-buttons d-flex justify-content-end">
-                        <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse"
-                            href="#search" class="btn navbar-btn btn-outline d-none d-lg-inline-block"><span
+                        <div class="navbar-collapse collapse"></div><a data-toggle="collapse"
+                                href="#search" class="btn navbar-btn btn-outline d-none d-lg-inline-block"><span
                                 class="sr-only">Toggle search</span><i class="fa fa-search text-dark"></i></a>
                         <div class="navbar-collapse collapse d-none d-lg-block"><a href="{% url 'view_cart' %}"
                                 class="btn btn-outline navbar-btn"><i class="fa fa-shopping-cart text-dark"></i><span
@@ -305,12 +305,37 @@
             </div>
         </div>
     </div>
+    <div class="to-top-btn">
+        <a class="to-top-link d-flex">
+            <i class="fas fa-arrow-circle-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+
     {% endblock %}
 
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show')
     </script>
+
+    <script type="text/javascript">
+        // Adapted from https://www.markuptag.com/jquery-back-to-top-button-with-smooth-scroll/
+    $(document).ready(function(){
+        // Show and hide button after scroll down and up
+        $(window).on("scroll", function () {
+           if ($(this).scrollTop() > 200) {
+              $('.to-top-btn').fadeIn('slow');
+           } else {
+              $('.to-top-btn').fadeOut('slow');
+           }
+        });
+        // Clickable button js
+        $('.to-top-link').click(function() {
+          $("html, body").animate({ scrollTop: 0 }, 0);
+        });
+      });
+    </script>
+
     {% endblock %}
 
 </body>
