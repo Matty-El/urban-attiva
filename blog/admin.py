@@ -1,3 +1,27 @@
 from django.contrib import admin
+from .models import BlogPost, BlogComment
 
-# Register your models here.
+
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'author',
+        'content',
+        'date',
+    )
+
+    ordering = ["-date"]
+
+
+class BlogCommentAdmin(admin.ModelAdmin):
+    list_display = (
+        'post',
+        'author',
+        'comment',
+        'date',
+    )
+
+    ordering = ["-date"]
+
+admin.site.register(BlogPost, BlogPostAdmin)
+admin.site.register(BlogComment, BlogCommentAdmin)
