@@ -35,7 +35,15 @@
   .product-menu {
     position: static !important;
   }
-  
+
+
+/* determine if actually needed */
+html { 
+    scroll-behavior: smooth; 
+  }
+
+/* reference where sourced this style menu */
+
   .product-menu .product-menu-contained {
     padding: 20px;
     width: 100%;
@@ -339,8 +347,6 @@ html {
 
 html, body {
     height: 100%;
-    overflow-x: hidden;
-    margin-top: 0px;
     display: flex;
     flex-direction: column;
   }
@@ -492,7 +498,7 @@ background-repeat: no-repeat;
 }
 
 
-/*.std-background {
+.std-background {
 	height: 100%;
 	width: 100%;
 	top: 0;
@@ -500,7 +506,7 @@ background-repeat: no-repeat;
 	position: fixed;
 	background: white;
 	z-index: -1;
-}*/
+}
 
 a.category-badge > span.badge:hover {
     background: #212529 !important;
@@ -513,8 +519,8 @@ a.category-badge > span.badge:hover {
     position: fixed;
     color: #FF834F;
     font-size: 42px;
-    bottom: 10px;
-    right: 20px;
+    bottom: 20px;
+    right: 10px;
     z-index: 9999999999;
     display: none;
 }
