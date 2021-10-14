@@ -16,4 +16,4 @@ def __init__(self, *args, **kwargs):
 
     self.fields['category'].choices = friendly_names
     for field_name, field in self.fields.items():
-        field.wwidget.attrs['class'] = 'border-black'
+        field.widget.attrs['class'] = 'border-black'

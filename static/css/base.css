@@ -4,7 +4,7 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 50vh;
+  min-height: 75vh;
   margin-top: -48px;
 }
 
@@ -18,7 +18,7 @@
   padding: 4px 8px;
 }
 .search-btn {
-  background: #555555;
+  background: #566465;
   color: #FFFFFF;
 }
 
@@ -58,8 +58,8 @@
   }
 
   .btn-outline {
-    border-color: #555555;
-    color: #555555;
+    border-color: #566465;
+    color: #566465;
     background: #FFFFFF;
   }
 
@@ -71,10 +71,6 @@
   .logo-sm {
       width: 161px;
       height: 39px;
-}
-
-.profile-container {
-  margin-bottom: 40px;
 }
 
 html { 
@@ -142,7 +138,7 @@ html {
     letter-spacing: 0.1em;
     font-weight: 700;
     padding: 30px 15px !important;
-    color: #555;
+    color: #566465;
   }
   
   @media (max-width: 991.98px) {
@@ -191,7 +187,7 @@ html {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding-bottom: 10px;
-    border-bottom: dotted 1px #555;
+    border-bottom: dotted 1px #566465;
   }
   
   @media (max-width: 767.98px) {
@@ -258,7 +254,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding-bottom: 10px;
-  border-bottom: dotted 1px #555;
+  border-bottom: dotted 1px #566465;
 }
 
 @media (max-width: 7768px) {
@@ -341,12 +337,7 @@ html {
 
 /* Sticky footer https://css-tricks.com/couple-takes-sticky-footer/ */
 
-
-html {
-  height: 100%;
-}
-
-body {
+html, body {
     height: 100%;
     overflow-x: hidden;
     margin-top: 0px;
@@ -542,7 +533,7 @@ input[name=q]::placeholder {
 .message-container {
     position: fixed;
     top: 72px;
-    right: 15px;
+    right: 180px;
     z-index: 99999999999;
 }
 
@@ -627,7 +618,7 @@ input[name=q]::placeholder {
       }
   
       .header-container {
-          padding-top: 0px;
+          padding-top: 48px;
       }
   }
 
@@ -641,7 +632,7 @@ input[name=q]::placeholder {
     }
 
     .header-container {
-        padding-top: 0px;
+        padding-top: 48px;
     }
 }
 
@@ -726,7 +717,7 @@ select option[value=""] {
 }
 
 .allauth-form-inner-content input {
-    border-color: black;
+    /*border-color: black;*/
     border-radius: 5px;
 }
 
@@ -808,7 +799,7 @@ select option[value=""] {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   vertical-align: bottom;
-  background-color: #555;
+  background-color: #566465;
 }
 
 #footer .social a i {
@@ -837,7 +828,7 @@ select option[value=""] {
 }
 
 #copyright {
-  background: #333;
+  background: #4B5657;
   color: #ccc;
   padding: 20px 0;
   font-size: 0.738rem;
@@ -845,4 +836,10 @@ select option[value=""] {
 
 #copyright p {
   margin: 0;
+}
+
+/* ------------------- Product detail page --------------- */
+
+.product-detail {
+  margin-top: 48px !important;
 }
