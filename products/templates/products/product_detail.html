@@ -29,7 +29,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="small mb-1">{{ product.sku }}</div>
-            <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+            <h3 class="display-5 fw-bolder">{{ product.name }}</h3>
             <div class="lead mb-2 text-left font-weight-bold">
                 <span>£{{ product.price }}</span>
             </div>
@@ -89,6 +89,12 @@
                                     </div>
                                 </div>
                             </div>
+                            {% if request.user.is_superuser %}
+                                <small class=ml-3>
+                                    <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-lg"></i> Edit</a> |
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}"><i class="far fa-trash-alt fa-lg"></i> Delete</a>
+                                </small>
+                            {% endif %}
                     <div class="col{% if size %}-12 mt-2{% endif %} mb-4">
                         <a href="{% url 'products' %}" class="btn btn-outline-black mt-5">
                             <span class="icon">
