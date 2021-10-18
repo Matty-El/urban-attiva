@@ -47,7 +47,7 @@ html {
   .product-menu .product-menu-contained {
     padding: 20px;
     width: 100%;
-    max-width: 1140px;
+    max-width: 1800px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -295,7 +295,7 @@ html {
   border-bottom: dotted 1px #566465;
 }
 
-@media (max-width: 7768px) {
+@media (max-width: 768px) {
   .navbar .account-menu h5 {
     font-size: 0.9rem;
   }

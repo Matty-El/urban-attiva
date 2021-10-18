@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="container mx-auto pt-5">
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-8 mx-auto">
+            <h2 class="mb-4 mt-5">{{ blog_post.title }}</h2>
+            <h6 class="text-muted"> By: {{ blog_post.author}}</h6>
+            <h6 class="text-muted"> {{ blog_post.date }}</h6>
+            {% if request.user.is_superuser %}
+            <div>
+                <a href="{% url 'edit_blog_post' blog_post.id %}"><i class="fas fa-edit fa-lg"></i> Edit</a> |
+                <a class="text-danger" data-toggle="modal" data-target="#deletePost-{{ blog_post.id }}"><i
+                        class="far fa-trash-alt fa-lg"></i> Delete</a>
+            </div>
+
+            <!-- Delete Blogpost modal-->
+            <div class="modal fade" id="deletePost-{{ blog_post.id }}" tabindex="-1"
+                aria-labelledby="deletePostLabel-{{ blog_post.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-full font-weight-bold" id="deletePostLabel">Delete blog post.</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-full">
+                            <p>Are you sure that your want to delete this blog post? This action cannot be undone.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                            <a href="{% url 'delete_blog_post' blog_post.id %}" class="btn btn-danger ml-3">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+            <div>
+                {% if blog_post.image %}
+                <img class="card-img-top img-fluid" src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
+                {% else %}
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog_post.title }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-sm-12 mb-5 mt-5 blog-content">
+            <p class="text-full text-justify">{{ blog_post.content }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="rounded p-4 mb-4 clearfix">
+                <h5 class="mb-0 mb-4">Post Comments ({{ blog_post.comments.count }})</h5>
+                <div class="row align-items-start">
+                    <div class="col-lg-6 col-sm-12">
+                        <a href="{% url 'add_comment' blog_post.id %}" type="button" class="btn btn-black">Comment</a>
+                    </div>
+                </div>
+            </div>
+            {% if blog_post.comments.count > 0 %}
+                    {% for comment in blog_post.comments.all %}
+            <div class="p-4">
+                <div class="pt-4 pb-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="user d-flex align-items-center">
+                            <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/img/user.svg"
+                                    alt="..." class="img-fluid rounded-circle" height="40px" width="40px"></div>
+                            <div class="title"><strong> {{ comment.author }}</strong></div>
+                        </div>
+                        <div class="title">{{ comment.date }}</div>
+                    </div>
+                    <div class="pt-4">
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                    {% if request.user.is_authenticated or request.user.is_superuser %}
+                    <div>
+                        <a href="{% url 'edit_comment' comment.id %}"><i class="fas fa-edit fa-lg"></i> Edit</a> |
+                        <a class="text-danger" data-toggle="modal" data-target="#deleteComment-{{ blog_post.id }}"><i
+                                class="far fa-trash-alt fa-lg"></i> Delete</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Delete comment modal -->
+            <div class="modal fade" id="deleteComment-{{ comment.id }}" tabindex="-1"
+                aria-labelledby="deleteCommentLabel-{{ comment.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title text-full font-weight-bold" id="deleteCommentLabel">Delete comment.</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-full">
+                            <p>Are you sure that your want to delete your comment? This action cannot be undone.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                            <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger ml-3">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}

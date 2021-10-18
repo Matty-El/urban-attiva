@@ -16,7 +16,7 @@ class BlogPost(models.Model):
 
 
 class BlogComment(models.Model):
-    post = models.ForeignKey(BlogPost,
+    blog_post = models.ForeignKey(BlogPost,
                              on_delete=models.CASCADE,
                              related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -26,5 +26,3 @@ class BlogComment(models.Model):
 
     def __str__(self):
         return self.comment_title
-
-

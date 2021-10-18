@@ -15,7 +15,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 class BlogCommentAdmin(admin.ModelAdmin):
     list_display = (
-        'post',
+        'blog_post',
         'author',
         'comment',
         'date',
