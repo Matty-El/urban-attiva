@@ -113,7 +113,7 @@ def add_comment(request, blog_post_id):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.comment_user = request.user
+            comment.author = request.user
             comment.blog_post = blog_post
             comment.save()
             messages.success(request, 'Thank you for your comment !')
@@ -161,7 +161,7 @@ def edit_comment(request, comment_id):
 
         return render(request, template, context)
     else:
-        messages.error(request, 'You cannot do that !')
+        messages.error(request, 'You can only edit your own comments!')
         return redirect(reverse('blog'))
 
 

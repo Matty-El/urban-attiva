@@ -36,6 +36,14 @@
     position: static !important;
   }
 
+  .modal {
+    max-width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
 
 /* determine if actually needed */
 html { 
@@ -47,7 +55,7 @@ html {
   .product-menu .product-menu-contained {
     padding: 20px;
     width: 100%;
-    max-width: 1800px;
+    max-width: 1400px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);

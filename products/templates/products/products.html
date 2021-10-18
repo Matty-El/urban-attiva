@@ -3,11 +3,11 @@
 
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -101,14 +101,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer text-center">
+                        <div>
                             {% if request.user.is_superuser %}
-                                        <small class=ml-3>
-                                            <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-lg"></i> Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}"><i class="fas fa-trash-alt fa-lg"></i> Delete</a>
-                                        </small>
-                                    {% endif %}
-                          </div>
+                            <div class="ml-3 text-center">
+                                <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-md"></i> Edit</a>
+                                |
+                                <a class="text-danger" data-toggle="modal" data-target="#deleteProduct-{{ product.id }}"><i
+                                        class="fas fa-trash-alt fa-md"></i> Delete</a>
+                            </div>
+                            <!-- Delete product modal-->
+                            <div class="modal fade" id="deleteProduct-{{ product.id }}" tabindex="-1"
+                            aria-labelledby="deleteProductLabel-{{ product.id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-full font-weight-bold" id="deleteProductLabel">Delete product.
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-full">
+                                        <p>Are you sure that your want to delete this product? This action cannot be
+                                            undone.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary"
+                                            data-dismiss="modal">Cancel</button>
+                                        <a href="{% url 'delete_product' product.id %}"
+                                            class="btn btn-danger ml-3">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
@@ -135,28 +162,28 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+{{ block.super }}
 
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}

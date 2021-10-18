@@ -32,7 +32,6 @@ class CommentForm(forms.ModelForm):
         # which model and which fields
         model = BlogComment
         fields = (
-            'author',
             'comment_title',
             'comment',
             )
