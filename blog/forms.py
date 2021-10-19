@@ -4,6 +4,7 @@ from .models import BlogPost, BlogComment
 
 
 class BlogForm(forms.ModelForm):
+    """ Form for creation of blog entry """
 
     class Meta:
         model = BlogPost
@@ -18,7 +19,6 @@ class BlogForm(forms.ModelForm):
 
     image = forms.ImageField(label='image', required=False, widget=CustomClearableFileInput)
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
@@ -29,7 +29,6 @@ class CommentForm(forms.ModelForm):
     """ Comment form for blog comments """
 
     class Meta:
-        # which model and which fields
         model = BlogComment
         fields = (
             'comment_title',

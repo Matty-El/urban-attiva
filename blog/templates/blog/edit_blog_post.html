@@ -32,7 +32,7 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black" href="{% url 'blog' %}">Cancel</a>
+                        <a class="btn btn-outline-black" href="{% url 'blog_detail' blog_post.id %}">Cancel</a>
                         <button class="btn btn-black" type="submit">Update Blog Post</button>
                     </div>
                 </form>

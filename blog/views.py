@@ -138,6 +138,8 @@ def edit_comment(request, comment_id):
     """ Edit a blog comment """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
+    blog_post = comment.blog_post
+
     if request.user == comment.author or request.user.is_superuser:
         if request.method == 'POST':
             form = CommentForm(request.POST, instance=comment)
@@ -146,7 +148,7 @@ def edit_comment(request, comment_id):
                 messages.success(
                             request,
                             'Your comment has been successfully updated')
-                return redirect(reverse('blog'))
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
             else:
                 messages.error(request,
                                'Failed to update your comment. \
@@ -157,12 +159,13 @@ def edit_comment(request, comment_id):
         context = {
             'form': form,
             'comment': comment,
+            'blog_post': blog_post,
         }
 
         return render(request, template, context)
     else:
         messages.error(request, 'You can only edit your own comments!')
-        return redirect(reverse('blog'))
+        return redirect(reverse('blog_detail', args=[blog_post.id]))
 
 
 @login_required
@@ -170,6 +173,7 @@ def delete_comment(request, comment_id):
     """ Delete a blog comment """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
+    blog_post = comment.blog_post
 
     if request.user == comment.author or request.user.is_superuser:
         comment.delete()

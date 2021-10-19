@@ -88,7 +88,7 @@
     {% if blog_post.comments.count > 0 %}
     {% for comment in blog_post.comments.all %}
     <div class="p-4">
-        <div class="p-4 shadow-sm rounded">
+        <div class="p-4 shadow rounded">
             <div class="d-flex justify-content-between">
                 <div class="user d-flex align-items-center">
                     <div><strong>By: {{ comment.author }}</strong></div>

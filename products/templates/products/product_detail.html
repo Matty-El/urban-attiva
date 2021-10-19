@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block page_header %}
@@ -41,8 +42,8 @@
                 </a>
             </p>
             {% endif %}
-            {% if product.rating %}
-            <p class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+            {% if product.get_rating != 0 %}
+            <p class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.get_rating|floatformat:1 }} /
                 5</p>
             {% else %}
             <p class="text-muted">No Rating</p>
@@ -91,7 +92,7 @@
                     <div class="ml-3 col-12">
                         <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-md"></i> Edit</a> |
                         <a class="text-danger" data-toggle="modal" data-target="#deleteProduct-{{ product.id }}"><i
-                            class="fas fa-trash-alt fa-md"></i> Delete</a>
+                                class="fas fa-trash-alt fa-md"></i> Delete</a>
                     </div>
                     {% endif %}
                     <div class="col{% if size %}-12 mt-2{% endif %} mb-4">
@@ -105,38 +106,139 @@
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     {% endwith %}
-                    
+
                 </div>
             </form>
         </div>
         <!-- Delete product modal-->
-    <div class="modal fade" id="deleteProduct-{{ product.id }}" tabindex="-1"
-    aria-labelledby="deleteProductLabel-{{ product.id }}" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-full font-weight-bold" id="deleteProductLabel">Delete product.
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-full">
-                <p>Are you sure that your want to delete this product? This action cannot be
-                    undone.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary"
-                    data-dismiss="modal">Cancel</button>
-                <a href="{% url 'delete_product' product.id %}"
-                    class="btn btn-danger ml-3">Delete</a>
+        <div class="modal fade" id="deleteProduct-{{ product.id }}" tabindex="-1"
+            aria-labelledby="deleteProductLabel-{{ product.id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-full font-weight-bold" id="deleteProductLabel">Delete product.
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-full">
+                        <p>Are you sure that your want to delete this product? This action cannot be
+                            undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                        <a href="{% url 'delete_product' product.id %}" class="btn btn-danger ml-3">Delete</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
+    <hr>
+
+    <div class="container px-4 px-lg-5 my-5">
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="fw-bolder mb-4 review-heading">Reviews ({{ product.reviews.count }})
+                    {% if user.is_authenticated %}
+                    <div class="rounded p-4 mb-4 clearfix">
+                        <div class="row align-items-start">
+                            <div class="col-lg-6 col-sm-8">
+                                <a href="{% url 'add_review' product.id %}" type="button" class="btn btn-black">Post
+                                    Review</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </h3>
+            </div>
+            {% if not user.is_authenticated %}
+            <div class="col-md-6">
+                <p class="ms-lg-3 align-bottom lead">Please <a class="link-secondary"
+                        href="{% url 'account_login' %}">login</a> or <a class="link-secondary"
+                        href="{% url 'account_signup' %}">register</a> to add a review.</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="reviews-wrapper">
+            {% for review in product.reviews.all %}
+            <div class="product-review shadow rounded p-4">
+                <p>
+                    <strong><i class="fas fa-user"></i> </strong>{{ review.user }}
+                    <br>
+                    <strong>Date: </strong>{{ review.date|date:"d-m-Y"}},
+                    <strong>Rating: </strong>{{ review.review_rating }}
+                </p>
+                <p>{{ review.review_comment }}</p>
+                {% if request.user.is_authenticated %}
+                {% if user.id == review.user.id or request.user.is_superuser %}
+                <div>
+                    <a href="{% url 'edit_review' review.id %}"><i class="fas fa-edit fa-lg"></i>
+                        Edit</a> |
+                    <a class="text-danger" data-toggle="modal" data-target="#deleteReview-{{ review.id }}"><i
+                            class="far fa-trash-alt fa-lg"></i> Delete</a>
+                </div>
+                {% endif %}
+                {% endif %}
+                <!-- Delete review modal -->
+            <div class="modal fade" id="deleteReview-{{ review.id }}" tabindex="-1"
+            aria-labelledby="deleteReviewLabel-{{ review.id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title text-full font-weight-bold" id="deleteReviewLabel">
+                            Delete Review.</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-full">
+                        <p>Are you sure that your want to delete your review? This action cannot be
+                            undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                        <a href="{% url 'delete_review' review.id %}" class="btn btn-danger ml-3">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+            {% empty %}
+            <div class="product-review shadow rounded p-4">
+                No reviews yet!
+            </div>
+            <!-- Delete review modal -->
+            <div class="modal fade" id="deleteReview-{{ review.id }}" tabindex="-1"
+                aria-labelledby="deleteReviewLabel-{{ review.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title text-full font-weight-bold" id="deleteReviewLabel">
+                                Delete Review.</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-full">
+                            <p>Are you sure that your want to delete your review? This action cannot be
+                                undone.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger ml-3">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block postloadjs %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
+    {% endblock %}
