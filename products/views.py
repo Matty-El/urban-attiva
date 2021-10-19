@@ -65,9 +65,11 @@ def product_detail(request, product_id):
     """ View to display individual product detail """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = ProductReview.objects.filter(product=product)
 
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -80,7 +82,7 @@ def add_product(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-     
+  
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -220,5 +222,12 @@ def delete_review(request, review_id):
         messages.success(request, 'Your review has been deleted!')
         return redirect(reverse('product_detail', args=[product.id]))
     else:
-        messages.error(request, 'You cannot delete this comment!')
+        messages.error(request, 'You cannot delete this review!')
         return redirect(reverse('product_detail', args=[product.id]))
+
+    context = {
+            'product': product,
+            'review': review,
+        }
+
+    return render(request, context)

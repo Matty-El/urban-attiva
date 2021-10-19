@@ -178,7 +178,13 @@ def delete_comment(request, comment_id):
     if request.user == comment.author or request.user.is_superuser:
         comment.delete()
         messages.success(request, 'Your comment has been deleted!')
-        return redirect(reverse('blog'))
+        return redirect(reverse('blog_detail', args=[blog_post.id]))
     else:
         messages.error(request, 'You cannot delete this comment!')
-        return redirect(reverse('blog'))
+        return redirect(reverse('blog_detail', args=[blog_post.id]))
+
+    context = {
+        'blog_post': blog_post,
+    }
+
+    return render(request, context)

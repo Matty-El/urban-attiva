@@ -1,8 +1,7 @@
-from django.db import models
-from django.db.models import Avg, Count, Sum
-from multiselectfield import MultiSelectField
 from decimal import Decimal
+from django.db import models
 from django.contrib.auth.models import User
+from multiselectfield import MultiSelectField
 
 
 class Category(models.Model):
@@ -75,6 +74,7 @@ class Product(models.Model):
 
     # code with stein
     def get_rating(self):
+        """ Calculate average product review rating from reviews """
         total = sum(int(review['review_rating']) for review in self.reviews.values())
 
         if self.reviews.count() > 0:
@@ -100,3 +100,6 @@ class ProductReview(models.Model):
     review_comment = models.TextField(max_length=250, blank=True, null=True)
     review_rating = models.IntegerField(choices=RATING)
     date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date']

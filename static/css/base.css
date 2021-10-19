@@ -400,7 +400,7 @@ html, body {
 
 .footer {
     flex-shrink: 0;
-}
+  }
 
 .logo-lg {
     width: 240px;
@@ -684,13 +684,6 @@ input[name=q]::placeholder {
     }
 }
 
-#footer {
-   position:relative;
-   bottom:0;
-   width:100vw;
-}
-
-
 /* Contain image on hover / zoom */
 .image-contained {
     position: relative;
@@ -889,5 +882,9 @@ select option[value=""] {
 /* ------------------- Product detail page --------------- */
 
 .product-detail {
+  margin-top: 48px !important;
+}
+
+.checkout-success {
   margin-top: 48px !important;
 }

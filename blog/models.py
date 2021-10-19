@@ -14,6 +14,9 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['-date']
+
 
 class BlogComment(models.Model):
     blog_post = models.ForeignKey(BlogPost,
@@ -26,3 +29,6 @@ class BlogComment(models.Model):
 
     def __str__(self):
         return self.comment_title
+    
+    class Meta:
+        ordering = ['-date']
