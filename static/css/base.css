@@ -888,3 +888,8 @@ select option[value=""] {
 .checkout-success {
   margin-top: 48px !important;
 }
+
+.card-img-top {
+  padding-left: 10px;
+  padding-right: 10px;
+}
