@@ -58,7 +58,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-sm btn-black rounded-left"
+                                            <button class="decrement-qty btn btn-sm btn-ua-grey rounded-left"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
@@ -69,7 +69,7 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-sm btn-black rounded-right"
+                                            <button class="increment-qty btn btn-sm btn-ua-grey rounded-right"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
@@ -92,7 +92,7 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                            <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                             <h6>Shipping: £{{ shipping|floatformat:2 }}</h6>
                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_shipping_delta > 0 %}
@@ -105,13 +105,13 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black btn-lg">
+                            <a href="{% url 'products' %}" class="btn btn-outline-ua-grey btn-lg">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="{% url 'checkout' %}" class="btn btn-black btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn btn-ua-grey btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>

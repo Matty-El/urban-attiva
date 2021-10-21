@@ -1,11 +1,15 @@
+/*Photo by <a href="https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Todd Quackenbush</a> on <a href="https://unsplash.com/s/photos/swimmer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
+  
+
 .jumbotron {
   color: white;
   background-image: url('/media/hero-image3.jpg');
-  background-position: top;
+  background-position: 40% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 75vh;
+  min-height: 70vh;
   margin-top: -48px;
+  margin-bottom: 0px;
 }
 
 /* --------------- Buttons -----------------*/
@@ -24,6 +28,16 @@
 
 .product-review {
   margin-bottom: 20px;
+}
+
+.fa-shopping-cart:before, .cart-count, .search-nav {
+  color: #566465;
+}
+
+/* --------------- Profile -----------------*/
+
+.table thead th {
+  color: #4B5657;
 }
 
 /* --------------- General -----------------*/
@@ -78,8 +92,8 @@ html {
   }
 
   .btn-outline {
-    border-color: #566465;
-    color: #566465;
+    border-color: #4B5657;
+    color: #4B5657;
     background: #FFFFFF;
   }
 
@@ -104,7 +118,7 @@ html {
   }
   
   #top-banner .offer {
-    color: #fff;
+    color: #FFFFFF;
   }
   
   #top-banner .offer .btn {
@@ -113,30 +127,7 @@ html {
   }
   
   #top-banner a {
-    color: #fff;
-  }
-  
-  #top-banner ul.menu {
-    margin: 0;
-    font-size: 0.738rem;
-  }
-  
-  #top-banner ul.menu > li {
-    margin-right: 0;
-  }
-  
-  #top-banner ul.menu > li a {
-    color: #eee;
-  }
-  
-  #top-banner ul.menu > li + li:before {
-    content: "|\00a0";
-    padding: 0 5px;
-    color: #f8f9fa;
-  }
-  
-  #top-banner ul.menu > .active {
-    color: #999;
+    color: #FFFFFF;
   }
   
   /* -------------------- Product Form ---------------------- */
@@ -158,13 +149,13 @@ html {
 
   .custom-checkbox .custom-control-label::before {
     border-radius: 5px;
-    border-color: #dc3545;
+    border-color: #DC3545;
   }
 
   .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     border-radius: 5px;
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #DC3545;
+    border-color: #DC3545;
   }
 
   
@@ -172,7 +163,7 @@ html {
   /* -------------------- Navbar ---------------------- */
   
   .navbar {
-    background-color: #fff;
+    background-color: #FFFFFF;
     padding-left:10px;
     padding-right:10px;
     padding-bottom: 0px;
@@ -191,17 +182,17 @@ html {
     color: #566465;
   }
   
-  @media (max-width: 991.98px) {
+  @media (max-width: 992px) {
     .navbar .navbar-nav > .nav-item > .nav-link {
       padding: 10px 15px !important;
     }
   }
   
   .navbar .navbar-nav > .nav-item > .nav-link.active, .navbar .navbar-nav > .nav-item > .nav-link:hover, .navbar .navbar-nav > .nav-item > .nav-link:focus {
-    background: #D3D3D3;
+    background: #D3D3D3; /* CHECK THIS COLOUR AND CHANGE IF NECESSARY */
   }
   
-  @media (max-width: 991.98px) {
+  @media (max-width: 992px) {
     .navbar .dropdown-menu {
       position: relative !important;
       border: none;
@@ -223,7 +214,7 @@ html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   }
   
-  @media (max-width: 991.98px) {
+  @media (max-width: 992px) {
     .navbar .product-menu-contained {
       padding: 15px !important;
       -webkit-box-shadow: none;
@@ -240,7 +231,7 @@ html {
     border-bottom: dotted 1px #566465;
   }
   
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     .navbar .product-menu h5 {
       font-size: 0.9rem;
     }
@@ -259,7 +250,7 @@ html {
   }
   
   .navbar .product-menu ul .nav-item a {
-    color: #999;
+    color: #889899;
     font-size: 0.8rem;
     display: block;
     padding: 0 !important;
@@ -274,11 +265,6 @@ html {
     margin-bottom: 10px;
   }
   
-  .navbar .navbar-btn {
-    color: #fff;
-    margin-right: 10px;
-  }
-
 /* ------------ Account Menu ------------*/
 
 .navbar .account-menu-contained {
@@ -290,7 +276,7 @@ html {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 992px) {
   .navbar .account-menu-contained {
     padding: 15px !important;
     -webkit-box-shadow: none;
@@ -342,14 +328,14 @@ html {
 }
 
 .navbar .navbar-btn {
-  color: #fff;
+  color: #FFFFFF;
   margin-right: 10px;
 }
 
 /* ------------ Search ------------------*/
   
   #search {
-    background: #fff;
+    background: #FFFFFF;
   }
   
   #search .container {
@@ -371,9 +357,12 @@ html {
   .dropdown-item {
     padding: 0.25rem 1.5rem;
     font-weight: 400;
-    color: #212529;
+    color: #4B5657;
   }
   
+
+  /* CHECK THESE AND CHNAGE AS REQUIRED */
+
   .dropdown-item:hover, .dropdown-item:focus {
     color: #343a40;
     background-color: #f8f9fa;
@@ -391,6 +380,8 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: #566465;
   }
 
 .page-content {
@@ -425,12 +416,12 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 
-.testimonials {
+.customer-reviews {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
-.testimonials img {
+.customer-reviews img {
   max-width: 150px;
   max-height: 150px;
 }
@@ -459,44 +450,24 @@ background-repeat: no-repeat;
 
 .shop-now-button-hero {
     background: white;
-    color: black;
+    color: #566465;
     min-width: 150px;
+    font-weight: bold;
+    
 }
 
-.shop-now-button {
-    background: black;
+.btn-ua-grey {
+    background: #4B5657;
     color: white;
-    min-width: 150px;
-}
-
-.btn-black {
-    background: black;
-    color: white;
-}
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus
- {
-    background: white !important;
-    color: black;
-    border: 1px solid black;
 }
 
 .shop-now-button-hero:hover,
 .shop-now-button-hero:active,
 .shop-now-button-hero:focus {
-    background: black;
-    color: white;
-    border: 1px solid black;
-}
-
-.keep-shopping-button:hover,
-.keep-shopping-button:active,
-.keep-shopping-button:focus {
-    background: black;
-    color: white;
-    border: 1px solid black;
+    background: #FF4D02;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 1px solid #FF4D02;
 }
 
 .btn-black {
@@ -504,41 +475,24 @@ background-repeat: no-repeat;
     color: white;
 }
 
-.btn-outline-black {
+.btn-outline-ua-grey {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    color: #4B5657 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #4B5657;
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
+.btn-outline-ua-grey:hover,
+.btn-outline-ua-grey:active,
+.btn-outline-ua-grey:focus {
+    background: #4B5657;
+    color:#FFFFFF !important;
+    border: #4B5657;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+.primaryAction {
+  background: #4B5657 !important;
+  border: #4B5657 !important;
 }
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-.bg-black {
-    background: #000 !important;
-}
-
 
 .std-background {
 	height: 100%;
@@ -551,7 +505,7 @@ background-repeat: no-repeat;
 }
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: #4B5657 !important;
     color: #fff !important;
 }
 
@@ -652,25 +606,17 @@ input[name=q]::placeholder {
       max-width: 80%;
     }
   }
-  
 
-  /* Remember to sort header when refactor navabar code */
-  /* fixed top navbar only on medium and up */
-  @media (min-width: 768px) {
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1030;
-      }
-  
-      .header-container {
-          padding-top: 48px;
-      }
+/* Move shop now button on smaller devices */
+@media (max-width: 500px) {
+  .header-font {
+    margin-bottom: 150px !important;
   }
+} 
 
-  @media (max-width: 768px) {
+/* Remember to sort header when refactor navabar code */
+/* fixed top navbar only on medium and up */
+@media (min-width: 768px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -682,6 +628,20 @@ input[name=q]::placeholder {
     .header-container {
         padding-top: 48px;
     }
+}
+
+@media (max-width: 768px) {
+  .fixed-top-desktop-only {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+  }
+
+  .header-container {
+      padding-top: 48px;
+  }
 }
 
 /* Contain image on hover / zoom */
@@ -775,15 +735,15 @@ select option[value=""] {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: #4B5657;
+    border: 1px solid #4B5657;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -809,9 +769,8 @@ select option[value=""] {
 /* ----------------- Footer --------------- */
 
 #footer {
-  background: #e0e0e0;
+  background: #E0E0E0;
   padding: 50px 0;
-  margin-top: 40px;
 }
 
 #footer ul {
@@ -872,7 +831,7 @@ select option[value=""] {
   background: #4B5657;
   color: #ccc;
   padding: 20px 0;
-  font-size: 0.738rem;
+  font-size: 0.5rem;
 }
 
 #copyright p {
@@ -889,7 +848,11 @@ select option[value=""] {
   margin-top: 48px !important;
 }
 
+/* Need to try and resolve selecting the wrong image size */
 .card-img-top {
   padding-left: 10px;
   padding-right: 10px;
+  /*width: 100%;
+  height: 15vw;
+  object-fit: cover;*/
 }
