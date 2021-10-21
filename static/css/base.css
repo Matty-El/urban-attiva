@@ -856,3 +856,7 @@ select option[value=""] {
   height: 15vw;
   object-fit: cover;*/
 }
+
+strong {
+  color:#4B5657;
+}
