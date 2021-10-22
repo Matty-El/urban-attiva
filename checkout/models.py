@@ -4,6 +4,8 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
+from django.contrib.auth.models import User
+
 from django_countries.fields import CountryField
 
 from products.models import Product
@@ -15,6 +17,9 @@ class Order(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL,
+                             null=True, blank=True,
+                             related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -54,7 +59,7 @@ class Order(models.Model):
         else:
             self.shipping_cost = 0
 
-        if self.user_profile is None:
+        if self.user is not None:
             self.user_discount = self.order_total * -settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100
         else:
             self.user_discount = 0

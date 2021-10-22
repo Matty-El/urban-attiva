@@ -63,6 +63,10 @@
     transform: translateX(-50%);
   }
 
+  .table {
+    color: #4B5657;
+  }
+
 /* determine if actually needed */
 html { 
     scroll-behavior: smooth; 
@@ -694,7 +698,7 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 162, 184, 0.85);
+    background: rgba(79, 203, 255, 0.50);
     z-index: 9999;
 }
 

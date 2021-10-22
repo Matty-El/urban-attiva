@@ -269,9 +269,10 @@
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Information</h5>
                     <ul class="list-unstyled">
-                        <li><a href="">About us</a></li>
-                        <li><a href="">Returns Policy</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li><a href="{% url 'terms_conditions' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'returns' %}">Returns Policy</a></li>
+                        <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        <li><a href="{% url 'cookies' %}">Cookies</a></li>
                     </ul>
                     <hr>
                     <h5 class="mb-3">Users</h5>
