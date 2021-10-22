@@ -67,10 +67,10 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    def sale_price(self):
+    def product_sale_price(self):
         """ Calculate sale price of product """
-        sale_price = Decimal(self.price - ((self.price * self.discount_percent) / 100))
-        return sale_price
+        product_sale_price = Decimal(self.price - ((self.price * self.discount_percent) / 100))
+        return product_sale_price
 
     # code with stein
     def get_rating(self):

@@ -31,9 +31,17 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="small mb-1">{{ product.sku }}</div>
             <h3 class="display-5 fw-bolder">{{ product.name }}</h3>
+            {% if product.on_sale is True %}
+            <p class="mb-0">
+                <span class="mb-0 text-left"><s>£{{ product.price }}</s></span>
+                <span class="mb-0 text-left text-danger font-weight-bold">£{{ product.product_sale_price|floatformat:2 }}
+                </span>
+            </p>
+            {% else %}
             <div class="lead mb-2 text-left font-weight-bold">
                 <span>£{{ product.price }}</span>
             </div>
+            {% endif %}
             <p class="lead">{{ product.description }}</p>
             {% if product.category %}
             <p class="small mt-1 mb-2">

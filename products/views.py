@@ -9,7 +9,6 @@ from .models import Product, Category, ProductReview
 from .forms import ProductForm, ReviewForm
 
 
-
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -59,6 +58,38 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
+
+
+def products_on_sale(request):
+    """ A view to show all sale products, including sorting """
+
+    products = Product.objects.filter(on_sale=True)
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
+    context = {
+        'products': products,
+        'current_sorting': current_sorting,
+    }
+
+    return render(request, 'products/products_on_sale.html', context)
 
 
 def product_detail(request, product_id):
