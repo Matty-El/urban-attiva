@@ -92,12 +92,15 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                            <h6><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h6>
                             <h6>Shipping: £{{ shipping|floatformat:2 }}</h6>
+                            {% if request.user.is_authenticated %}
+                            <h6>Registered User Discount: £{{ user_discount|floatformat:2 }}</h6>
+                            {% endif %}
                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_shipping_delta > 0 %}
                             <p class="mb-1 text-danger">
-                                You could get free shipping by spending just <strong>${{ free_shipping_delta }}</strong>
+                                You could get free shipping by spending just <strong>£{{ free_shipping_delta }}</strong>
                                 more!
                             </p>
                             {% endif %}

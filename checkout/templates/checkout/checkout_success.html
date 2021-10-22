@@ -15,7 +15,7 @@
 
 {% block content %}
 <div class="std-background"></div>
-<div class="container page-content checkout-success">
+<div class="container">
     <div class="row">
         <div class="col">
             <hr>
@@ -174,6 +174,16 @@
                         <p class="mb-0">£{{ order.shipping_cost }}</p>
                     </div>
                 </div>
+                {% if user.is_authenticated %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 font-weight-bold">Registered User Discount</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">£{{ order.user_discount }}</p>
+                    </div>
+                </div>
+                {% endif %}
 
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -205,5 +215,6 @@
             {% endif %}
         </div>
     </div>
+    <br>
 </div>
 {% endblock %}

@@ -29,6 +29,8 @@ class Order(models.Model):
                                         null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
+    user_discount = models.DecimalField(max_digits=10, decimal_places=2,
+                                        null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
@@ -43,7 +45,7 @@ class Order(models.Model):
     def update_total(self):
         """
         Update grand total each time an order line item is added
-        including shipping costs.
+        including shipping costs and registered user discount.
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
@@ -51,7 +53,12 @@ class Order(models.Model):
             self.shipping_cost = self.order_total * settings.STANDARD_SHIPPING_PERCENTAGE / 100
         else:
             self.shipping_cost = 0
-        self.grand_total = self.order_total + self.shipping_cost
+
+        if self.user_profile is None:
+            self.user_discount = self.order_total * -settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100
+        else:
+            self.user_discount = 0
+        self.grand_total = self.order_total + self.shipping_cost + self.user_discount
         self.save()
 
     def save(self, *args, **kwargs):

@@ -39,14 +39,19 @@ def cart_contents(request):
     else:
         shipping = 0
         free_shipping_delta = 0
+    if request.user.is_authenticated:
+        user_discount = total * -Decimal(settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100)
+    else:
+        user_discount = 0
 
-    grand_total = shipping + total
+    grand_total = shipping + user_discount + total
 
     context = {
         'cart_items': cart_items,
         'total': total,
         'product_count': product_count,
         'shipping': shipping,
+        'user_discount': user_discount,
         'free_shipping_delta': free_shipping_delta,
         'free_shipping_threshold': settings.FREE_SHIPPING_THRESHOLD,
         'grand_total': grand_total,
