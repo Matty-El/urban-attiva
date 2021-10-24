@@ -21,6 +21,7 @@
 .btn-sm {
   padding: 4px 8px;
 }
+
 .search-btn {
   background: #566465;
   color: #FFFFFF;
@@ -890,6 +891,17 @@ select option[value=""] {
   object-fit: cover;*/
 }
 
-strong {
+/* strong {
   color:#4B5657;
+} */
+
+.blog-img {
+  max-width: 40%;
+}
+
+@media (max-width: 1008px) {
+
+  .blog-img {
+    max-width: 100%;
+  }
 }

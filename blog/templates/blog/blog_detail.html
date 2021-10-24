@@ -15,16 +15,17 @@
 <div class="container-fluid page-content blog-detail">
     <div class="row">
         <div class="col-8 mx-auto">
-            <div>
+            <div class="mb-4">
                 {% if blog_post.image %}
-                <img class="card-img-top img-fluid" src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
+                <img class="card-img-top img-fluid px-0" src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
                 {% else %}
-                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog_post.title }}">
+                <img class="card-img-top img-fluid px-0" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog_post.title }}">
                 {% endif %}
             </div>
+
             <div class="post-details">
-                <h1>{{ blog_post.title }}<a href="#"></a></h1>
-                <h6 class="text-muted"> By: {{ blog_post.author}}</h6>
+                <h2 >{{ blog_post.title }}</h2>
+                <h6 class="text-muted"><i class="fas fa-user"></i> {{ blog_post.author}}</h6>
                 <h6 class="text-muted"><i class="far fa-clock"></i> {{ blog_post.date }}</h6>
                 <div class="text-muted"><i class="far fa-comments"></i></i> {{ blog_post.comments.count }}</div>
                 {% if request.user.is_superuser %}
@@ -37,7 +38,7 @@
                 {% endif %}
             </div>
             <div class="post-body">
-                <p class="intro">{{ blog_post.intro }}</p>
+                <p class="intro lead">{{ blog_post.intro }}</p>
                 <p class="blog_content">{{ blog_post.content }}</p>
             </div>
             <!-- Delete blog post modal-->
