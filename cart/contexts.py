@@ -14,7 +14,10 @@ def cart_contents(request):
     for item_id, item_data in cart.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
-            total += item_data * product.price
+            if product.on_sale is True:
+                total += item_data * Decimal(product.price - ((product.price * product.discount_percent) / 100))
+            else:
+                total += item_data * product.price
             product_count += item_data
             cart_items.append({
                 'item_id': item_id,
@@ -24,7 +27,10 @@ def cart_contents(request):
         else:
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
-                total += quantity * product.price
+                if product.on_sale is True:
+                    total += quantity * Decimal(product.price - ((product.price * product.discount_percent) / 100))
+                else:
+                    total += quantity * product.price
                 product_count += quantity
                 cart_items.append({
                     'item_id': item_id,
