@@ -189,6 +189,9 @@ def add_review(request, product_id):
             review.user = request.user
             review.product = product
             review.save()
+            # Update average product rating
+            product.save_average_product_rating()
+
             messages.success(request, 'Thank you for your Review !')
             return redirect(reverse('product_detail', args=[product.id]))
         else:

@@ -1,4 +1,5 @@
 from decimal import Decimal
+from django.db.models import Avg
 from django.db import models
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
@@ -81,6 +82,14 @@ class Product(models.Model):
             return total / self.reviews.count()
         else:
             return 0
+
+    def save_average_product_rating(self):
+        """
+        Calculate average product rating and update product data
+        """
+        self.rating = self.reviews.all().aggregate(
+            Avg("review_rating"))['review_rating__avg']
+        self.save()
 
 
 RATING = (
