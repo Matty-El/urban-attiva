@@ -10,10 +10,29 @@ from .forms import BlogForm, CommentForm
 def blog(request):
     """ To display all blog posts """
 
+    query = None
+    sort = None
+    direction = None
+
     blog_posts = BlogPost.objects.all().order_by("-date")
 
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request,
+                               ("You didn't enter any search criteria!"))
+                return redirect(reverse('blog'))
+
+            queries = Q(title__icontains=query) | Q(intro__icontains=query)
+            blog_posts = blog_posts.filter(queries)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
-        'blog_posts': blog_posts
+        'blog_posts': blog_posts,
+        'search_term': query,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'blog/blog.html', context)

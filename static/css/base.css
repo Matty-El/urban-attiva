@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 70vh;
-  margin-top: -48px;
+  /*margin-top: -48px;*/
   margin-bottom: 0px;
 }
 
@@ -361,7 +361,7 @@ scroll-behavior: smooth;
   }
   
 
-  /* CHECK THESE AND CHNAGE AS REQUIRED */
+  /* CHECK THESE AND CHANGE AS REQUIRED */
 
   .dropdown-item:hover, .dropdown-item:focus {
     color: #343a40;
@@ -386,7 +386,7 @@ html, body {
 
 .page-content {
     flex: 1 0 auto;
-    margin-top: -48px;
+    /*margin-top: -48px;*/
 }
 
 .footer {
@@ -628,7 +628,7 @@ input[name=q]::placeholder {
 
 /* Remember to sort header when refactor navabar code */
 /* fixed top navbar only on medium and up */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -654,7 +654,7 @@ input[name=q]::placeholder {
   .header-container {
       padding-top: 48px;
   }
-}
+}*/
 
 @media (max-width: 991px) {
 
@@ -874,7 +874,7 @@ select option[value=""] {
 
 /* ------------------- Product detail page --------------- */
 
-.product-detail, .blog-detail, .blog {
+.product-detail, .blog-detail {
   margin-top: 48px !important;
 }
 

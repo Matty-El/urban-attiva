@@ -12,36 +12,56 @@
 
 {% block content %}
 <div class="std-background"></div>
-<div class="container-fluid page-content blog">
-    <div class="row">
-        <div class="col text-center mt-3">
+<div class="container-fluid page-content">
+    <div class="row mt-3">
+        <div class="col text-center">
             <h2 class="logo-font pb-2">All Blog Posts</h2>
         </div>
     </div>
-    <div class="mx-auto">
-        <div class="container">
-            <div class="row">
-                {% for blog in blog_posts %}
-                <div class="mb-5 w-100 text-center">
-                    {% if blog.image %}
-                    <div class="mb-3"><a href="{% url 'blog_detail' blog.id %}"><img src="{{ blog.image.url }}"
-                                alt="{{ blog.title }}" class="img-fluid blog-img"></a></div>
-                    {% else %}
-                    <div class="post-thumbnail"><a href="{% url 'blog_detail' blog.id %}"><img src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ blog.title }}" class="img-fluid blog-img" /></a></div>
-                    {% endif %}
-                    <div>
-                        <a href="{% url 'blog_detail' blog.id %}">
-                            <h3 class="h4">{{ blog.title }}</h3>
-                        </a>
-                        <p class="lead">{{ blog.intro }}</p>
-                        <div class="card-footer bg-white pt-0 border-0 text-center mb-4">
-                            <small class="px-2 text-muted">Posted by: {{ blog.author }} <span class="date"> on:
-                                    {{ blog.date }}</span></small>
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col">
+                <div class="row">
+                    <!-- Blog entries-->
+                    <div class="col-lg-8">
+                        {% for blog in blog_posts %}
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            {% if blog.image %}
+                            <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
+                                    src="{{ blog.image.url }}" alt="{{ blog.title }}" /></a>
+                            {% else %}
+                            <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
+                                    src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}" /></a>
+                            {% endif %}
+                            <div class="card-body">
+                                <div class="small text-muted">{{ blog.date }}</div>
+                                <h2 class="card-title h4">{{ blog.title }}</h2>
+                                <p class="card-text">{{ blog.intro }}</p>
+                                <a class="btn btn-ua-grey" href="{% url 'blog_detail' blog.id %}">Read more</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Blog search-->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <form role="search" class="ml-auto" method="GET" action="{% url 'blog' %}"></form>
+                                    <div class="input-group">
+                                        <input class="form-control border border-dark" type="text" placeholder="Search our blog..."
+                                            aria-label="Search our blog..." aria-describedby="button-search" name="q" />
+                                        <div class="input-group-append"> 
+                                        <button class="btn search-btn form-control" id="button-search" type="submit"><i
+                                                class="fa fa-search text-white"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
