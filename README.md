@@ -4,13 +4,13 @@
 
 ![Urban Attiva](readme-files/urban-attiva-presented.png)
 
-Cycling is a global and accessible sport that has shown a huge increase in popularity over recent years. The global market is for bicycles alone is in excess of $54 billion dollars. Alongside the growth in bicycle sales there has been significant growth in cycling related products such as GPS cycle computers and related software platforms that allow users to record, analyse and share their rides.
+Working with the company director, this website has been developed as the first iteration of an eCommerce store for Urban Attiva. The website provides shoppers with the ability to browse and purchase products, add product reviews and to read the company blog to find out what is new with Urban Attiva and to leave comments on blog articles.
 
-VeloRoute has been developed to allow users to share their favourite cycling routes, to search routes that other users have added to the site and to link to the routes that have been saved to platforms such as Strava and MapMyRide so that the routes can then be downloaded to their GPS devices.
+The client requested a simple, attractive and modern website that is responsive and easy to navigate, allows potential customers to sign up for email updates on company news, provides links to the company social media accounts and links to enable the customer to purchase products.
 
-The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development and Backend Development modules.
+The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development, Backend Development and Full STack Frameworks modules.
 
-View the live website [here.](https://velo-route.herokuapp.com/)
+View the live website [here.](https://urban-attiva.herokuapp.com/)
 
 ---
 
@@ -30,14 +30,10 @@ View the live website [here.](https://velo-route.herokuapp.com/)
 
 ### Strategy
 
-The key goals for developing the website are:
+The key business goals for developing the website are:
 
--   To provide users with an attractive and intuitive interactive website that enables them to search for and find new cycling routes and find tips relating to cycling and cycling safety.
--   To allow users to securely register with VeloRoute and set up a username and password.
--   To allow returning users to log in to VeloRoute.
--   To enable users to add their favourite cycling routes.
--   To allow users to edit or delete their cycling routes.
--   To allow admin users to edit cycling routes, cycling tips and categories.
+-   To sell both own brand and established brand sports products to generate revenue for the company.
+-   To promote the Urban Attiva brand through the blog and utilisation of an Urban Attiva style template.
 
 ### Scope
 
@@ -50,50 +46,60 @@ The key goals for developing the website are:
 -   As the website owner, I want the website to be accessible to all users so that all users can use our website.
 -   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
 -   As the website owner, I want the  website to be compatible with different browsers so that users have a consistent experience no matter which browser they use.
+-   As the website owner, I want the website to be secure so that only authorised users can access store management functionality.
 
 #### Users
 
--   As a user, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
--   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information I am looking for.
--   As a user, I want to register with VeloRoute with a secure username and password.
--   As a user, I want to find new cycling routes so that I can see try new recommended routes.
--   As a user, I want to be able to add my favourite cycling routes to the website.
--   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previously submitted.
--   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
--   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
--   As a user, I want to be able to rate cycling routes that have been added to the website.
--   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the
-    cycling route on platforms such as Strava.
+-   As a shopper, I want to understand what the store sells and to be able to navigate the website easily so that I can so that I can decide if I want to purchase any products.
+-   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
+-   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
+-   As a shopper, I want to see products matching that I have searched for and the number of results returned so that I can see whether the product I searched for is available.
+-   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
+-   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
+-   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
+-   As a shopper, I want to view individual product details so that I can see the price, description, product rating, product image and available sizes of products.
+-   As a shopper, I want to be able to select the quantity and size of product so that I can purchase the product quantity I want and in the correct size.
+-   As a shopper, I want to view products that have been added to my shopping bag so that I can see the items I have selected and the total cost of the items in my shopping cart.
+-   As a shopper, I want to adjust the quantity of items in my shopping bag so that I can make changes to the contents of my shopping cart before checkout.
+-   As a shopper, I want to purchase an item without registering so that I can quickly purchase items without the need to register.
+-   As a shopper, I want to enter my payment information so that I can quickly check out and pay for my items.
+-   As a shopper, I want to view an order confirmation after checkout so that I can verify that I haven't made any mistakes when entering my information.
+-   As a shopper, I want to receive an order confirmation after checkout so that I can keep a proof of purchase.
+-   As a shopper, I want to read item reviews from verified shoppers so that I can see how other shoppers rate the products.
+-   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics or events.
+-   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
+-   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.
 
-#### Admin Users
+#### Registered Users
 
--   As an admin user, I want to be able to log in to VeloRoute and have access to the same functionality that a standard website user has.
--   As an admin user, I want to be able to edit cycling route categories.
--   As an admin user I want to be able to edit cycling tips so that I can edit or delete cycling tips.
--   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
+-   As a registered user, I want to receive a confirmation email after registering so that I can verify that my account was successfully registered.
+-   As a registered user, I want to have a personal user profile so that I can view my account information, order history and order confirmations.
+-   As a registered user, I want to log in and log out once I have registered so that I can access my personal account information.
+-   As a registered user, I want to add a product review so that I can provide a review of the product that I have purchased.
+-   As a registered user, I want to recover my password if I have forgotten it so that I can reaccess my account.
+-   As a registered user, I want to leave comments on blog posts so that I can express my views on the blog content.
 
-#### IT Users
+#### Administrator
 
--   As an IT user, I want to be able to create, edit and delete cycling route, cycling tip and difficulty level categories so that I can make updates to the database when new categories are required.
-
+-   As an administrator, I want to add a blog post so that I can publish blog posts for users to read.
+-   As an administrator, I want to add a product so that I can add new items to the store.
+-   As an administrator, I want to delete a product so that I can remove items that are no longer sold.
+-   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
+-   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
+-   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
 
 ### Structure
 
-The VeloRoute website has been designed to provide an attractive, intuitive and easy to navigate website. The site has been developed to enable visitors to search for rides that have been submitted by users and to securely register and submit their own cycling routes.
+The Urban Attiva website has been designed to provide an attractive, intuitive and easy to navigate website. The site has been developed to enable visitors to register, log in, search for products to add to their shopping cart, to check out securely and access their account information.
 
 The website has the following key elements:
 
--   A simple landing page design that provides information about VeloRoute and that presents cycling routes to the user.
--   A join us page that allows users to register with VeloRoute.
--   A log in page so that registered users can log in to VeloRoute.
--   A Routes page that allows users to search rides that have been submitted by registered users.
--   An Add Route page for users to add their favourite cycling routes to VeloRoute.
--   A user profile page that displays the user's details that they registered with and also displays the routes that the
-    user has added to VeloRoute. The profile page is where users can edit routes they have previously submitted.
--   A cycling tips page offering tips related to cycling.
--   A categories page for admin users to edit route, difficulty levels and cycling tip categories.
--   A add cycling tips page for admin users to add and to edit or delete cycling tips.
--   A footer containing information about the VeloRoute team, social media links and copyright information.
+-   A simple landing page design with a main navigation menu with links for the home page, shop, blog and user account. 
+-   The home page has a hero image with header and a prominant shop now button, images with links to the product categories, and a footer with links to further information and social media. A dropdown search field allows users to search for  products by entering their own search criteria.
+-   The shop dropdown menu provides access to the main product categories and the product pages enable sorting within categories with a link through to individual product details.
+-   Shopping cart and checkout functionality.
+-   A blog page listing recent blog posts.
+-   An account dropdown menu with links to register and log in. Once logged in a user has access to their profile and administration users can access the product and blog management functionality.
 
 ### Skeleton
 
@@ -107,17 +113,17 @@ The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 
 The following changes were made after the initial design.
 
--   Addition of user profile page with ability for users to edit their previously submitted routes on the profile page.
--   Expanding card panels which can be clicked to reveal the underlying information on routes and cycling tips.
+-   Functionality to enable users to leave product reviews.
+-   User registered discount functionality.
 
 
 ### Surface
 
-VeloRoute features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. Colour is added to the site through the use of images and buttons as detailed in the colour scheme below.
+The Urban Attiva website features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. Colour is added to the site through the use of images and buttons as detailed in the colour scheme below.
 
 #### Branding
 
-A simple VeloRoute logo was created using Canva.
+A simple Urban Attiva logo has been developed aligned to the branding for an existing sister company.
 
 ![Urban Attiva Logo](static/images/velo-route-logo-crop.png)
 
@@ -159,16 +165,18 @@ The website has been developed incorporating the following defensive design aspe
 
 #### Data Input Validation
 
-Data validation is incorporated on all data input fields with the following validation applied to:
+Django-allauth is utilised for all authentication, registration, account management functionality.
 
-Join Us Form:
+Data validation is on custom forms is incorporated on all data input fields with the following validation applied to:
+
+Product management form:
 
 -   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist in the database and a user is notified via a flash message if this is the case.
 -   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
 -   Email address field is validated to ensure a valid email address in the correct format is entered.
 -   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
 
-Add Route / Edit Route Form:
+Blog management form:
 
 -   Category, difficulty and country are dropdown fields with data populated from the database.
 -   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
@@ -178,7 +186,7 @@ Add Route / Edit Route Form:
 -   The route link is validated to ensure it is a valid URL.
 -   The same validation is in place when a user comes to edit a route.
 
-Add Cycling Tip Form:
+Product review form:
 
 -   The category is populated form the database.
 -   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
@@ -186,7 +194,7 @@ Add Cycling Tip Form:
 -   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
 -   The cycling tip link is validated to ensure it is a valid URL.
 
-Add Categories Form:
+Blog comment form:
 
 -   The category input is validated to ensure the user only inputs letter, spaces and no special characters.
 
@@ -208,20 +216,22 @@ The MongoDB VeloRoute database has seven collections as detailed in the attached
 
 #### Home Page
 
--   VeloRoute logo with a link to the home page.
--   A navigation menu on the top right of the website hero section that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with sidenav menu on smaller devices. Only the navigation links for Home, Routes, Cycling Tips, Log In and Join Us pages are visible to users who are not logged in to the site.
--   Section one of the Home page includes a hero image and tagline.
--   Section two of the Home page includes introductory text and a call to action button prompting users to join us at VeloRoute.
--   Section three of the Home page includes the six most recently added routes displayed on medium and larger devices and the three most recently added routes are displayed on small devices.
+-   Urban Attiva logo with a link to the home page.
+-   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with aa exapnding sidenav menu on smaller devices. 
+-   Section one of the home page includes a hero image, header text and a shop now button.
+-   Section two of the home page images for each of the core product categories which when clicked link through to the product pages pre filtered by category.
+-   Section three of the home page includes some customer reviews.
+-   Section four of the home page cconatins some information highlighting free shipping thresholds, secure payments and registered user discounts.
 
-#### Routes Page
+#### Shop Navigation
 
--   The Routes page displays all routes that have been added to VeloRoute, with the most recently added routes displayed first.
--   There is the option to search routes to find routes matching specific text search criteria.
+-   The shop navigation menu enables users to link to the product page with products displayed filtered by core product categories and sub categories.
+-   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
+-   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the prodcut detail page and select the quentity and chosen size.
 
-#### Cycling Tips Page
+#### Shopping Cart
 
--   The Cycling Tips page displays cards with cycling tips relating to categories such as bicycle maintenance, safety and nutrition.
+-   Once the user has selectd products and added them to their shopping cart the cart 
 -   Cycling Tips are added by the admin user and cannot be edited by other users. Admin users can edit or delete cycling tips and the delete button is linked to a modal to confirm if the user definitely wants to delete the cycling tip.
 
 #### Log In Page
