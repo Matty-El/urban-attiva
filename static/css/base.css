@@ -3,7 +3,7 @@
 
 .jumbotron {
   color: white;
-  background-image: url('/media/hero-image3.jpg');
+  background-image: url('../images/hero-image3.jpg');
   background-position: 40% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -264,7 +264,10 @@ scroll-behavior: smooth;
 .navbar .product-menu .banner {
   margin-bottom: 10px;
 }
-  
+
+.navbar-toggler {
+  color: #4B5657;
+}
 /* ------------ Account Menu ------------*/
 
 .navbar .account-menu-contained {
@@ -660,11 +663,6 @@ input[name=q]::placeholder {
 
   .display-4.logo-font {
       font-size: 2rem;
-  }
-
-  .btn.btn-outline-black.rounded-0,
-  .btn.btn-black.rounded-0 {
-      padding: .375rem .375rem;
   }
 
   .btn.btn-outline-ua-grey,

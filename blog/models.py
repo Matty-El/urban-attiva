@@ -1,12 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=254, null=True, blank=True)
-    intro = models.CharField(max_length=254, null=True, blank=True)
-    content = models.TextField()
+    title = models.CharField(max_length=254, null=True, blank=False)
+    intro = models.CharField(max_length=254, null=True, blank=False)
+    content = models.TextField(max_length=2000, null=True, blank=False)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
