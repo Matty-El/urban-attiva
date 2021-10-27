@@ -6,5 +6,4 @@ urlpatterns = [
     path('terms_conditions/', views.terms_conditions, name='terms_conditions'),
     path('returns/', views.returns, name='returns'),
     path('faq/', views.faq, name='faq'),
-    path('cookies/', views.cookies, name='cookies')
 ]

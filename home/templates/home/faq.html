@@ -16,82 +16,95 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">FAQ</h2>
+            <h2 class="logo-font mb-4">FAQs</h2>
             <hr>
         </div>
     </div>
     <div id="accordion" class="mb-10">
-        <div class="card">
-            <div class="card-header" id="headingOne">
+        <div class="card mb-1">
+            <div class="card-header information-background" id="headingOne">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">
-                        Collapsible Group Item #1 <i class="fas fa-plus text-right"></i>
+                    <button class="btn btn-link collapsed information" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <i class="fas fa-plus text-right"></i> How long will delivery take?
                     </button>
                 </h5>
             </div>
-
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <h5>How long will delivery take?</h5>
+                    <p>Items are usually packed and shipped the same day if ordered before 5pm, and should be received the following day. Items ordered after 5pm will be dispatched the following day so should be with you within 48hrs. If you are ordering from the Scottich Highland & Islands, Northern Ireland or the Isle of Man, items will be received within 3 to 5 working days.</p>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
+        <div class="card mb-1">
+            <div class="card-header information-background" id="headingTwo">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                    <button class="btn btn-link collapsed information" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="false" aria-controls="collapseTwo">
-                        Collapsible Group Item #2
+                        <i class="fas fa-plus text-right"></i> How do I return items?
                     </button>
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <h5>How do I return items?</h5>
+                    <p>You can request a returns form and label from our Customer Service Team. Just simply complete the returns form and attach the label to your package and take to your nearest Collect+ store. Please see our Returns and Refunds Policy <a href="{% url 'returns' %}">here</a>.</p>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
+        <div class="card mb-1">
+            <div class="card-header information-background" id="headingThree">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                        aria-expanded="false" aria-controls="collapseThree">
-                        Collapsible Group Item #3
+                    <button class="btn btn-link collapsed information" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="fas fa-plus text-right"></i> How do I get a refund?
                     </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <h5>How do I get a refund?</h5>
+                    <p>You will receive a refund when you return your item to us. The credit or debit card used for your original purchase will be refunded once we have booked the return into our warehouse. Please see our Returns and Refunds Policy <a href="{% url 'returns' %}">here</a>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-1">
+            <div class="card-header information-background" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed information" data-toggle="collapse" data-target="#collapseFour"
+                        aria-expanded="false" aria-controls="collapseFour">
+                        <i class="fas fa-plus text-right"></i> How long do I have to return an item I have purchased?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    <h5>How long do I have to return an item I have purchased?</h5>
+                    <p>For non perishable items 60 days and 28 days for perishable items. Please see our Returns and Refunds Policy <a href="{% url 'returns' %}">here</a>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-1">
+            <div class="card-header information-background" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed information" data-toggle="collapse" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive">
+                        <i class="fas fa-plus text-right"></i> What payment options do you accept?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    <h5>What payment options do you accept?</h5>
+                    <p>We accept all major debit and credit cards.</p>
                 </div>
             </div>
         </div>
     </div>
     <br>
     <div>
-        <a href="{% url 'products' %}" class="btn btn-ua-grey keep-shopping-button btn-lg">
-            <span class="icon">
-                <i class="fas fa-chevron-left"></i>
-            </span>
+        <a href="{% url 'products' %}" class="btn btn-ua-grey keep-shopping-button">
             <span class="text-uppercase">Keep Shopping</span>
         </a>
     </div>

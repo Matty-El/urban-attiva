@@ -76,6 +76,8 @@ html {
 
 /* reference where sourced this style menu */
 
+/* ------------ Navigation ----------- */
+
 .product-menu .product-menu-contained {
   padding: 20px;
   width: 100%;
@@ -105,10 +107,6 @@ html {
 .logo-sm {
     width: 161px;
     height: 39px;
-}
-
-html { 
-scroll-behavior: smooth; 
 }
 
 /* ------------------- Top Banner ----------------------- */
@@ -380,6 +378,8 @@ scroll-behavior: smooth;
 
 /* Sticky footer https://css-tricks.com/couple-takes-sticky-footer/ */
 
+/* ---------- Footer --------- */
+
 html, body {
     height: 100%;
     display: flex;
@@ -641,37 +641,7 @@ input[name=q]::placeholder {
   .header-font {
     margin-bottom: 150px !important;
   }
-} 
-
-/* Remember to sort header when refactor navabar code */
-/* fixed top navbar only on medium and up */
-/*@media (min-width: 768px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 48px;
-    }
 }
-
-@media (max-width: 768px) {
-  .fixed-top-desktop-only {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-  }
-
-  .header-container {
-      padding-top: 48px;
-  }
-}*/
 
 @media (max-width: 991px) {
 
@@ -689,6 +659,8 @@ input[name=q]::placeholder {
       padding: .25rem .5rem !important;
   }
 }
+
+/* ----------- Home page categories images -------- */
 
 /* Contain image on hover / zoom */
 .image-contained {
@@ -733,15 +705,18 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
-  #loading-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(79, 203, 255, 0.50);
-    z-index: 9999;
+
+/* ----------- Checkout ---------- */
+
+#loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(79, 203, 255, 0.50);
+  z-index: 9999;
 }
 
 .loading-spinner {
@@ -764,7 +739,6 @@ select option[value=""] {
 }
 
 .allauth-form-inner-content input {
-    /*border-color: black;*/
     border-radius: 5px;
 }
 
@@ -809,8 +783,6 @@ select option[value=""] {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
-
-
 
 /* ----------------- Footer --------------- */
 
@@ -884,6 +856,17 @@ select option[value=""] {
   margin: 0;
 }
 
+/* information pages */
+
+.information {
+  color: #4B5657;
+  font-size: 16px;
+}
+
+.information-background {
+  background-color: #FFFFFF;
+}
+
 /* ------------------- Product detail page --------------- */
 
 .product-detail, .blog-detail {
@@ -907,6 +890,9 @@ select option[value=""] {
   color:#4B5657;
 } */
 
+
+/* ----------- Blog ----------- */
+
 .blog-img {
   max-width: 40%;
 }
@@ -916,4 +902,64 @@ select option[value=""] {
   .blog-img {
     max-width: 100%;
   }
+}
+
+
+/* ------------ Error pages ----------- */
+
+/*------------- 404 / 500 error ------------- */
+
+/* https://freefrontend.medium.com/51-html-404-page-templates-6dc41cf9135c */
+
+.mainbox {
+  background-color: #FFFFFF;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  position: relative;
+}
+
+  .err, .err3 {
+    color: #6E7F80;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+  }
+
+.far, .err4 {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #FF834F;
+}
+
+ .err2, .err5 {
+    color: #6E7F80;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+  }
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+  }
+
+a {
+  text-decoration: none;
+  color: #4F73FF;
+}
+
+a:hover {
+  text-decoration: underline;
 }

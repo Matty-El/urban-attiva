@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+    <div class="err3">5</div>
+    <i class="fas fa-cog fa-spin err4"></i>
+    <i class="fas fa-cog err5"></i>
+    <div class="msg">Ooops....? Something went wrong.<p>Let's go <a href="{% static 'home' %}">home</a> and try from
+            there.</p>
+    </div>
+</div>
+{% endblock %}

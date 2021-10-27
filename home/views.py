@@ -24,8 +24,3 @@ def returns(request):
 
     return render(request, 'home/returns.html')
 
-
-def cookies(request):
-    """ View the cookies policy page """
-
-    return render(request, 'home/cookies.html')
