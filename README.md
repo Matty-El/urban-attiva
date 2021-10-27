@@ -52,7 +52,7 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As the website owner, I want the  website to be compatible with different browsers so that users have a consistent experience no matter which browser they use.
 -   As the website owner, I want the website to be secure so that only authorised users can access store management functionality.
 
-#### Users
+#### Shoppers
 
 -   As a shopper, I want to understand what the store sells and to be able to navigate the website easily so that I can so that I can decide if I want to purchase any products.
 -   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
@@ -131,26 +131,23 @@ The following changes were made after the initial design.
 
 ### Surface
 
-The Urban Attiva website features a clean and simple design with #4B5657 used for dark backgrounds and text and #F6F7F7 for light backgrounds and text to provide good contrast. The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises a white background to match the image background.
+The Urban Attiva website features a clean and simple design with #4B5657 used for dark backgrounds and text and #F6F7F7 for light backgrounds and text to provide good contrast. The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
 
 #### Branding
 
 A simple Urban Attiva logo has been developed aligned to the branding for an existing sister company.
 
-![Urban Attiva Logo](static/images/urban-attiva-logo.png)
+<img src="static/images/urban-attiva-logo.png" width="250">
 
 #### Colours
 
 Full details of the Urban Attiva colour template can be found in the [Urban Attiva Branding Guidelines](readme-files/urban-attiva-branding-guidelines.pdf)
 
+#FFFFFF for navigation backgrounds
 
-UPDATE!!!!
+The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. 
 
-A simple colour palette using #263238 for navigation and footer backgrounds and #FAFAFA for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white.
-
-All icons with the exception of the social media icons use colour #607D8B. Social media icons in footer are the same colour as the footer text #FAFAFA.
-
-Colours have been used as accents for toast messages and these conform to the standard Bootstrap colours for each specific message type. 
+The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
 
 BUTTONS!!!!!! UPDATE #4DD0E1 has been used for the flash messages background, #EF6C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
 
@@ -185,7 +182,7 @@ The website has been developed incorporating the following defensive design aspe
 
 Django-allauth is utilised for all authentication, registration and account management functionality. This functionality incorporates data validation on these forms.
 
-Data validation is on custom forms is incorporated on all data input fields with the following validation applied to:
+Data validation on custom forms is incorporated on all data input fields with the following validation applied to:
 
 Product management form:
 
@@ -222,10 +219,11 @@ Blog comment form:
 
 ### Existing Features
 
-#### Home Page
+#### Home Page (navigation all pages)
 
 -   Urban Attiva logo with a link to the home page.
--   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with aa exapnding sidenav menu on smaller devices. 
+-   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with aa expanding sidenav menu on smaller devices.
+-   A search button in the navbar which when clicked drops down to reveal a field to enter search criteria. Once the search term has been entered the user can click on the serach button and products with details matching the search term will be displayed.
 -   Section one of the home page includes a hero image, header text and a shop now button.
 -   Section two of the home page images for each of the core product categories which when clicked link through to the product pages pre filtered by category.
 -   Section three of the home page includes some customer reviews.
@@ -233,55 +231,61 @@ Blog comment form:
 
 #### Register
 
-#### Profile Page
+-   A simple registration page for a user to register with Urban Attiva by entering and confirming their email address, choosing a user name, and entering their chosen password.
+-   Once the user is registered they will be directed to verify your email address page and will receive an email with a link to verify their email address.
+-   When the email address has been verified the user will be directed to the log in page to log in.
 
 #### Log In
+
+-   Simple log in page where the user can log in by entering their user name and password. Once logged in they will be directed to the home page.
+-   A link to the registration page if the user has not yet registered.
+-   A forgot password link to direct the user to the forgot password page where they can enter their email address to reset their password.
+
+#### Profile Page
+
+-   Contains a form where the user can enter their default shipping information. This information will be populated from an order if they have placed an order and have not input their shipping information. The shipping information can be updated on this page.
+-   The customer's order history is displayed on the right of the page with a truncated order number link to allow the user view previously placed order details.
 
 #### Shop
 
 -   The shop navigation menu enables users to link to the product page with products displayed filtered by core product categories and sub categories.
 -   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
--   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the product detail page and select the quentity and chosen size.
+-   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the product detail page and select the quantity and chosen size.
+-   Registered users can leave product reviews which are displayed below the product details.
+-   Admin users can edit or delete inappropriate product reviews via links in the product review when logged in.
 
 #### Shopping Cart
 
 -   Once the user has selected products and added them to their shopping cart a toast with a confirmation message and a summary of what is in their cart is displayed on the top right of the screen. The cart icon on the top right of the page will display an updated number of products and when clicks navigates the user to the cart page where details of the products are listed with the functionality to allow the cart items to be updated or deleted from the cart.
+-   Registered users are eligible for an additional discount which is subtracted from their order total and displayed
 -   On selecting the secure checkout button the customer is navigated to the checkout page.
 
 #### Checkout
 
--   .......
+-   The checkout page provides a form for the user to enter their details and credit card information with an order summary detailing the products in the order.
+-   When the user selects the complete order button the order is processed securely via a Stripe integration and the customer is directed to the ckeckout success page with details of the order they have just placed. An email confirmation is also sent to the user.
 
-#### Join Us Page
+#### Blog
 
--   The Join Us page has a simple form for the user to provide their details so that the user can be registered. All inputs are validated.
--   Upon registration the user's details are stored in a MongoDB database with the password hashed for additional security.
+-   The blog page lists recent Urban Attiva blog articles with a brief introduction displayed. Users can search the blog page to display articles containing their search criteria.
+-   Clicking on the read more button directs the user to the blog detail page where the full blog article is diaplayed.
+-   Registered users can leave comments which are displayed below the blog article.
 
-#### Profile Page
+#### Product Management
 
--   The profile page displays the logged in user's profile details and the routes they have added which are displayed with the most recently added routes listed first.
--   The displayed routes can be edited by selecting the edit button or they can be deleted. There is a cancel button if the user decides that they do not wish to edit the route which returns the user to their profile page. The delete button is linked to a modal that displays a message to ask if the use definitely wants to delete the route.
+-   Admin users have a product management menu option under their account menu when logged into the site. This allows the admin user to add new products to the site via the product management page.
+-   Admin users can edit or delete existing products by selecting the relevant links that are displyed on the product cards and products detail pages when the user is logged in.
 
-#### Add Routes Page
+#### Blog Management
 
--   The Add Routes page allows users who are logged in to the site to add new routes.
--   There is a simple input form that has dropdown select options for choosing a route category, country and difficulty level and input fields for users to add a route name, route image, route description, route distance and a link to the route on the users favourite GPS activity platform, e.g. Strava.
+-   Admin users have a blog management menu option under their account menu when logged into the site. This allows the admin user to add new blog posts to the site via the blog management page.
+-   Admin users can edit or delete existing blog by selecting the relevant links that are displyed on the blog detail page when the user is logged in.
 
-#### Add Cycling Tip Page
-
--   The Add Cycling Tips page allows admin users to add new cycling tips to the VeloRoute website.
--   There is a simple input form that has a dropdown select option for choosing a cycling tip category and input fields for the admin user to add a cycling tip name, an image, a cycling tip description and a link to further information related to the cycling tip.
-
-#### Manage Categories Page
-
--   The Manage Categories page allows administration users to add, edit and delete the categories used for the dropdown select options on the Add Route and Add Cycling Tips pages.
--   The categories are displayed as simple cards categorised by each category type with buttons for adding, editing and deleting the categories.
-
-#### Footer Section
+#### Footer Section - all pages
 
 -   This section has information links for terms and conditions, returns policy, FAQs, cookies, log in and register, the registerd company address, social media links and copyright wording.
 
-_Note: The social media links currently link to the social media websites and not VeloRoute specific pages_
+_Note: Some of the social media links currently link to the social media websites and not Urban Attiva specific pages_
 
 #### Future features
 
@@ -315,7 +319,7 @@ The following technologies have been used to in the development of the Urban Att
 -   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
 -   [Amazon Web Sevices S3](https://aws.amazon.com) - used to host the live static and media files.
--   [Coolors](https://coolors.co/) - used for creating the colour palette image.
+-   [Favicon.io](https://favicon.io) - used to create the favicon.
 
 ### Testing Tools Used
 
@@ -336,39 +340,39 @@ Full details of testing are contained in the [testing document](TESTING.md).
 
 ## Deployment
 
-Github has been used for hosting the website repository and Gitpod as the IDE. 
+GitHub has been used for hosting the Urban Attiva website repository and the Gitpod used as the IDE. 
 
-A Code Institute template was used for the initial creation of this repository which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-To use this template to create a similar project simply click 'Use Template' at the top of the repository. You will be directed to name your own
-repositry using this template. Once named, you can decide whether to make the 'repo' public or private, my version is public. Then select 'Create Repository'.
-The 'repo' should then open and you can begin working on it by selecting the green GitPod button on the top right of the repo. The GitPod button will open your workspace.
+The Code Institute template was used for the initial creation of the repository which can be found on Github [here](https://github.com/Code-Institute-Org/gitpod-full-template).
+
+To use this template click 'Use Template' at the top of the repository, name the repository, decide on whether the repository should be public or private, and then click 'Create Repository'. From the repository that has just been created select the green Gigtpod button and a workspace for your project will be created.
 
 ### Deployment via Heroku
 
 1. Go to [Heroku.com](https://id.heroku.com/login) and login or create and account.
-2. Your dashboard should open and there will be a 'New' button on the top-right of the screen, select this.
-3. Select 'Create New App' from the buttons drop down menu
-4. Add your app name (it must be unique, lowercase with a dash used instead of spaces)
-5. Select the region closest to you and click create app
-6. Install 'dj_database_url' and 'psycopg2' via the CLI using the pip3 install prefixed to the module names
+2. On your personal there is a 'New' button on the top-right of the screen - click this button and select 'Create new app'.
+3. Enter your app name - it must be unique, lowercase and dashes instead of spaces.
+4. Select the region closest to you and click 'Create app'.
+5. Install 'dj_database_url' and 'psycopg2' via the CLI using the pip3 install prefixed to the module names
 >* pip3 install dj_database_url
 >* pip3 install psycopg2
-7. Login to Heroku via the CLI 
->* 'heoku login -i'
-8. Run migration on the Heroku Postgres -
+6. Login to Heroku via the CLI using your Heroku credentials 
+>* 'heroku login -i'
+7. Run migration on the Heroku Postgres -
 >* 'heroku run python manage.py migrate'
-9. Create a new super user for this deployed version 
-10. Install 'gunicorn' and then freeze to your requirments.txt
-11. Create the 'Procfile' note the capital 'P' and add :
+8. Create a new super user for this deployed version
+>* 'heroku python manage.py migrate'
+9. Install 'gunicorn' and then freeze to your requirments.txt
+10. Create the 'Procfile' note the capital 'P' and add :
 
 >* web: gunicorn `your-app-name`.wsgi:application
 
-12. Disable Heroku from collecting static files - 
+11. Disable Heroku from collecting static files - 
 >* 'heroku config:set DISABLE_COLLECTSTATIC=1 --app `your-app-name`
-13. Add the host name to your settings.py file, under ALLOWED_HOSTS
+or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings config vars
+12. Add the host name to your settings.py file, under ALLOWED_HOSTS
 >* ALLOWED_HOSTS = ['`you-app-name`.herokuapp.com', 'localhost']
-14. To set the environment variables open the settings tab and select 'Reveal Config Vars'
-15. Add the following variable keys and the values you have chosen :
+13. To set the environment variables open the Heroku app settings tab and select 'Reveal Config Vars'
+14. Add the following variable keys and the values you have included in your django app settings file:
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY
     - DATABASE_URL
@@ -382,16 +386,16 @@ The 'repo' should then open and you can begin working on it by selecting the gre
     - STRIPE_WH_SECRET
     - USE_AWS = True
 
-16. Hide Con Fig Vars and reopen the deploy tab
-17. Add and commit your changes in the CLI, then use the below to to deploy to Heroku :
+15. Select Hide Config Vars and reopen the Deploy tab.
+16. Add and commit your changes in the CLI, then use the below to to deploy to Heroku :
 >* git push Heroku main
-18. You will then need to connect your GitHub Repository, in the deploy tab, under method, select "Connect to GitHub". Connect your GitHub account, ensure the correct profile name is displayed. Then add your repository name, search and select the correct repository.
-19. Under automatic deployment, enable automatic deployment.
-20. You can now deploy via the heroku dashboard by clicking the `open app` button. At this stage your site has deployed with out any static files.
+17. To connect your GitHub repository - select the Deploy tab and for Deployment method select "Connect to GitHub". Connect your GitHub account, ensure the correct profile name is displayed. Then add your repository name, search and select the correct repository.
+18. Under Automatic deploys enable automatic deployment.
+19. You can now open your app via the Heroku dashboard by clicking the 'Open app' button. Your site is now deployed but without static files.
 
 ### Amazon Web Services S3 Bucket 
-1. Create your AWS account
-2. Search for S3 and create a new bucket, select 'allow public access'
+1. If you don't already have an Amazon Web Services account create one.
+2. Log into your AWS account and search for S3 and create a new bucket, select 'allow public access'
 3. Under Properties go to static website hosting. Select enable typle index.html as index.html and save.
 4. In Permissions, under CORS use :
 >* [
@@ -486,8 +490,8 @@ The 'repo' should then open and you can begin working on it by selecting the gre
 >* if os.path.exists("env.py"): import env
 10. Apply migrations
 11. Create your super user
-12. To view what the code will look like in a browser from here type "python3 manage.py runserver" into the console and hit enter or replace "manage.py" with which ever you have named the app
-13. A pop-up will appear stating "A service is available on Port 8080" select Open Browser
+12. To view what the website in a browser from here type "python3 manage.py runserver" into the console and hit enter or replace "manage.py" with which ever you have named the app
+13. A pop-up will appear stating "A service is available on Port 8000" select Open Browser
 
 ---
 

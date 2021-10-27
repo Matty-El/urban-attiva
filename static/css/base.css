@@ -523,6 +523,16 @@ background-repeat: no-repeat;
 	z-index: -1;
 }
 
+.product-detail-background {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #FFFFFF;
+	z-index: -1;
+}
+
 a.category-badge > span.badge:hover {
     background: #4B5657 !important;
     color: #fff !important;
