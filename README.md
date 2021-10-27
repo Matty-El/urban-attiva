@@ -1,12 +1,10 @@
-[<img src="static/images/urban-attiva-logo.png" width="250">](https://velo-route.herokuapp.com/)
+[<img src="static/images/urban-attiva-logo.png" width="250">](https://urban-attiva.herokuapp.com/)
 
-# VeloRoute Website
+# Urban Attiva Website
 
 ![Urban Attiva](readme-files/urban-attiva-presented.png)
 
-Working with the company director, this website has been developed as the first iteration of an eCommerce store for Urban Attiva. The website provides shoppers with the ability to browse and purchase products, add product reviews and to read the company blog to find out what is new with Urban Attiva and to leave comments on blog articles.
-
-The client requested a simple, attractive and modern website that is responsive and easy to navigate, allows potential customers to sign up for email updates on company news, provides links to the company social media accounts and links to enable the customer to purchase products.
+This website has been developed as the first iteration of an eCommerce store for Urban Attiva, a sports equipment retailer. The website provides shoppers with the ability to browse and securely purchase products, add product reviews and to read the company blog to find out what is new with Urban Attiva and to leave comments on blog articles.
 
 The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development, Backend Development and Full STack Frameworks modules.
 
@@ -17,12 +15,11 @@ View the live website [here.](https://urban-attiva.herokuapp.com/)
 ## Contents
 
 1.  [User Experience Design](#user-experience-design)
-2.  [Data Model](#data-model)
-3.  [Features](#features)
-4.  [Technologies Used](#technologies-used)
-5.  [Testing](#testing)
-6.  [Deployment](#deployment)
-7.  [Credits](#credits)
+2.  [Features](#features)
+3.  [Technologies Used](#technologies-used)
+4.  [Testing](#testing)
+5.  [Deployment](#deployment)
+6.  [Credits](#credits)
 
 ---
 
@@ -33,11 +30,18 @@ View the live website [here.](https://urban-attiva.herokuapp.com/)
 The key business goals for developing the website are:
 
 -   To sell both own brand and established brand sports products to generate revenue for the company.
--   To promote the Urban Attiva brand through the blog and utilisation of an Urban Attiva style template.
+-   To promote the Urban Attiva brand through the website, blog and social media to establish brand recognition, reputation and loyalty.
+
+The key user goals for the website are:
+
+-   To find and purchase quality products that will help me with my training and competition in my chosen sport.
+-   To be kept informed of news and information in relation to the Urban Attiva company.
 
 ### Scope
 
 #### User Stories
+
+The requirements for the Urban Attiva website are captured as user stories.
 
 #### Website Owner
 
@@ -90,7 +94,7 @@ The key business goals for developing the website are:
 
 ### Structure
 
-The Urban Attiva website has been designed to provide an attractive, intuitive and easy to navigate website. The site has been developed to enable visitors to register, log in, search for products to add to their shopping cart, to check out securely and access their account information.
+The Urban Attiva website has been designed to provide be intuitive and easy to navigate. The site has been developed to enable visitors to register, log in, search for products to add to their shopping cart, to check out securely, and to access their account information.
 
 The website has the following key elements:
 
@@ -100,6 +104,14 @@ The website has the following key elements:
 -   Shopping cart and checkout functionality.
 -   A blog page listing recent blog posts.
 -   An account dropdown menu with links to register and log in. Once logged in a user has access to their profile and administration users can access the product and blog management functionality.
+
+#### Information Architecture
+
+Data Model:
+
+The Urban Attiva database has seven tables as detailed in the attached data model.
+
+![Urban Attiva Data Model](readme-files/velo-route-data-model.png)
 
 ### Skeleton
 
@@ -119,29 +131,36 @@ The following changes were made after the initial design.
 
 ### Surface
 
-The Urban Attiva website features a clean and simple design with #263238 used for dark backgrounds and text and #FAFAFA for light backgrounds and text to provide good contrast. Colour is added to the site through the use of images and buttons as detailed in the colour scheme below.
+The Urban Attiva website features a clean and simple design with #4B5657 used for dark backgrounds and text and #F6F7F7 for light backgrounds and text to provide good contrast. The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises a white background to match the image background.
 
 #### Branding
 
 A simple Urban Attiva logo has been developed aligned to the branding for an existing sister company.
 
-![Urban Attiva Logo](static/images/velo-route-logo-crop.png)
+![Urban Attiva Logo](static/images/urban-attiva-logo.png)
 
 #### Colours
 
-![Colour scheme](design/velo-route-colour-palette.png)
+Full details of the Urban Attiva colour template can be found in the [Urban Attiva Branding Guidelines](readme-files/urban-attiva-branding-guidelines.pdf)
+
+
+UPDATE!!!!
 
 A simple colour palette using #263238 for navigation and footer backgrounds and #FAFAFA for text to provide a good contrast whilst avoiding the potential eyestrain of using pure black and white.
 
 All icons with the exception of the social media icons use colour #607D8B. Social media icons in footer are the same colour as the footer text #FAFAFA.
 
-Colours have been used for flash messages and action buttons. #4DD0E1 has been used for the flash messages background, #EF6C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
+Colours have been used as accents for toast messages and these conform to the standard Bootstrap colours for each specific message type. 
 
-Images are used to add some additional colour to the website.
+BUTTONS!!!!!! UPDATE #4DD0E1 has been used for the flash messages background, #EF6C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
 
 #### Typography
 
-Roboto font has been utilised for all text across the website. This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+Roboto font has been utilised for all text across the website and detailed in the [Urban Attiva Branding Guidelines](readme-files/urban-attiva-branding-guidelines.pdf). This is a simple and modern font available from the Google Fonts library which is unobtrusive and easy to read. Font Awesome icons have been utilised for icons throughout the site.
+
+#### Images
+
+Images are used to add some additional colour to the website home page and for the product cards and blog posts.
 
 ### Defensive Design
 
@@ -149,23 +168,22 @@ The website has been developed incorporating the following defensive design aspe
 
 #### Error Handling
 
+-   Toast have been utilised to provide users with messages clearly stating that an error has occurred
 -   Error pages for 403, 404 and 500 errors which will be displayed to the user if any of these errors occur.
 
 #### Confirm on Delete
 
 -   All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
 
-#### Segregation of Duties**
+#### User Authentication and Priveleges
 
--   The standard users of the website can only create, update and delete routes and can only update and delete routes they have added to Veloroute.
-
--   The admin user can view and edit any routes that have been added and have full functionality to create, edit and delete routes and cycling tips.
-
--   A further role of IT user has been added who can only create, update and delete categories as an understanding of the data model is required prior to any changes to these categories. 
+-   Non-registered (anonymous) users can browse the website, purchase products, read the blog and see customer reviews and blog comments.
+-   Registered users can view and update their account profile and view their order history as well as being able to add product reviews and blog comments.
+-   Administrators (super users) can access and utilise the product management and blog management functionality and delete inappropriate customer reviews or blog comments. 
 
 #### Data Input Validation
 
-Django-allauth is utilised for all authentication, registration, account management functionality.
+Django-allauth is utilised for all authentication, registration and account management functionality. This functionality incorporates data validation on these forms.
 
 Data validation is on custom forms is incorporated on all data input fields with the following validation applied to:
 
@@ -200,19 +218,9 @@ Blog comment form:
 
 ---
 
-## Data Model
-
-The MongoDB VeloRoute database has seven collections as detailed in the attached diagram.
-
-![Urban Attiva Data Model](readme-files/velo-route-data-model.png)
-
----
-
 ## Features
 
 ### Existing Features
-
-#### Sections
 
 #### Home Page
 
@@ -223,21 +231,26 @@ The MongoDB VeloRoute database has seven collections as detailed in the attached
 -   Section three of the home page includes some customer reviews.
 -   Section four of the home page cconatins some information highlighting free shipping thresholds, secure payments and registered user discounts.
 
-#### Shop Navigation
+#### Register
+
+#### Profile Page
+
+#### Log In
+
+#### Shop
 
 -   The shop navigation menu enables users to link to the product page with products displayed filtered by core product categories and sub categories.
 -   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
--   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the prodcut detail page and select the quentity and chosen size.
+-   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the product detail page and select the quentity and chosen size.
 
 #### Shopping Cart
 
--   Once the user has selectd products and added them to their shopping cart the cart 
--   Cycling Tips are added by the admin user and cannot be edited by other users. Admin users can edit or delete cycling tips and the delete button is linked to a modal to confirm if the user definitely wants to delete the cycling tip.
+-   Once the user has selected products and added them to their shopping cart a toast with a confirmation message and a summary of what is in their cart is displayed on the top right of the screen. The cart icon on the top right of the page will display an updated number of products and when clicks navigates the user to the cart page where details of the products are listed with the functionality to allow the cart items to be updated or deleted from the cart.
+-   On selecting the secure checkout button the customer is navigated to the checkout page.
 
-#### Log In Page
+#### Checkout
 
--   The log in page provides a simple form for the user to log in to VeloRoute with the details they provided on registration.
--   The user is directed to their profile page when they log in.
+-   .......
 
 #### Join Us Page
 
@@ -266,40 +279,42 @@ The MongoDB VeloRoute database has seven collections as detailed in the attached
 
 #### Footer Section
 
--   This section has information about the VeloRoute team, copyright wording and links to Facebook, Twitter, Instagram and Pinterest social media sites.
+-   This section has information links for terms and conditions, returns policy, FAQs, cookies, log in and register, the registerd company address, social media links and copyright wording.
 
 _Note: The social media links currently link to the social media websites and not VeloRoute specific pages_
 
 #### Future features
 
--   The ability for users to add ratings to the routes that have been added to VeloRoute.
--   Additional country categorisation to include states, regions, counties etc.
--   Addition of a separate cycling tips page to link from each of the cycling tips to provide a more detailed overview and instructions.
--   A newsletter for users to sign up to updates relating to VeloRoute.
+-   Allow only registered users who have purchased a particular product to leave a review.
+-   Addition of multiple product images for each product. Time constraints and sourcing free images prevented me from sourcing multiple images for all the products.
+-   Sharing of blog articles.
+-   Social media sign on.
 
 ---
 
 ## Technologies Used
 
-The following technologies have been used to complete the UX design, capture user stories and defects and assign for development and to develop the Urban Paws website.
+The following technologies have been used to in the development of the Urban Attiva website.
 
 ### Languages
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5) - used for the structure and content of the Trail Running UK website.
--   [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the Trail Running UK website.
--   [jQuery](https://jquery.com/)- used for scripts for the why trail running and races sections of the Trail Running UK website and for the newsletter.
--   [Python](https://www.python.org/) - used to style the Trail Running UK website.
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5) - used for the structure and content of the Urban Attiva website.
+-   [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the Urban Attiva website.
+-   [jQuery](https://jquery.com)- used for the development of interactive aspects across the website.
+-   [Python](https://www.python.org) - used for the backend development. A full list of the Python modules used can be found in the requiremments.txt file.
 
 ### Frameworks - Libraries - Other
 
--   [Materialize](https://getbootstrap.com/) - utilised for the front-end design framework.
--   [MongoDB](https://www.mongodb.com/) - used as the database for the project.
--   [GitHub](https://github.com/) - for hosting the website repository.
--   [GitPod](https://gitpod.io/) - used as the development environment for the website.
--   [Google Fonts](https://fonts.google.com/) - used to source the Roboto font used throughout the website.
+-   [Django](https://www.djangoproject.com) - web framework used to develop a secure, scalable and maintainable website for Urban Attiva
+-   [Bootstrap](https://getbootstrap.com) - utilised for the front-end design framework.
+-   [SQLite3](https://www.sqlite.org) - used as the development database for the project.
+-   [PostgresSQL](https://www.postgresql.org) - used for the production database.
+-   [GitHub](https://github.com) - for hosting the website repository.
+-   [GitPod](https://gitpod.io) - used as the development environment for the website.
+-   [Google Fonts](https://fonts.google.com/) - used to source the font used throughout the website.
 -   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
--   [Canva](https://canva.com/) - used for the design of the VeloRoute website logo.
+-   [Amazon Web Sevices S3](https://aws.amazon.com) - used to host the live static and media files.
 -   [Coolors](https://coolors.co/) - used for creating the colour palette image.
 
 ### Testing Tools Used
@@ -317,74 +332,162 @@ The following technologies have been used to complete the UX design, capture use
 
 Full details of testing are contained in the [testing document](TESTING.md).
 
-### Deployment
+---
 
-#### Requirements
+## Deployment
 
-To be able to deploy this project you will need the following:
+Github has been used for hosting the website repository and Gitpod as the IDE. 
 
-- Python3 installed
-- A Github account 
-- A MongoDB account 
-- A Heroku account
+A Code Institute template was used for the initial creation of this repository which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
+To use this template to create a similar project simply click 'Use Template' at the top of the repository. You will be directed to name your own
+repositry using this template. Once named, you can decide whether to make the 'repo' public or private, my version is public. Then select 'Create Repository'.
+The 'repo' should then open and you can begin working on it by selecting the green GitPod button on the top right of the repo. The GitPod button will open your workspace.
 
-#### To clone the project locally
+### Deployment via Heroku
 
-To clone this project from GitHub.
+1. Go to [Heroku.com](https://id.heroku.com/login) and login or create and account.
+2. Your dashboard should open and there will be a 'New' button on the top-right of the screen, select this.
+3. Select 'Create New App' from the buttons drop down menu
+4. Add your app name (it must be unique, lowercase with a dash used instead of spaces)
+5. Select the region closest to you and click create app
+6. Install 'dj_database_url' and 'psycopg2' via the CLI using the pip3 install prefixed to the module names
+>* pip3 install dj_database_url
+>* pip3 install psycopg2
+7. Login to Heroku via the CLI 
+>* 'heoku login -i'
+8. Run migration on the Heroku Postgres -
+>* 'heroku run python manage.py migrate'
+9. Create a new super user for this deployed version 
+10. Install 'gunicorn' and then freeze to your requirments.txt
+11. Create the 'Procfile' note the capital 'P' and add :
 
-1.  Open the project repository on GitHub and click the **Code** dropdown button.
-2.  Select the **HTTPS** tab and copy the URL.
-3.  Open your terminal (Mac OS, Linux) or Git-Bash terminal (Windows).
-4.  Change the current working directory to the location where you want the cloned directory to be created.
-5.  Type **git clone**, enter a space and then paste the URL copied from GitHub.
-6.  Press **Enter** and the local clone will be created in the specified directory.
+>* web: gunicorn `your-app-name`.wsgi:application
 
-#### Working with the local copy
+12. Disable Heroku from collecting static files - 
+>* 'heroku config:set DISABLE_COLLECTSTATIC=1 --app `your-app-name`
+13. Add the host name to your settings.py file, under ALLOWED_HOSTS
+>* ALLOWED_HOSTS = ['`you-app-name`.herokuapp.com', 'localhost']
+14. To set the environment variables open the settings tab and select 'Reveal Config Vars'
+15. Add the following variable keys and the values you have chosen :
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - DATABASE_URL
+    - DISABLE_COLLECT_STATIC = 1
+    - EMAIL_HOST_PASS
+    - EMAIL_HOST_USER
+    - SECRET_KEY
+    - STRIPE_PRICE_ID
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+    - STRIPE_WH_SECRET
+    - USE_AWS = True
 
-1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
-2. Create a database in MongoDB  
-    - Signup or login to your MongoDB account.
-    - Create a cluster and a database.
-    - Create seven collections in the database: **categories, cycling_tips, cycling_tip_categories, difficulty_levels, routes, users, countries.**
-    - Add the data to the collections. See the VeloRoute [Data Model](#data-model) for details on how the data has been modelled for this project.
-3. Create the environment variables 
-    - Create a .gitignore file in the root directory of the project.
-    - Add the env.py file in the .gitignore.
-    - Create the file env.py. This  will contain all the environment variables.
+16. Hide Con Fig Vars and reopen the deploy tab
+17. Add and commit your changes in the CLI, then use the below to to deploy to Heroku :
+>* git push Heroku main
+18. You will then need to connect your GitHub Repository, in the deploy tab, under method, select "Connect to GitHub". Connect your GitHub account, ensure the correct profile name is displayed. Then add your repository name, search and select the correct repository.
+19. Under automatic deployment, enable automatic deployment.
+20. You can now deploy via the heroku dashboard by clicking the `open app` button. At this stage your site has deployed with out any static files.
 
-    ```
-    Import os
-    os.environ.setdefault("IP", "Added by developer")
-    os.environ.setdefault("PORT", "Added by developer")
-    os.environ.setdefault("SECRET_KEY", "Added by developer")
-    os.environ.setdefault("MONGO_URI", "Added by developer")
-    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
-    ```
-4. Run the app: Open your terminal window in your IDE. Type python3 app.py to run the app.
+### Amazon Web Services S3 Bucket 
+1. Create your AWS account
+2. Search for S3 and create a new bucket, select 'allow public access'
+3. Under Properties go to static website hosting. Select enable typle index.html as index.html and save.
+4. In Permissions, under CORS use :
+>* [
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+5. Still in permissions, select bucket policy:
+>* Generate bucket policy and copy the bucket ARN
+>* Choose S3 Bucket Policy as type of policy
+>* For Principle enter *
+>* Paste ARN copied from above
+>* Add Statement
+>* Generate Policy
+>* Copy Policy JSON Document
+>* Paste policy into Edit Bucket policy on the previous tab
+>* Save 
+6. Under Access Control List (ACL):
+>* For Everyone (public access), tick List
+>* Accept that everyone in the world may access the Bucket
+>* Save
 
-#### Heroku Deployment  
-1. Set up local workspace for Heroku 
-    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which files to install.)
-    - In terminal window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
-2. Set up Heroku: create a Heroku account and create a new app and select your region. 
-3. Deployment method 'Github'
-    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
-        - Search for your Github repository to connect to it.
-        - When your repository appears click on **connect** to connect your repository to Heroku. 
-    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
-        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
-4. Push the requirements.txt and Procfile to repository. 
-     ```
-    $ git add requirements.txt
-    $ git commit -m "Add requirements.txt"
+### AWS IAM
+1. From the IAM dashboard within AWS, select User Groups:
+>* Create a new group
+>* Click through and create group
+2. Select Policies:
+>* Create policy
+>* Under JSON tab, click Import managed policy
+>* Choose AmazongS3FullAccess
+>* Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+>* Click next step and go to Review policy
+>* Give the policy a name and description of your choice
+>* Create policy
+3. Go back to User Groups and choose the group created earlier
+>* Under Permissions > Add permissions, choose Attach Policies and select the one just created
+>* Add permissions
+4. Under Users::
+>* Choose a user name
+>* Selecet programmatic access as the access type
+>* Click through next
+>* Add the user to the group just created
+>* Click next and creat user
+5. Download the ``.csv` containing the access key and secret access key.
+>* The `.csv` file is onlu available once and cannot be downloaded again
 
-    $ git add Procfile 
-    $ git commit -m "Add Procfile"
-    ```
-5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+### Connecting Heroku to AWS S3
+1. Install boto3 and django-storages and freeze your requirements
+2. Add the values from the `.csv` you downloaded to the Heroku configvars
+3. Delete 'DISABLE_COLLECT_STATIC = 1' from the config vars
+4. Create a custom storage python file in your development environment with the following
 
-Heroku will receive the code from Github and host the app using the required packages. 
-Click on **Open app** in the right corner of your Heroku account. The app will open and the live link is available from the address bar. 
+>* from django.conf import settings
+>* from storages.backends.s3boto3 import S3Boto3Storage
+
+
+>* class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+>* class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+
+
+5. Deploy the app
+6. In the S3 bucket, set up a new media folder at the same level as the tatic folder and upload any required files. Both files need to be publicly accessible.
+
+### Make a clone on GitPod
+
+1. Select the Repo you wish to clone in GitHub
+2. Click on the code dropdown button
+3. Copy the https link to your clipboard
+4. Open your gitpod workspace
+5. In the terminal type "git clone" and paste the copied link
+6. Hit enter to create the clone
+7. To install the required packages type pip install -r requirements.txt into the command line
+8. Set up an env.py and add the env.py to your gitignore file. Include:
+>* import os
+>* os.environ.setdefault("STRIPE_SECRET_KEY", "`ADD YOUR KEY`")
+>* os.environ.setdefault("STRIPE_PUBLIC_KEY", "`ADD YOUR KEY`")
+>* os.environ.setdefault("STRIPE_WH_SECRET", "`ADD YOUR KEY`")
+9. add the following to your settings.py 
+>* if os.path.exists("env.py"): import env
+10. Apply migrations
+11. Create your super user
+12. To view what the code will look like in a browser from here type "python3 manage.py runserver" into the console and hit enter or replace "manage.py" with which ever you have named the app
+13. A pop-up will appear stating "A service is available on Port 8080" select Open Browser
 
 ---
 
@@ -392,9 +495,9 @@ Click on **Open app** in the right corner of your Heroku account. The app will o
 
 Two significant challenges were encountered late on in the project:
 
-1.  The Materialize grid system presented an issue where the cards that were utilised flexed perfectly within the Materialize columns to become a uniform width but the image element within the card-image div did not flex perfectly proportionately to the width. As a reult the cards were very slightly different heights resulting in gaps in the rows of cards as they flexed to fill the parent container. I thought that if a container can be utilized as a parent to the image and the image constrained within that container as it flexed then maybe I could achieve a uniform height for all card images. After lots of searching on Google I came across <a href="https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/"></a> which seemed to describe what i was thinking. After adapting the code I achieved the desired result. Images with a uniform height and cards aligned.
+1.  
 
-2.  The second challenge was when the realisation hit me that if my admin user has access to change or delete categories that have been set up in the system that could break the functionality related to other aspects of the site. To resolve this I created an IT user and assigned the ability to create , update and delete categories to this user as this user will understand the data model and can assess any required change before implementing the change and can consult the developer as required. 
+2.  
 
 ---
 
@@ -408,34 +511,29 @@ All text content included in this project is my own.
 
 All images are my own, have been licensed from Adobe Stock or are freely available on Unsplash. Credits are listed below.
 
-**Hero Image**
+**Home Page Images**
 
--   The hero image is licensed from Adobe Stock.
+-   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) [on] (<a href=")https://unsplash.com/s/photos/swimmer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-**Routes Images**
+- Running category image
+- Cycling category image
+- Swimming category image
+- Nutrition category image
+- Customer review 1 image
+- Customer review 2 image
+- Customer review 3 image
 
--   The Brossac, Chatignac and Berneuil route photo is my own.
+**Product Images**
+
+-   All product images are licensed from Adobe Stock.
+
+**Blog Images**
+
+-   All images are my own.
   
--   Wokingham CC Sunday ride route: Photo by <a href="">Martin Magnemyr</a> on Unsplash
-  
--   Beauty of the Peak District ride: Photo by <a href="">Minkus</a> on Unsplash
-
--   Epic French Pyrenees route: Photo by <a href="">Yury Kirillov</a> on Unsplash
-  
--   Coast to Alicante route: Photo by <a href="">Polina Rytova</a> on Unsplash
-  
--   Mountain trails route: Photo by <a href="">Jan Kopřiva</a> on Unsplash
-
-**Cycling Tips Images**
-
--   Clean and maintain your bike cycling tip: Photo by <a href="">Dan Burton</a> on Unsplash
-  
--   The M Check cycling tip: Photo by <a href="">Robert Bye</a> on Unsplash
-
--   Coffee and cake cycling tip: Photo by <a href="">Nathan Dumlao</a> on Unsplash
-  
--   Clean your chain cycling tip: Photo is licensed from Adobe Stock
 
 ### Acknowledgements
 
 -   [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) for mentor guidance and support.
+
+-   Igor from the Student Support team for assisting patiently with an issue following deployment to Heroku.
