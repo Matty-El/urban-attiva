@@ -487,7 +487,14 @@ background-repeat: no-repeat;
 .btn-ua-grey:focus,
 .search-btn:hover,
 .search-btn:active,
-.search-btn:focus {
+.search-btn:focus,
+.btn-ua-grey-increment:hover,
+.btn-ua-grey-increment:active,
+.btn-ua-grey-increment:focus,
+.btn-ua-grey-decrement:hover,
+.btn-ua-grey-decrement:active,
+.btn-ua-grey-decrement:focus
+ {
     background: #000000;
     color:#FFFFFF !important;
     border: 1px solid #000000;
@@ -919,59 +926,8 @@ select option[value=""] {
 
 /*------------- 404 / 500 error ------------- */
 
-/* adapted from https://freefrontend.medium.com/51-html-404-page-templates-6dc41cf9135c */
-
-.mainbox {
-  background-color: #FFFFFF;
-  margin: auto;
-  height: 600px;
-  width: 600px;
-  position: relative;
-}
-
-.err, .err3 {
-  color: #6E7F80;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11rem;
-  position:absolute;
-  left: 20%;
-  top: 8%;
-}
-
-.far, .err4 {
-  position: absolute;
-  font-size: 8.5rem;
-  left: 42%;
-  top: 18%;
+.err {
   color: #FF834F;
-}
-
-.err2 {
-  color: #6E7F80;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11rem;
-  position:absolute;
-  left: 68%;
-  top: 8%;
-}
-
-.err5 {
-  color: #6E7F80;
-  font-family: 'Roboto', sans-serif;
-  font-size: 8.5rem;
-  position:absolute;
-  left: 68%;
-  top: 18%;
-}
-
-.msg {
-  text-align: center;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.6rem;
-  position:absolute;
-  left: 16%;
-  top: 45%;
-  width: 75%;
 }
 
 a {
@@ -981,4 +937,8 @@ color: #4F73FF;
 
 a:hover {
 text-decoration: underline;
+}
+
+.page-wrap {
+  min-height: 100vh;
 }

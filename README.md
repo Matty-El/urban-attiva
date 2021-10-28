@@ -166,7 +166,7 @@ The website has been developed incorporating the following defensive design aspe
 #### Error Handling
 
 -   Toast have been utilised to provide users with messages clearly stating that an error has occurred
--   Error pages for 403, 404 and 500 errors which will be displayed to the user if any of these errors occur.
+-   Error pages for 404 and 500 errors which will be displayed to the user if either of these errors occur with a link back to the home page.
 
 #### Confirm on Delete
 
