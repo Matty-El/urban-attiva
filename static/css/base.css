@@ -484,7 +484,10 @@ background-repeat: no-repeat;
 
 .btn-ua-grey:hover,
 .btn-ua-grey:active,
-.btn-ua-grey:focus {
+.btn-ua-grey:focus,
+.search-btn:hover,
+.search-btn:active,
+.search-btn:focus {
     background: #000000;
     color:#FFFFFF !important;
     border: 1px solid #000000;
