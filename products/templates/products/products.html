@@ -54,7 +54,7 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                        <span class="small"><a class="text-info" href="{% url 'products' %}">Products Home</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for
                         <strong>"{{ search_term }}"</strong>{% endif %}
@@ -109,9 +109,9 @@
                                     {% endif %}
                                     {% if request.user.is_superuser %}
                                     <small class="ml-3 text-center">
-                                        <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-md"></i> Edit</a>
+                                        <a class="text-info" href="{% url 'edit_product' product.id %}"><i class="fas fa-edit fa-md"></i> Edit</a>
                                         |
-                                        <a class="text-danger" data-toggle="modal"
+                                        <a class="text-danger clickable" data-toggle="modal"
                                             data-target="#deleteProduct-{{ product.id }}"><i class="fas fa-trash-alt fa-md"></i>
                                             Delete</a>
                                     </small>

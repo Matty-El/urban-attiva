@@ -32,13 +32,13 @@ This was a manual process to copy and paste the code from each page and review t
 
 The jQuery code was validated using the [JSHint validation service](https://jshint.com/).
 
-![JSHint Validator](testing-files/velo-route-jshint-validation.png)
+![JSHint Validator](testing-files/urban-attiva-jshint-validation.png)
 
 ### Python Code Validation
 
 The Python code was validated using the [PEP 8 Online Validation Service](http://pep8online.com/).
 
-![PEP 8 Validator](testing-files/velo-route-pep8-validation.png)
+![PEP 8 Validator](testing-files/urban-attiva-pep8-validation.png)
 
 ---
 
@@ -46,7 +46,7 @@ The Python code was validated using the [PEP 8 Online Validation Service](http:/
 
 Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome browsers.
 
-![Browser compatibility](testing-files/velo-route-browser-compatibility-testing.png)
+![Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.png)
 
 ---
 
@@ -59,7 +59,7 @@ The site has been tested on the following devices:
 -   Desktop: 1024px, > 1200px. 
 -   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
 
-![Responsiveness testing](testing-files/velo-route-responsiveness-testing.png)
+![Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.png)
 
 --- 
 
@@ -71,7 +71,7 @@ Lighthouse reports were run for all pages of the website. A significant improvem
 
 ## User Story Testing
 
-The user stories below have all been tested against defined acceptance criteria. The full test results for all user stories are detailed in attached [testing report](testing-files/velo-route-user-story-testing-final.pdf).
+The user stories below have all been tested through two test cycles. The full test results for all user stories are detailed in the attached [testing report](testing-files/urban-attiva-user-story-testing-final.pdf).
 
 ### Website Owner
 
@@ -80,29 +80,47 @@ The user stories below have all been tested against defined acceptance criteria.
 -   As the website owner, I want the website to be accessible to all users so that all users can use our website.
 -   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
 -   As the website owner, I want the  website to be compatible with different browsers so that users have a consistent experience no matter which browser they use.
+-   As the website owner, I want the website to be secure so that only authorised users can access store management functionality.
 
-### Users
+### Shoppers
 
--   As a user, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
--   As a user, I want a website that is clearly laid out and easy to navigate so that I can find the information I am looking for.
--   As a user, I want to register with VeloRoute with a secure username and password.
--   As a user, I want to find new cycling routes so that I can see try new recommended routes.
--   As a user, I want to be able to add my favourite cycling routes to the website.
--   As a user, I want my routes to be displayed on my profile page so that I can see routes I have previously submitted.
--   As a user, I want to be able to edit or delete routes that I have previously added to the VeloRoute.
--   As a user, I want to be able to view cycling tips that have been added to VeloRoute so that I can find tips to help me with my cycling.
--   As a user, I want to be able to follow a link to cycling routes that have been added to VeloRoute so that I can view the cycling route on platforms such as Strava.
+-   As a shopper, I want to understand what the store sells and to be able to navigate the website easily so that I can so that I can decide if I want to purchase any products.
+-   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
+-   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
+-   As a shopper, I want to see products matching that I have searched for and the number of results returned so that I can see whether the product I searched for is available.
+-   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
+-   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
+-   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
+-   As a shopper, I want to view individual product details so that I can see the price, description, product rating, product image and available sizes of products.
+-   As a shopper, I want to be able to select the quantity and size of product so that I can purchase the product quantity I want and in the correct size.
+-   As a shopper, I want to view products that have been added to my shopping bag so that I can see the items I have selected and the total cost of the items in my shopping cart.
+-   As a shopper, I want to adjust the quantity of items in my shopping bag so that I can make changes to the contents of my shopping cart before checkout.
+-   As a shopper, I want to purchase an item without registering so that I can quickly purchase items without the need to register.
+-   As a shopper, I want to enter my payment information so that I can quickly check out and pay for my items.
+-   As a shopper, I want to view an order confirmation after checkout so that I can verify that I haven't made any mistakes when entering my information.
+-   As a shopper, I want to receive an order confirmation after checkout so that I can keep a proof of purchase.
+-   As a shopper, I want to read item reviews from verified shoppers so that I can see how other shoppers rate the products.
+-   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics or events.
+-   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
+-   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.
 
-### Admin Users
+### Registered Users
 
--   As an admin user, I want to be able to log in to VeloRoute and have access to the same functionality that a standard website user has.
--   As an admin user, I want to be able to edit cycling route, cycling tip and difficulty level categories.
--   As an admin user I want to be able to edit cycling tips so that I can add or delete cycling tips.
--   As an admin user I want to be able to add cycling tips so that I can present new cycling tips to VeloRoute users.
+-   As a registered user, I want to receive a confirmation email after registering so that I can verify that my account was successfully registered.
+-   As a registered user, I want to have a personal user profile so that I can view my account information, order history and order confirmations.
+-   As a registered user, I want to log in and log out once I have registered so that I can access my personal account information.
+-   As a registered user, I want to add a product review so that I can provide a review of the product that I have purchased.
+-   As a registered user, I want to recover my password if I have forgotten it so that I can reaccess my account.
+-   As a registered user, I want to leave comments on blog posts so that I can express my views on the blog content.
 
-#### IT Users
+### Administrator
 
--   As an IT user, I want to be able to create, edit and delete cycling route, cycling tip and difficulty level categories so that I can make updates to the database when new categories are required.
+-   As an administrator, I want to add a blog post so that I can publish blog posts for users to read.
+-   As an administrator, I want to add a product so that I can add new items to the store.
+-   As an administrator, I want to delete a product so that I can remove items that are no longer sold.
+-   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
+-   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
+-   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
 
 ---
 

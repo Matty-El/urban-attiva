@@ -458,14 +458,28 @@ background-repeat: no-repeat;
     min-width: 150px;
     font-weight: bold;
     border: 1px solid #FFFFFF;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .btn-ua-grey {
     background: #4B5657;
-    color: white;
-    border: 1px solid #4B5657;
-    border-radius: 25px;
+    color: white !important; /* to override allauth style */
+    border: 1px solid #4B5657 !important; /* to override allauth style */
+    border-radius: 25px !important; /* to override allauth style */
+}
+
+.btn-ua-grey-increment {
+  background: #4B5657;
+  color: white ;
+  border: 1px solid #4B5657; 
+  border-radius: 0px 25px 25px 0px !important;
+}
+
+.btn-ua-grey-decrement {
+  background: #4B5657;
+  color: white !important; 
+  border: 1px solid #4B5657 !important; 
+  border-radius: 25px 0px 0px 25px !important;
 }
 
 .btn-ua-grey:hover,
@@ -523,7 +537,7 @@ background-repeat: no-repeat;
 	z-index: -1;
 }
 
-.product-detail-background {
+.white-background {
 	height: 100%;
 	width: 100%;
 	top: 0;
@@ -800,11 +814,11 @@ select option[value=""] {
   color: #999;
 }
 
-#footer .social {
+#footer .social-media {
   text-align: left;
 }
 
-#footer .social a {
+#footer .social-media a {
   margin: 0 10px 0 0;
   color: #fff;
   display: inline-block;
@@ -820,29 +834,25 @@ select option[value=""] {
   background-color: #566465;
 }
 
-#footer .social a i {
+#footer .social-media a i {
   vertical-align: bottom;
   line-height: 30px;
 }
 
-#footer .social a.facebook:hover {
-  background-color: #4460ae;
+#footer .social-media a.facebook:hover {
+  background-color: #4460AE;
 }
 
-#footer .social a.gplus:hover {
-  background-color: #c21f25;
+#footer .social-media a.youtube:hover {
+  background-color: #C21F25;
 }
 
-#footer .social a.twitter:hover {
-  background-color: #3cf;
+#footer .social-media a.twitter:hover {
+  background-color: #33CCFF;
 }
 
-#footer .social a.instagram:hover {
-  background-color: #cd4378;
-}
-
-#footer .social a.email:hover {
-  background-color: #4a7f45;
+#footer .social-media a.instagram:hover {
+  background-color: #CD4378;
 }
 
 #copyright {
@@ -904,22 +914,9 @@ select option[value=""] {
   }
 }
 
-
-/* ------------ Error pages ----------- */
-
 /*------------- 404 / 500 error ------------- */
 
-/* https://freefrontend.medium.com/51-html-404-page-templates-6dc41cf9135c */
-
-.error-background {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: #FFFFFF;
-	z-index: -1;
-}
+/* adapted from https://freefrontend.medium.com/51-html-404-page-templates-6dc41cf9135c */
 
 .mainbox {
   background-color: #FFFFFF;
@@ -942,17 +939,26 @@ select option[value=""] {
   position: absolute;
   font-size: 8.5rem;
   left: 42%;
-  top: 16%;
+  top: 18%;
   color: #FF834F;
 }
 
-.err2, .err5 {
+.err2 {
   color: #6E7F80;
   font-family: 'Roboto', sans-serif;
   font-size: 11rem;
   position:absolute;
   left: 68%;
   top: 8%;
+}
+
+.err5 {
+  color: #6E7F80;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8.5rem;
+  position:absolute;
+  left: 68%;
+  top: 18%;
 }
 
 .msg {

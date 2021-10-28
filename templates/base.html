@@ -64,7 +64,10 @@
                             class="fa fa-search"></i>
                     </button>
                     <a href="{% url 'view_cart' %}" class="btn btn-outline navbar-toggler"><i
-                            class="fa fa-shopping-cart"></i>
+                            class="fa fa-shopping-cart"></i><span
+                            class="cart-count small">
+                            ({{ product_count }})
+                        </span>
                     </a>
                 </div>
                 <div id="navigation" class="collapse navbar-collapse">
@@ -213,8 +216,8 @@
                                 search</span><i class="fa fa-search search-nav"></i></a>
                         <div class="navbar-collapse collapse d-none d-lg-block"><a href="{% url 'view_cart' %}"
                                 class="btn btn-outline navbar-btn"><i class="fa fa-shopping-cart"></i><span
-                                    class="cart-count">
-                                    ({{ product_count }})
+                                    class="cart-count small">
+                                    £{{ grand_total|floatformat:2 }} ({{ product_count }})
                                 </span></a>
                         </div>
                     </div>
@@ -225,7 +228,7 @@
             <div class="container">
                 <form role="search" class="ml-auto" method="GET" action="{% url 'products' %}">
                     <div class="input-group">
-                        <input type="text" placeholder="Search our site" class="form-control border border-dark"
+                        <input type="text" placeholder="Search our site" class="form-control border"
                             name="q">
                         <div class="input-group-append">
                             <button type="submit" class="btn search-btn form-control"><i
@@ -294,11 +297,11 @@
                     <hr class="d-block d-md-none">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="mb-3">Social Media</h4>
-                    <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a
-                            href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#"
-                            class="instagram external"><i class="fa fa-instagram"></i></a><a href="#"
-                            class="gplus external"><i class="fa fa-google-plus"></i></a></p>
+                    <h5 class="mb-3">Social Media</h5>
+                    <p class="social-media"><a href="https://www.facebook.com/urbanattiva" target="_blank" class="facebook external"><i class="fa fa-facebook"></i></a><a
+                            href="https://twitter.com/" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/urban_attiva/" target="_blank"
+                            class="instagram"><i class="fa fa-instagram"></i></a><a href="https://www.youtube.com/" target="_blank"
+                            class="youtube"><i class="fa fa-youtube"></i></a></p>
                     <hr>
                     <div class="row">
                         <div class="col-lg-12 mb-2 mb-lg-0">
