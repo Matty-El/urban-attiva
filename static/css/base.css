@@ -911,6 +911,16 @@ select option[value=""] {
 
 /* https://freefrontend.medium.com/51-html-404-page-templates-6dc41cf9135c */
 
+.error-background {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #FFFFFF;
+	z-index: -1;
+}
+
 .mainbox {
   background-color: #FFFFFF;
   margin: auto;
@@ -919,47 +929,47 @@ select option[value=""] {
   position: relative;
 }
 
-  .err, .err3 {
-    color: #6E7F80;
-    font-family: 'Roboto', sans-serif;
-    font-size: 11rem;
-    position:absolute;
-    left: 20%;
-    top: 8%;
-  }
+.err, .err3 {
+  color: #6E7F80;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11rem;
+  position:absolute;
+  left: 20%;
+  top: 8%;
+}
 
 .far, .err4 {
   position: absolute;
   font-size: 8.5rem;
   left: 42%;
-  top: 15%;
+  top: 16%;
   color: #FF834F;
 }
 
- .err2, .err5 {
-    color: #6E7F80;
-    font-family: 'Roboto', sans-serif;
-    font-size: 11rem;
-    position:absolute;
-    left: 68%;
-    top: 8%;
-  }
+.err2, .err5 {
+  color: #6E7F80;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11rem;
+  position:absolute;
+  left: 68%;
+  top: 8%;
+}
 
 .msg {
-    text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.6rem;
-    position:absolute;
-    left: 16%;
-    top: 45%;
-    width: 75%;
-  }
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.6rem;
+  position:absolute;
+  left: 16%;
+  top: 45%;
+  width: 75%;
+}
 
 a {
-  text-decoration: none;
-  color: #4F73FF;
+text-decoration: none;
+color: #4F73FF;
 }
 
 a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }

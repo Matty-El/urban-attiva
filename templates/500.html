@@ -11,15 +11,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="mainbox">
-    <div class="mb-10">
-        <div class="err3">5</div>
-        <i class="fas fa-cog fa-spin err4"></i>
-        <i class="fas fa-cog err5"></i>
+<div class="std-background error-background"></div>
+<div class="container page-content">
+    <div class="row">
+        <div class="col">
+            <h2 class="logo-font mb-4"></h2>
+        </div>
     </div>
-    <div class="msg">Ooops....? Something went wrong.<p>Let's go <a href="{% url 'home' %}">home</a> and try from
-            there.</p>
+    <div class="mainbox">
+        <div class="mb-10">
+            <div class="err3">5</div>
+            <i class="fas fa-cog fa-spin err4"></i>
+            <i class="fas fa-cog err5"></i>
+        </div>
+        <div class="msg">Ooops....? Something went wrong.<p>Let's go <a href="{% url 'home' %}">home</a> and try from
+                there.</p>
+        </div>
     </div>
-</div>
 </div>
 {% endblock %}
