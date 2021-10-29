@@ -30,7 +30,7 @@
                         <th scope="col">Product Information</th>
                         <th scope="col"></th>
                         <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Quantity (Max 50)</th>
                         <th scope="col">Subtotal</th>
                     </thead>
                     {% for item in cart_items %}
@@ -57,7 +57,7 @@
                             {% endif %}
                         </td>
                         <td class="py-3 w-25">
-                            <form class="update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}" name="cart-update">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -70,7 +70,7 @@
                                             </button>
                                         </div>
                                         <input class="form-control form-control-sm qty_input" type="number"
-                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="50" step="1" oninput="(validity.valid)||(value='');" 
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-ua-grey-increment"
@@ -145,11 +145,11 @@
 
 {% include 'products/includes/quantity_input_script.html' %}
 <script type="text/javascript">
-    // Update cart product quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
+
 
     // Remove cart item and reload on click
     $('.remove-item').click(function(e) {

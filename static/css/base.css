@@ -930,6 +930,10 @@ select option[value=""] {
   color: #FF834F;
 }
 
+.err2 {
+  color: #6E7F80;
+}
+
 a {
 text-decoration: none;
 color: #4F73FF;
@@ -937,8 +941,4 @@ color: #4F73FF;
 
 a:hover {
 text-decoration: underline;
-}
-
-.page-wrap {
-  min-height: 100vh;
 }

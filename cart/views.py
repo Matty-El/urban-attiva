@@ -15,7 +15,7 @@ def add_to_cart(request, item_id):
     """ Add a quantity of a product to the shopping cart """
 
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity') or 1)
     redirect_url = request.POST.get('redirect_url')
     size = None
     if 'product_size' in request.POST:
@@ -49,7 +49,7 @@ def update_cart(request, item_id):
     """ Update the quantity of a product in the shopping cart """
 
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity') or 1)
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
