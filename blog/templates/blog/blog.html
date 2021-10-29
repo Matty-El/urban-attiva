@@ -15,52 +15,49 @@
 <div class="container-fluid page-content">
     <div class="row mt-3">
         <div class="col text-center">
-            <h2 class="logo-font pb-2">All Blog Posts</h2>
+            <h2 class="logo-font pb-2">Urban Attiva Blog</h2>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <!-- Blog entries-->
             <div class="col">
-                <div class="row">
-                    <!-- Blog entries-->
-                    <div class="col-lg-8">
-                        {% for blog in blog_posts %}
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            {% if blog.image %}
-                            <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
-                                    src="{{ blog.image.url }}" alt="{{ blog.title }}" /></a>
-                            {% else %}
-                            <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
-                                    src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}" /></a>
-                            {% endif %}
-                            <div class="card-body">
-                                <div class="small text-muted">{{ blog.date }}</div>
-                                <h2 class="card-title h4">{{ blog.title }}</h2>
-                                <p class="card-text">{{ blog.intro }}</p>
-                                <a class="btn btn-ua-grey" href="{% url 'blog_detail' blog.id %}">Read more</a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <div class="col-lg-4">
-                        <!-- Blog search-->
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <form role="search" class="ml-auto" method="GET" action="{% url 'blog' %}">
-                                    <div class="input-group">
-                                        <input class="form-control border" type="text" placeholder="Search our blog..."
-                                            aria-label="Search our blog..." aria-describedby="button-search" name="q" />
-                                        <div class="input-group-append"> 
+                <div class="col-lg-8 mx-auto">
+                    <!-- Blog search-->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form role="search" class="ml-auto" method="GET" action="{% url 'blog' %}">
+                                <div class="input-group">
+                                    <input class="form-control border" type="text" placeholder="Search our blog..."
+                                        aria-label="Search our blog..." aria-describedby="button-search" name="q" />
+                                    <div class="input-group-append">
                                         <button class="btn search-btn form-control" id="button-search" type="submit"><i
                                                 class="fa fa-search text-white"></i></button>
-                                        </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                </div>
+                <!-- Blog entries-->
+                <div class="col-lg-8 mx-auto">
+                    {% for blog in blog_posts %}
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        {% if blog.image %}
+                        <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
+                                src="{{ blog.image.url }}" alt="{{ blog.title }}" /></a>
+                        {% else %}
+                        <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"
+                                src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}" /></a>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="small text-muted">{{ blog.date }}</div>
+                            <h2 class="card-title h4">{{ blog.title }}</h2>
+                            <p class="card-text">{{ blog.intro }}</p>
+                            <a class="btn btn-ua-grey" href="{% url 'blog_detail' blog.id %}">Read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

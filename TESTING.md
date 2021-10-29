@@ -164,8 +164,8 @@ Blog comment form:
 
 ### Resolved
 
-1.  Defect Ref XXX: It was discovered during testing that users could delete the quantity of a product form the quantity field prior to adding to the cart which resulted in a 500 error. Solved by adding 'or' 1 in the add to cart view quantity variable. This is not an ideal solution but the user can then adjust the quantity in their cart prior to submitting the order. Would need a more satisfactory solution if developed further.
-2.  Defect Ref XXY: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref XXX, this is not the most elegant solution but avoids 500 errors for the user.
+1.  Defect Ref DEF001: It was discovered during testing that users could delete the quantity of a product form the quantity field prior to adding to the cart which resulted in a 500 error. Solved by adding 'or' 1 in the add to cart view quantity variable. This is not an ideal solution but the user can then adjust the quantity in their cart prior to submitting the order. Would need a more satisfactory solution if developed further.
+2.  Defect Ref DEF002: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref XXX, this is not the most elegant solution but avoids 500 errors for the user.
 3.  
 
 ### Unresolved
