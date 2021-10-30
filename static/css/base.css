@@ -80,7 +80,7 @@ html {
 .product-menu .product-menu-contained {
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
