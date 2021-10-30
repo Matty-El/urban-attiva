@@ -12,7 +12,9 @@ class BlogForm(forms.ModelForm):
             'author',
             'title',
             'intro',
-            'content',
+            'content_one',
+            'content_two',
+            'content_three',
             'image_url',
             'image',
             )
@@ -44,10 +46,24 @@ class BlogForm(forms.ModelForm):
                 'Minimum 5 characters required'])
         # title must not have just empty characters and must be > 50 characters long
         if content is None:
-            self._errors['content'] = self.error_class([
+            self._errors['content_one'] = self.error_class([
                 'Please enter valid text'])
         elif len(content) < 50:
-            self._errors['content'] = self.error_class([
+            self._errors['content One'] = self.error_class([
+                'Minimum 50 characters required'])
+
+        if content is None:
+            self._errors['content_two'] = self.error_class([
+                'Please enter valid text'])
+        elif len(content) < 50:
+            self._errors['content_two'] = self.error_class([
+                'Minimum 50 characters required'])
+
+        if content is None:
+            self._errors['content_three'] = self.error_class([
+                'Please enter valid text'])
+        elif len(content) < 50:
+            self._errors['content_three'] = self.error_class([
                 'Minimum 50 characters required'])
 
         # return errors in form

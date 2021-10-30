@@ -12,17 +12,13 @@
 
 {% block content %}
 <div class="container page-content">
-    <div class="d-flex flex-row align-items-center pt-10">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 text-center mt-20">
-                    <span class="display-1 d-block">4<i class="far fa-question-circle fa-spin err fa-sm"></i>4</span>
-                    <div class="mb-4 lead">Maybe this page moved? Got deleted? Never existed in the first place?<p>Let's
-                            go <a href="{% url 'home' %}">home</a> and try from there.</p>
-                    </div>
+        <div class="row">
+            <div class="text-center col-12">
+                <span class="display-1 d-block err">4<i class="far fa-question-circle fa-spin err-orange fa-sm"></i>4</span>
+                <div class="mb-4 lead">Maybe this page moved? Got deleted? Never existed in the first place?<p>Let's
+                        go <a href="{% url 'home' %}">home</a> and try from there.</p>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 {% endblock %}

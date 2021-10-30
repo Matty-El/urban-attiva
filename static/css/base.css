@@ -913,11 +913,13 @@ input[name=q]::placeholder {
 
 /*------------- 404 / 500 error ------------- */
 
-.err {
+.err-orange {
   color: #FF834F;
 }
 
-.err2 {
+
+.err {
+  padding-top: 50px;
   color: #6E7F80;
 }
 

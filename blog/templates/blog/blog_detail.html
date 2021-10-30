@@ -31,7 +31,9 @@
                 </div>
                 <section class="mb-5 mt-4">
                     <p class="fs-5 mb-4 lead">{{ blog_post.intro }}</p>
-                    <p class="fs-5 mb-4">{{ blog_post.content }}</p>
+                    <p class="fs-5 mb-4">{{ blog_post.content_one }}</p>
+                    <p class="fs-5 mb-4">{{ blog_post.content_two }}</p>
+                    <p class="fs-5 mb-4">{{ blog_post.content_three }}</p>
                 </section>
                 {% if request.user.is_superuser %}
                 <div>

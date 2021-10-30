@@ -12,16 +12,12 @@
 
 {% block content %}
 <div class="container page-content">
-    <div class="d-flex flex-row align-items-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 text-center">
-                    <span class="display-1 d-block mt-20">5<i class="fas fa-cog fa-spin err fa-sm"></i><i
-                            class="fas fa-cog fa-sm"></i></span>
-                    <div class="msg">Ooops....? Something went wrong.<p>Let's go <a href="{% url 'home' %}">home</a> and
-                            try from there.</p>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="text-center col-12">
+            <span class="display-1 d-block err">5<i class="fas fa-cog fa-spin err-orange fa-sm"></i><i
+                    class="fas fa-cog fa-sm"></i></span>
+            <div class="msg">Ooops....? Something went wrong.<p>Let's go <a href="{% url 'home' %}">home</a> and
+                    try from there.</p>
             </div>
         </div>
     </div>
