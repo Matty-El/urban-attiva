@@ -45,7 +45,7 @@
                     <a class="text-info" href="{% url 'edit_blog_post' blog_post.id %}"><i
                             class="fas fa-edit fa-sm"></i> Edit</a>
                     |
-                    <a class="text-danger clickable" data-toggle="modal" data-target="#deletePost-{{ post.id }}"><i
+                    <a class="text-danger clickable" data-toggle="modal" data-target="#deletePost-{{ blog_post.id }}"><i
                             class="fas fa-trash-alt fa-sm"></i> Delete</a>
                 </div>
                 <!-- Delete blog post modal-->
@@ -116,14 +116,14 @@
             <small>
                 <a class="text-info" href="{% url 'edit_comment' comment.id %}"><i class="fas fa-edit fa-sm"></i>
                     Edit</a> |
-                <a class="text-danger clickable" data-toggle="modal" data-target="#deleteComment-{{ review.id }}"><i
+                <a class="text-danger clickable" data-toggle="modal" data-target="#deleteComment-{{ comment.id }}"><i
                         class="fas fa-trash-alt fa-sm"></i> Delete</a>
             </small>
             {% endif %}
             {% endif %}
             <!-- Delete comment modal -->
             <div class="modal fade" id="deleteComment-{{ comment.id }}" tabindex="-1"
-                aria-labelledby="deleteCommentLabel-{{ review.id }}" aria-hidden="true">
+                aria-labelledby="deleteCommentLabel-{{ comment.id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -151,6 +151,5 @@
         </div>
         {% endfor %}
     </div>
-</div>
 </div>
 {% endblock %}
