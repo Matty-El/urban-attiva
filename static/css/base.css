@@ -36,6 +36,10 @@
   color: #566465;
 }
 
+.badge {
+  border-radius: 25px;
+}
+
 /* --------------- Profile -----------------*/
 
 .table thead th {

@@ -51,7 +51,7 @@
             </p>
             {% endif %}
             {% if product.rating != 0 %}
-            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+            <small class="text-muted"><i class="fas fa-star mr-1 text-warning fa-lg"></i>{{ product.rating }} /
                 5</small>
             {% else %}
             <small class="text-muted">No Rating</small>
@@ -175,7 +175,7 @@
                     {{ review.user}}
             </p>
             <p class="text-muted">
-                Rating: {{ review.review_rating }} <i class="fas fa-star mr-1 text-muted"></i>
+                Rating: {{ review.review_rating }} <i class="fas fa-star mr-1 text-warning fa-lg"></i>
             </p>
             <p>{{ review.review_comment }}</p>
             {% if request.user.is_authenticated %}
