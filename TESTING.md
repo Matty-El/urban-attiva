@@ -18,7 +18,7 @@
 
 The HTML code was validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/).
 
-![CSS Validator](testing-files/velo-route-css-validation.png)
+![CSS Validator](testing-files/urban-attiva-css-validation.png)
 
 ### HTML Code Validation
 
@@ -26,13 +26,13 @@ The HTML code was validated using the [W3C Markup validation service](https://va
 
 No significant errors and all resolved.
 
-This was a manual process to copy and paste the code from each page and review to highlight any errors that were not syntax errors as a result of using Flask and Jinja templates. The only errors found related to a few stray tags and some very minor duplication of attributes and an error stating that validation is not allowed on text area field inputs so this was removed.
-
 ### jQuery Code Validation
 
 The jQuery code was validated using the [JSHint validation service](https://jshint.com/).
 
 ![JSHint Validator](testing-files/urban-attiva-jshint-validation.png)
+
+A couple of warnings but no errors found.
 
 ### Python Code Validation
 
@@ -46,7 +46,7 @@ The Python code was validated using the [PEP 8 Online Validation Service](http:/
 
 Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome browsers.
 
-![Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.pdf)
+[Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.pdf)
 
 ---
 
@@ -59,7 +59,7 @@ The site has been tested on the following devices:
 -   Desktop: 1024px, > 1200px. 
 -   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
 
-![Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.pdf)
+[Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.pdf)
 
 --- 
 
@@ -158,7 +158,7 @@ Blog comment form:
 
 ### Unresolved
 
-- No significant defects were left unresolved
+- No significant defects were left unresolved.
 
 ---
 

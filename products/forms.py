@@ -10,8 +10,8 @@ class ProductForm(forms.ModelForm):
         model = Product
         exclude = ('rating',)
 
-    image = forms.ImageField(label='image', required=False, widget=CustomClearableFileInput)
-
+    image = forms.ImageField(label='image', required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -41,11 +41,11 @@ class ReviewForm(forms.ModelForm):
         # extract the field data
         review_comment = self.cleaned_data.get('review_comment')
 
-        # title must not have just empty characters and must be > 10 characters long
+        # title must not have just empty characters and must be >
+        # 10 characters long
         if review_comment is None:
             self._errors['review_comment'] = self.error_class([
                 'Please enter valid text'])
         elif len(review_comment) < 10:
             self._errors['review_comment'] = self.error_class([
                 'Minimum 10 characters required'])
-    

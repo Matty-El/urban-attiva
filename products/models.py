@@ -51,7 +51,8 @@ SIZE_OPTIONS = (
 
 class Product(models.Model):
     """ Product model """
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -72,13 +73,16 @@ class Product(models.Model):
 
     def product_sale_price(self):
         """ Calculate sale price of product """
-        product_sale_price = Decimal(self.price - ((self.price * self.discount_percent) / 100))
+        product_sale_price = Decimal(self.price -
+                                     ((self.price * self.discount_percent) /
+                                      100))
         return product_sale_price
 
     # code with stein
     def get_rating(self):
         """ Calculate average product review rating from reviews """
-        total = sum(int(review['review_rating']) for review in self.reviews.values())
+        total = sum(int(review['review_rating']) for review in
+                    self.reviews.values())
 
         if self.reviews.count() > 0:
             return total / self.reviews.count()
@@ -107,7 +111,8 @@ class ProductReview(models.Model):
     """ Product review model """
     product = models.ForeignKey(
         Product, related_name='reviews', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='reviews',
+                             on_delete=models.CASCADE)
     review_comment = models.TextField(max_length=250, blank=True, null=True)
     review_rating = models.IntegerField(choices=RATING)
     date = models.DateTimeField(auto_now_add=True)

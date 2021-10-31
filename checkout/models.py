@@ -65,7 +65,7 @@ class Order(models.Model):
         if self.user is not None:
             self.user_discount = \
                 self.order_total \
-                     * -settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100
+                * -settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100
         else:
             self.user_discount = 0
         self.grand_total = self.order_total + \

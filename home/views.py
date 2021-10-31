@@ -23,4 +23,3 @@ def returns(request):
     """ View the returns policy page """
 
     return render(request, 'home/returns.html')
-
