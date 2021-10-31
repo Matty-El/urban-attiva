@@ -428,6 +428,11 @@ background-repeat: no-repeat;
     padding-bottom: 5rem;
 }
 
+.customer-message {
+  max-width: 300px;
+  margin: auto;
+}
+
 .customer-reviews img {
   max-width: 150px;
   max-height: 150px;
@@ -591,6 +596,7 @@ input[name=q]::placeholder {
 .message-container {
     position: absolute;
     top: 72px;
+    right: 150px;
     z-index: 99999999999;
 }
 
@@ -663,7 +669,7 @@ input[name=q]::placeholder {
   }
 
 /* Move shop now button on smaller devices */
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .header-font {
     margin-bottom: 150px !important;
   }
