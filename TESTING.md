@@ -46,7 +46,7 @@ The Python code was validated using the [PEP 8 Online Validation Service](http:/
 
 Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome browsers.
 
-![Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.png)
+![Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.pdf)
 
 ---
 
@@ -59,7 +59,7 @@ The site has been tested on the following devices:
 -   Desktop: 1024px, > 1200px. 
 -   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
 
-![Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.png)
+![Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.pdf)
 
 --- 
 
@@ -75,12 +75,12 @@ The user stories below have all been tested through two test cycles. The full te
 
 ### Website Owner
 
--   As the website owner, I want branding to be clear and consistent across the website so that the user has a consistent experience.
--   As the website owner, I want the website to be search engine optimised so that users can easily find our website.
--   As the website owner, I want the website to be accessible to all users so that all users can use our website.
--   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
--   As the website owner, I want the  website to be compatible with different browsers so that users have a consistent experience no matter which browser they use.
--   As the website owner, I want the website to be secure so that only authorised users can access store management functionality.
+-   As the website owner, I want to ensure the branding is clear and consistent across the website so that the user has a consistent experience.
+-   As the website owner, I want to ensure the website is search engine optimised so that users can easily find our website.
+-   As the website owner, I want to ensure the website is accessible to all users so that all users can use our website.
+-   As the website owner, I want to ensure the website is conformant to web development best practices so that I know the development quality meets required standards.
+-   As the website owner, I want to ensure the website is compatible with different browsers so that users have a consistent experience no matter which browser they use.
+-   As the website owner, I want to ensure the website is secure so that only authorised users can access store management functionality.
 
 ### Shoppers
 
@@ -126,37 +126,26 @@ The user stories below have all been tested through two test cycles. The full te
 
 ## Defensive Design Testing
 
-1. Tested in user story testing - When deleting routes, cycling tips or categories on the site a modal will appear where the user has to confirm that they want to delete the item. Once they have confirmed then the item will be deleted.
+ ** INCOMPLETE **
+
+1. Tested in user story testing -  ** INCOMPLETE **
 2. Validation has been included on all form fields as listed below:
 
 Product form:
 
--   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist in the database and a user is notified via a flash message if this is the case.
--   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
--   Email address field is validated to ensure a valid email address in the correct format is entered.
--   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
+-   ** INCOMPLETE **
 
 Product review form:
 
--   Category, difficulty and country are dropdown fields with data populated from the database.
--   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
--   The route image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
--   The route description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
--   The route distance is validated to ensure it is a number between 1 and 6 numbers in length, so a maximum of 99999.
--   The route link is validated to ensure it is a valid URL.
--   The same validation is in place when a user comes to edit a route.
+-   ** INCOMPLETE **
 
 Blog form:
 
--   The category is populated form the database.
--   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
--   The cycling tip image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
--   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
--   The cycling tip link is validated to ensure it is a valid URL.
+-   ** INCOMPLETE **
 
 Blog comment form:
 
--   The category input is validated to ensure the user only inputs letter, spaces and no special characters.
+-   ** INCOMPLETE **
 
 ---
 
@@ -165,12 +154,11 @@ Blog comment form:
 ### Resolved
 
 1.  Defect Ref DEF001: It was discovered during testing that users could delete the quantity of a product form the quantity field prior to adding to the cart which resulted in a 500 error. Solved by adding 'or' 1 in the add to cart view quantity variable. This is not an ideal solution but the user can then adjust the quantity in their cart prior to submitting the order. Would need a more satisfactory solution if developed further.
-2.  Defect Ref DEF002: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref XXX, this is not the most elegant solution but avoids 500 errors for the user.
-3.  
+2.  Defect Ref DEF002: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref DEF001, this is not the most elegant solution but avoids 500 errors for the user.
 
 ### Unresolved
 
-- No specific bugs as such but would like to improve on the lighthouse reports performance metrics. After the first round of testing and fixing the performance was good but not above the 95% across the board I was hoping for. IMprovements to be made in this area.
+- No significant defects were left unresolved
 
 ---
 

@@ -45,19 +45,19 @@ The requirements for the Urban Attiva website are captured as user stories.
 
 #### Website Owner
 
--   As the website owner, I want branding to be clear and consistent across the website so that the user has a consistent experience.
--   As the website owner, I want the website to be search engine optimised so that users can easily find our website.
--   As the website owner, I want the website to be accessible to all users so that all users can use our website.
--   As the website owner, I want the website to be conformant to web development best practices so that I know the development quality meets required standards.
--   As the website owner, I want the  website to be compatible with different browsers so that users have a consistent experience no matter which browser they use.
--   As the website owner, I want the website to be secure so that only authorised users can access store management functionality.
+-   As the website owner, I want to ensure the branding is clear and consistent across the website so that the user has a consistent experience.
+-   As the website owner, I want to ensure the website is search engine optimised so that users can easily find our website.
+-   As the website owner, I want to ensure the website is accessible to all users so that all users can use our website.
+-   As the website owner, I want to ensure the website is conformant to web development best practices so that I know the development quality meets required standards.
+-   As the website owner, I want to ensure the website is compatible with different browsers so that users have a consistent experience no matter which browser they use.
+-   As the website owner, I want to ensure the website is secure so that only authorised users can access store management functionality.
 
 #### Shoppers
 
 -   As a shopper, I want to understand what the store sells and to be able to navigate the website easily so that I can so that I can decide if I want to purchase any products.
 -   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
 -   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
--   As a shopper, I want to see products matching that I have searched for and the number of results returned so that I can see whether the product I searched for is available.
+-   As a shopper, I want to see products matching what I have searched for and the number of results returned so that I can see whether the product I searched for is available.
 -   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
 -   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
 -   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
@@ -117,11 +117,11 @@ The Urban Attiva database has seven tables as detailed in the attached data mode
 
 #### Wireframes
 
+** THIS SECTION IS INCOMPLETE **
+
 The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 
--   Small device [wireframes](design/velo-route-small-device.png).
--   Medium device [wireframes](design/velo-route-medium-device.png).
--   Large device [wireframes](design/velo-route-large-device.png).
+-   Large device [wireframes](design/urban-attiva-large-device.png).
 
 The following changes were made after the initial design.
 
@@ -149,7 +149,7 @@ The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 a
 
 The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
 
-BUTTONS!!!!!! UPDATE #4DD0E1 has been used for the flash messages background, #EF6C00 for the call to action button on the home page, #0097A7 for action buttons throughout the site and #D50000 for all delete buttons.
+** THIS SECTION IS INCOMPLETE **
 
 #### Typography
 
@@ -160,6 +160,8 @@ Roboto font has been utilised for all text across the website and detailed in th
 Images are used to add some additional colour to the website home page and for the product cards and blog posts.
 
 ### Defensive Design
+
+** THIS SECTION IS INCOMPLETE ** 
 
 The website has been developed incorporating the following defensive design aspects.
 
@@ -186,38 +188,27 @@ Data validation on custom forms is incorporated on all data input fields with th
 
 Product management form:
 
--   Username validated to ensure that it is of length 5 - 15 characters and consists only of numbers and letters. The username is also checked to ensure it does not already exist in the database and a user is notified via a flash message if this is the case.
--   First name and last name fields cannot begin with a space, with a required length between 2 - 20 and letters.
--   Email address field is validated to ensure a valid email address in the correct format is entered.
--   Password is validated to ensure it is between 8 - 15 characters and contains at least one number and one capital and one lowercase letter.
+-   ** THIS SECTION IS INCOMPLETE **
 
 Blog management form:
 
--   Category, difficulty and country are dropdown fields with data populated from the database.
--   Route name is validated to ensure it cannot start with a blank space and must consist only of letters with no special characters.
--   The route image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
--   The route description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
--   The route distance is validated to ensure it is a number between 1 and 6 numbers in length, so a maximum of 99999.
--   The route link is validated to ensure it is a valid URL.
--   The same validation is in place when a user comes to edit a route.
+-   ** THIS SECTION IS INCOMPLETE **
 
 Product review form:
 
--   The category is populated form the database.
--   The cycling tip name is validated for a maximum of 30 characters which must be letters and spaces.
--   The cycling tip image is validated to ensure it is a valid URL and has a recognised jpg, jpeg, gif or png extension.
--   The cycling tip description is validated to ensure that it is of length between 10 - 300 characters consisting of letters, numbers and standard punctuation.
--   The cycling tip link is validated to ensure it is a valid URL.
+-   ** THIS SECTION IS INCOMPLETE **
 
 Blog comment form:
 
--   The category input is validated to ensure the user only inputs letter, spaces and no special characters.
+-   ** THIS SECTION IS INCOMPLETE **
 
 ---
 
 ## Features
 
 ### Existing Features
+
+** THIS SECTION IS INCOMPLETE - IMAGES NEED TO BE ADDED **
 
 #### Home Page (navigation all pages)
 
@@ -497,7 +488,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 
 ## Challenges
 
-Two significant challenges were encountered late on in the project:
+** THIS SECTION IS INCOMPLETE **
 
 1.  
 
@@ -516,6 +507,8 @@ All text content included in this project is my own.
 All images are my own, have been licensed from Adobe Stock or are freely available on Unsplash. Credits are listed below.
 
 **Home Page Images**
+
+** THIS SECTION IS INCOMPLETE **
 
 -   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) [on] (<a href=")https://unsplash.com/s/photos/swimmer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
