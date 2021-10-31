@@ -483,9 +483,9 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 7. To install the required packages type pip install -r requirements.txt into the command line
 8. Set up an env.py and add the env.py to your gitignore file. Include:
 >* import os
->* os.environ.setdefault("STRIPE_SECRET_KEY", "`ADD YOUR KEY`")
->* os.environ.setdefault("STRIPE_PUBLIC_KEY", "`ADD YOUR KEY`")
->* os.environ.setdefault("STRIPE_WH_SECRET", "`ADD YOUR KEY`")
+>* os.environ.setdefault("STRIPE_SECRET_KEY", "`YOUR STRIPE KEY`")
+>* os.environ.setdefault("STRIPE_PUBLIC_KEY", "`YOUR STRIPE KEY`")
+>* os.environ.setdefault("STRIPE_WH_SECRET", "`YOUR STRIPE KEY`")
 9. add the following to your settings.py 
 >* if os.path.exists("env.py"): import env
 10. Apply migrations

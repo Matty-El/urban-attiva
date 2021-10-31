@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col">
                 <div class="col-lg-8 mx-auto">
-                    <!-- Blog search-->
+                    <!-- Blog search -->
                     <div class="card mb-4">
                         <div class="card-body">
                             <form role="search" class="ml-auto" method="GET" action="{% url 'blog' %}">
@@ -38,10 +38,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Blog entries-->
+                <!-- Blog posts -->
                 <div class="col-lg-8 mx-auto">
                     {% for blog in blog_posts %}
-                    <!-- Blog post-->
                     <div class="card mb-4">
                         {% if blog.image %}
                         <a href="{% url 'blog_detail' blog.id %}"><img class="card-img-top p-0"

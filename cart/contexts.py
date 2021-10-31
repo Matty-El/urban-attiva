@@ -5,7 +5,8 @@ from products.models import Product
 
 
 def cart_contents(request):
-
+    """ Create cart content and totals """
+    
     cart_items = []
     total = 0
     product_count = 0
@@ -15,7 +16,8 @@ def cart_contents(request):
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
             if product.on_sale is True:
-                total += item_data * Decimal(product.price - ((product.price * product.discount_percent) / 100))
+                total += item_data * Decimal(product.price - (
+                    (product.price * product.discount_percent) / 100))
             else:
                 total += item_data * product.price
             product_count += item_data
@@ -28,7 +30,8 @@ def cart_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 if product.on_sale is True:
-                    total += quantity * Decimal(product.price - ((product.price * product.discount_percent) / 100))
+                    total += quantity * Decimal(product.price - (
+                        (product.price * product.discount_percent) / 100))
                 else:
                     total += quantity * product.price
                 product_count += quantity
@@ -46,7 +49,8 @@ def cart_contents(request):
         shipping = 0
         free_shipping_delta = 0
     if request.user.is_authenticated:
-        user_discount = total * -Decimal(settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100)
+        user_discount = total * -Decimal(
+            settings.REGISTERED_USER_DISCOUNT_PERCENTAGE / 100)
     else:
         user_discount = 0
 
@@ -58,7 +62,8 @@ def cart_contents(request):
         'product_count': product_count,
         'shipping': shipping,
         'user_discount': user_discount,
-        'registered_user_discount_percentage': settings.REGISTERED_USER_DISCOUNT_PERCENTAGE,
+        'registered_user_discount_percentage':
+            settings.REGISTERED_USER_DISCOUNT_PERCENTAGE,
         'free_shipping_delta': free_shipping_delta,
         'free_shipping_threshold': settings.FREE_SHIPPING_THRESHOLD,
         'grand_total': grand_total,

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class OrderForm(forms.ModelForm):
     class Meta:
+        """ Create and order form """
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',

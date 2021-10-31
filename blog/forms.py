@@ -32,21 +32,24 @@ class BlogForm(forms.ModelForm):
         content_two = self.cleaned_data.get('content_two')
         content_three = self.cleaned_data.get('content_three')
 
-        # title must not have just empty characters and must be > 5 characters long
+        # title must not have just empty characters and must be
+        # > 5 characters long
         if title is None:
             self._errors['title'] = self.error_class([
                 'Please enter valid text'])
         elif len(title) < 5:
             self._errors['title'] = self.error_class([
                 'Minimum 5 characters required'])
-        # title must not have just empty characters and must be > 50 characters long
+        # title must not have just empty characters and must be
+        # > 50 characters long
         if intro is None:
             self._errors['intro'] = self.error_class([
                 'Please enter valid text'])
         elif len(intro) < 5:
             self._errors['intro'] = self.error_class([
                 'Minimum 5 characters required'])
-        # title must not have just empty characters and must be > 50 characters long
+        # title must not have just empty characters and must be
+        # > 50 characters long
         if content_one is None:
             self._errors['content_one'] = self.error_class([
                 'Please enter valid text'])
@@ -65,7 +68,8 @@ class BlogForm(forms.ModelForm):
         # return errors in form
         return self.cleaned_data
 
-    image = forms.ImageField(label='image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='image', required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -75,7 +79,6 @@ class BlogForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     """ Comment form for blog comments """
-
     class Meta:
         model = BlogComment
         fields = (

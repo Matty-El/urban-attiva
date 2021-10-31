@@ -17,7 +17,8 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font pb-2">Products</h2>
             {% for category in current_categories  %}
-            <a class="category-badge text-decoration-none" href="{% url 'products_on_sale' %}?category={{ category.name }}">
+            <a class="category-badge text-decoration-none"
+                href="{% url 'products_on_sale' %}?category={{ category.name }}">
                 <span class="p-2 badge badge-white text-dark border border-dark">{{ category.friendly_name }}</span>
             </a>
             {% endfor %}
@@ -85,14 +86,15 @@
                             <div class="row">
                                 <div class="col">
                                     {% if product.on_sale is True %}
-                                        <p class="mb-0">
-                                            <span class="mb-0 text-center"><s>£{{ product.price }}</s></span>
-                                            <span class="mb-0 text-center text-danger font-weight-bold">£{{ product.product_sale_price|floatformat:2 }}
-                                            </span>
-                                        </p>
-                                        {% else %}
-                                        <p class="mb-0 font-weight-bold text-center">£{{ product.price }}</p>
-                                        {% endif %}
+                                    <p class="mb-0">
+                                        <span class="mb-0 text-center"><s>£{{ product.price }}</s></span>
+                                        <span
+                                            class="mb-0 text-center text-danger font-weight-bold">£{{ product.product_sale_price|floatformat:2 }}
+                                        </span>
+                                    </p>
+                                    {% else %}
+                                    <p class="mb-0 font-weight-bold text-center">£{{ product.price }}</p>
+                                    {% endif %}
                                     {% if product.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted"
@@ -102,17 +104,20 @@
                                     </p>
                                     {% endif %}
                                     {% if product.rating %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1 text-warning fa-lg"></i>{{ product.rating }} /
+                                    <small class="text-muted"><i
+                                            class="fas fa-star mr-1 text-warning fa-lg"></i>{{ product.rating }} /
                                         5</small>
                                     {% else %}
                                     <small class="text-muted">No Rating</small>
                                     {% endif %}
                                     {% if request.user.is_superuser %}
                                     <small class="ml-3 text-center">
-                                        <a href="{% url 'edit_product' product.id %}" class="text-info"><i class="fas fa-edit fa-md"></i> Edit</a>
+                                        <a href="{% url 'edit_product' product.id %}" class="text-info"><i
+                                                class="fas fa-edit fa-md"></i> Edit</a>
                                         |
                                         <a class="text-danger" data-toggle="modal"
-                                            data-target="#deleteProduct-{{ product.id }}"><i class="fas fa-trash-alt fa-md"></i>
+                                            data-target="#deleteProduct-{{ product.id }}"><i
+                                                class="fas fa-trash-alt fa-md"></i>
                                             Delete</a>
                                     </small>
                                     {% endif %}

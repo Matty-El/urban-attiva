@@ -12,7 +12,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """ Add a quantity of a product to the shopping cart """
+    """ Add a quantity of a selected product to the shopping cart """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity') or 1)
@@ -77,7 +77,7 @@ def update_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """ Update the quantity of a product in the shopping cart """
+    """ Remove the product from the shopping cart """
 
     try:
         product = get_object_or_404(Product, pk=item_id)

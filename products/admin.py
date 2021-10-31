@@ -5,6 +5,7 @@ from .models import Product, Category, ProductReview
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """ Product admin """
     list_display = (
         'sku',
         'name',
@@ -18,6 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Category admin """
     list_display = (
         'friendly_name',
         'name',

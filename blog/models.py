@@ -1,7 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class BlogPost(models.Model):
+    """ Blog post model """
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=254, null=True, blank=False)
     intro = models.CharField(max_length=254, null=True, blank=False)
@@ -20,9 +23,11 @@ class BlogPost(models.Model):
 
 
 class BlogComment(models.Model):
+    """ Blog comment model """
+
     blog_post = models.ForeignKey(BlogPost,
-                             on_delete=models.CASCADE,
-                             related_name='comments')
+                                  on_delete=models.CASCADE,
+                                  related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     comment_title = models.CharField(max_length=50, null=False, blank=False)
     comment = models.TextField(max_length=2000, null=False, blank=False)
@@ -30,6 +35,8 @@ class BlogComment(models.Model):
 
     def __str__(self):
         return self.comment_title
-    
+
     class Meta:
+        """ Ordering for blog comments """
+
         ordering = ['-date']

@@ -13,7 +13,7 @@
 {% block content %}
 <div class="std-background"></div>
 <div class="container page-content blog-detail">
-    <div class="row">
+    <div class="row">s
         <div class="col-8 offset-2">
             <article>
                 <header class="mb-4">
@@ -31,13 +31,13 @@
                     {% endif %}
                 </div>
                 <section class="mb-5 mt-4">
-                    <p class="fs-5 mb-4 lead">{{ blog_post.intro }}</p>
-                    <p class="fs-5 mb-4">{{ blog_post.content_one }}</p>
+                    <p class="mb-4 lead">{{ blog_post.intro }}</p>
+                    <p class="mb-4">{{ blog_post.content_one }}</p>
                     {% if blog_post.content_two != None %}
-                    <p class="fs-5 mb-4">{{ blog_post.content_two }}</p>
+                    <p class="mb-4">{{ blog_post.content_two }}</p>
                     {% endif %}
                     {% if blog_post.content_three != None %}
-                    <p class="fs-5 mb-4">{{ blog_post.content_three }}</p>
+                    <p class="mb-4">{{ blog_post.content_three }}</p>
                     {% endif %}
                 </section>
                 {% if request.user.is_superuser %}

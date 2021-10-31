@@ -64,8 +64,7 @@
                             class="fa fa-search"></i>
                     </button>
                     <a href="{% url 'view_cart' %}" class="btn btn-outline navbar-toggler"><i
-                            class="fa fa-shopping-cart"></i><span
-                            class="cart-count small">
+                            class="fa fa-shopping-cart"></i><span class="cart-count small">
                             ({{ product_count }})
                         </span>
                     </a>
@@ -90,9 +89,8 @@
                                                 <li class="nav-item"><a
                                                         href="{% url 'products' %}?sort=category&direction=asc"
                                                         class="nav-link">By Category</a></li>
-                                                <li class="nav-item"><a
-                                                        href="{% url 'products' %}"
-                                                        class="nav-link">All Products</a></li>
+                                                <li class="nav-item"><a href="{% url 'products' %}" class="nav-link">All
+                                                        Products</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6 col-lg-3">
@@ -165,7 +163,8 @@
                                             <h5 class="text-danger font-weight-bold">Sale</h5>
                                             <ul class="list-unstyled mb-3">
                                                 <li class="nav-item">
-                                                    <a href="{% url 'products_on_sale' %}" class="nav-link">All Sale Items</a>
+                                                    <a href="{% url 'products_on_sale' %}" class="nav-link">All Sale
+                                                        Items</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -220,8 +219,7 @@
             <div class="container">
                 <form role="search" class="ml-auto" method="GET" action="{% url 'products' %}">
                     <div class="input-group">
-                        <input type="text" placeholder="Search our products" class="form-control border"
-                            name="q">
+                        <input type="text" placeholder="Search our products" class="form-control border" name="q">
                         <div class="input-group-append">
                             <button type="submit" class="btn search-btn form-control"><i
                                     class="fa fa-search text-white"></i></button>
@@ -234,7 +232,7 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col offer"><a href="{% url 'products' %}" class="btn btn-success btn-sm">Free
-                        Shipping on orders over £50</a></div>
+                            Shipping on orders over £50</a></div>
                 </div>
             </div>
         </div>
@@ -276,7 +274,7 @@
                         <li><a href="{% url 'faq' %}">FAQs</a></li>
                     </ul>
                     <hr>
-                    <h5 class="mb-3">Users</h5>
+                    <h5 class="mb-3">Customers</h5>
                     <ul class="list-unstyled">
                         <li><a href="{% url 'account_login' %}">Login</a></li>
                         <li><a href="{% url 'account_signup' %}">Register</a></li>
@@ -290,9 +288,11 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Social Media</h5>
-                    <p class="social-media"><a href="https://www.facebook.com/urbanattiva" target="_blank" class="facebook external"><i class="fa fa-facebook"></i></a><a
-                            href="https://twitter.com/" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/urban_attiva/" target="_blank"
-                            class="instagram"><i class="fa fa-instagram"></i></a><a href="https://www.youtube.com/" target="_blank"
+                    <p class="social-media"><a href="https://www.facebook.com/urbanattiva" target="_blank"
+                            class="facebook external"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/"
+                            target="_blank" class="twitter"><i class="fa fa-twitter"></i></a><a
+                            href="https://www.instagram.com/urban_attiva/" target="_blank" class="instagram"><i
+                                class="fa fa-instagram"></i></a><a href="https://www.youtube.com/" target="_blank"
                             class="youtube"><i class="fa fa-youtube"></i></a></p>
                     <hr>
                     <div class="row">

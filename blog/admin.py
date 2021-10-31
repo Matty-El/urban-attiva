@@ -3,6 +3,7 @@ from .models import BlogPost, BlogComment
 
 
 class BlogPostAdmin(admin.ModelAdmin):
+    """ Blog post admin """
     list_display = (
         'title',
         'author',
@@ -16,6 +17,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 
 class BlogCommentAdmin(admin.ModelAdmin):
+    """ Blog comment admin """
     list_display = (
         'blog_post',
         'author',

@@ -4,6 +4,7 @@ from .models import Product, Category, ProductReview
 
 
 class ProductForm(forms.ModelForm):
+    """ Products form """
 
     class Meta:
         model = Product
@@ -23,6 +24,7 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    """ Review form """
 
     class Meta:
         model = ProductReview

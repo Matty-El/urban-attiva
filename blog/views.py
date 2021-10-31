@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.db.models.functions import Lower
 from .models import BlogPost, BlogComment
 from .forms import BlogForm, CommentForm
 
@@ -67,7 +66,8 @@ def add_blog_post(request):
             messages.success(request, 'Blog post successfully created.')
             return redirect(reverse('blog_detail', args=[blog_post.id]))
         else:
-            messages.error(request, 'Failed to create blog post. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to create blog post. Please ensure the form is valid.')
     else:
         form = BlogForm()
 
@@ -154,7 +154,7 @@ def add_comment(request, blog_post_id):
 
 @login_required
 def edit_comment(request, comment_id):
-    """ Edit a blog comment """
+    """ Edit a blog post comment """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
     blog_post = comment.blog_post
@@ -189,7 +189,7 @@ def edit_comment(request, comment_id):
 
 @login_required
 def delete_comment(request, comment_id):
-    """ Delete a blog comment """
+    """ Delete a blog post comment """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
     blog_post = comment.blog_post
