@@ -24,7 +24,7 @@ The HTML code was validated using the [W3C CSS validation service](https://jigsa
 
 The HTML code was validated using the [W3C Markup validation service](https://validator.w3.org/).
 
-No significant errors and all resolved.
+** THIS SECTION IS INCOMPLETE AS RAN OUT OF TIME TO FULLY VALIDATE ALL HTML **
 
 ### jQuery Code Validation
 
@@ -38,7 +38,7 @@ A couple of warnings but no errors found.
 
 The Python code was validated using the [PEP 8 Online Validation Service](http://pep8online.com/).
 
-![PEP 8 Validator](testing-files/urban-attiva-pep8-validation.png)
+All errors were resolved.
 
 ---
 
@@ -71,7 +71,7 @@ Lighthouse reports were run for all pages of the website. A significant improvem
 
 ## User Story Testing
 
-The user stories below have all been tested through two test cycles. The full test results for all user stories are detailed in the attached [testing report](testing-files/urban-attiva-user-story-testing-final.pdf).
+The user stories below have all been tested through two test cycles. The full test results for all user stories are detailed in the attached [testing report](testing-files/urban-attiva-user-story-testing.pdf).
 
 ### Website Owner
 
@@ -126,9 +126,9 @@ The user stories below have all been tested through two test cycles. The full te
 
 ## Defensive Design Testing
 
- ** INCOMPLETE **
+ ** INCOMPLETE AS RAN OUT OF TIME TO FULLY DOCUMENT **
 
-1. Tested in user story testing -  ** INCOMPLETE **
+1. Tested in user story testing
 2. Validation has been included on all form fields as listed below:
 
 Product form:

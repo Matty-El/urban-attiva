@@ -109,7 +109,7 @@ The website has the following key elements:
 
 Data Model:
 
-The Urban Attiva database has seven tables as detailed in the attached data model.
+The Urban Attiva database has ** INCOMPLETE AS RAN OUT OF TIME TO FULLY DOCUMENT **
 
 ![Urban Attiva Data Model](readme-files/velo-route-data-model.png)
 
@@ -126,7 +126,7 @@ The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 The following changes were made after the initial design.
 
 -   Functionality to enable users to leave product reviews.
--   User registered discount functionality.
+-   Registered user discount functionality.
 
 
 ### Surface
@@ -148,8 +148,6 @@ Full details of the Urban Attiva colour template can be found in the [Urban Atti
 The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. 
 
 The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
-
-** THIS SECTION IS INCOMPLETE **
 
 #### Typography
 
@@ -331,39 +329,33 @@ Full details of testing are contained in the [testing document](TESTING.md).
 
 ## Deployment
 
-GitHub has been used for hosting the Urban Attiva website repository and the Gitpod used as the IDE. 
+### Deployment on Heroku
 
-The Code Institute template was used for the initial creation of the repository which can be found on Github [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-
-To use this template click 'Use Template' at the top of the repository, name the repository, decide on whether the repository should be public or private, and then click 'Create Repository'. From the repository that has just been created select the green Gigtpod button and a workspace for your project will be created.
-
-### Deployment via Heroku
-
-1. Go to [Heroku.com](https://id.heroku.com/login) and login or create and account.
-2. On your personal there is a 'New' button on the top-right of the screen - click this button and select 'Create new app'.
-3. Enter your app name - it must be unique, lowercase and dashes instead of spaces.
+1. Log in to [Heroku.com](https://id.heroku.com/login) or create an account.
+2. On your personal dashboard click the 'New' button on the top-right of the screen.
+3. Enter your app name.
 4. Select the region closest to you and click 'Create app'.
-5. Install 'dj_database_url' and 'psycopg2' via the CLI using the pip3 install prefixed to the module names
->* pip3 install dj_database_url
->* pip3 install psycopg2
-6. Login to Heroku via the CLI using your Heroku credentials 
->* 'heroku login -i'
-7. Run migration on the Heroku Postgres -
->* 'heroku run python manage.py migrate'
+5. Install 'dj_database_url' and 'psycopg2' via the CLI using pip3 install
+-   pip3 install dj_database_url
+-   pip3 install psycopg2
+6. Log in to Heroku via the CLI using your Heroku credentials 
+-   'heroku login -i'
+7. Run migration on the Heroku Postgres
+-   'heroku run python manage.py migrate'
 8. Create a new super user for this deployed version
->* 'heroku python manage.py migrate'
+-   'heroku python manage.py migrate'
 9. Install 'gunicorn' and then freeze to your requirments.txt
-10. Create the 'Procfile' note the capital 'P' and add :
+10. Create the 'Procfile' and add the following:
 
->* web: gunicorn `your-app-name`.wsgi:application
+-   web: gunicorn `your-app-name`.wsgi:application
 
 11. Disable Heroku from collecting static files - 
->* 'heroku config:set DISABLE_COLLECTSTATIC=1 --app `your-app-name`
+-   'heroku config:set DISABLE_COLLECTSTATIC=1 --app `app-name`
 or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings config vars
 12. Add the host name to your settings.py file, under ALLOWED_HOSTS
->* ALLOWED_HOSTS = ['`you-app-name`.herokuapp.com', 'localhost']
+-   ALLOWED_HOSTS = ['`app-name`.herokuapp.com', 'localhost']
 13. To set the environment variables open the Heroku app settings tab and select 'Reveal Config Vars'
-14. Add the following variable keys and the values you have included in your django app settings file:
+14. Add the following variable keys and the values that have been included in your django app settings file:
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY
     - DATABASE_URL
@@ -379,7 +371,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 
 15. Select Hide Config Vars and reopen the Deploy tab.
 16. Add and commit your changes in the CLI, then use the below to to deploy to Heroku :
->* git push Heroku main
+-   git push Heroku main
 17. To connect your GitHub repository - select the Deploy tab and for Deployment method select "Connect to GitHub". Connect your GitHub account, ensure the correct profile name is displayed. Then add your repository name, search and select the correct repository.
 18. Under Automatic deploys enable automatic deployment.
 19. You can now open your app via the Heroku dashboard by clicking the 'Open app' button. Your site is now deployed but without static files.
@@ -389,7 +381,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 2. Log into your AWS account and search for S3 and create a new bucket, select 'allow public access'
 3. Under Properties go to static website hosting. Select enable typle index.html as index.html and save.
 4. In Permissions, under CORS use :
->* [
+-   [
   {
       "AllowedHeaders": [
           "Authorization"
@@ -403,8 +395,8 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
       "ExposeHeaders": []
   }
 ]
-5. Still in permissions, select bucket policy:
->* Generate bucket policy and copy the bucket ARN
+5. Under permissions, select bucket policy:
+-   Generate bucket policy and copy the bucket ARN
 >* Choose S3 Bucket Policy as type of policy
 >* For Principle enter *
 >* Paste ARN copied from above
@@ -480,7 +472,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 9. add the following to your settings.py 
 >* if os.path.exists("env.py"): import env
 10. Apply migrations
-11. Create your super user
+11. Create a super user
 12. To view what the website in a browser from here type "python3 manage.py runserver" into the console and hit enter or replace "manage.py" with which ever you have named the app
 13. A pop-up will appear stating "A service is available on Port 8000" select Open Browser
 
@@ -510,7 +502,7 @@ All images are my own, have been licensed from Adobe Stock or are freely availab
 
 ** THIS SECTION IS INCOMPLETE **
 
--   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) [on] (<a href=")https://unsplash.com/s/photos/swimmer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+-   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 - Running category image
 - Cycling category image
