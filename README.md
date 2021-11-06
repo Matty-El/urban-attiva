@@ -457,7 +457,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 
 ### Make a clone on GitPod
 
-1. Select the Repo you wish to clone in GitHub
+1. Select the repository you wish to clone in GitHub
 2. Click on the code dropdown button
 3. Copy the https link to your clipboard
 4. Open your gitpod workspace

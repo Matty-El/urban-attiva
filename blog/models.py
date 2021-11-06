@@ -1,12 +1,28 @@
 from django.db import models
+from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
+import re
 
+
+TEXT_REGEX = RegexValidator(r'^[^\s][A-Za-z0-9\s]$', 'Please enter a valid title \
+                                 starting with a letter and including only \
+                                 letters, numbers, and a maximum of one space')
+
+
+def validate_text(value):
+    reg = re.compile('^[^\s][A-Za-z0-9\s]$')
+    if not reg.match(value):
+        raise ValidationError(u'%s Please enter a valid title \
+                              starting with a letter and including only \
+                              letters, numbers, and a maximum of one space' % value)
 
 class BlogPost(models.Model):
     """ Blog post model """
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=254, null=True, blank=False)
+    title = models.CharField(max_length=254, null=True, blank=False,
+                             validators=[validate_text])
     intro = models.CharField(max_length=254, null=True, blank=False)
     content_one = models.TextField(max_length=2000, null=True, blank=False)
     content_two = models.TextField(max_length=2000, null=True, blank=True)
