@@ -577,11 +577,11 @@ a.category-badge>span.badge:hover {
   height: 42px;
   width: 42px;
   position: fixed;
-  color: #FF834F;
+  color: #FF834F !important;
   font-size: 42px;
   bottom: 20px;
   right: 10px;
-  z-index: 9999999999;
+  z-index: 9999999;
   display: none;
 }
 

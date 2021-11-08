@@ -9,6 +9,8 @@ class Category(models.Model):
     """ Category model """
 
     class Meta:
+        """ Verbose name for categories """
+
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
@@ -51,6 +53,7 @@ SIZE_OPTIONS = (
 
 class Product(models.Model):
     """ Product model """
+
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
@@ -73,6 +76,7 @@ class Product(models.Model):
 
     def product_sale_price(self):
         """ Calculate sale price of product """
+
         product_sale_price = Decimal(self.price -
                                      ((self.price * self.discount_percent) /
                                       100))
@@ -109,6 +113,7 @@ RATING = (
 
 class ProductReview(models.Model):
     """ Product review model """
+
     product = models.ForeignKey(
         Product, related_name='reviews', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='reviews',
@@ -118,4 +123,6 @@ class ProductReview(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        """ Product review ordering """
+
         ordering = ['-date']

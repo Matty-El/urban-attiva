@@ -7,6 +7,7 @@ class BlogForm(forms.ModelForm):
     """ Form for creation of blog entry """
 
     class Meta:
+        """ blog form fields """
         model = BlogPost
         fields = (
             'author',
@@ -29,41 +30,31 @@ class BlogForm(forms.ModelForm):
         title = self.cleaned_data.get('title')
         intro = self.cleaned_data.get('intro')
         content_one = self.cleaned_data.get('content_one')
-        content_two = self.cleaned_data.get('content_two')
-        content_three = self.cleaned_data.get('content_three')
 
-        # title must not have just empty characters and must be
+        # Blog title must not have just empty characters and must be
         # > 5 characters long
-        if title is None:
+        if not title:
             self._errors['title'] = self.error_class([
-                'Please enter valid text'])
+                'Please enter valid text - this field must not be blank'])
         elif len(title) < 5:
             self._errors['title'] = self.error_class([
-                'Minimum 5 characters required'])
+                'Minimum of 5 characters required'])
+        # Blog intro must not have just empty characters and must be
+        # > 5 characters long
+        if not intro:
+            self._errors['intro'] = self.error_class([
+                'Please enter valid text - this field must not be blank'])
+        elif len(intro) < 10:
+            self._errors['intro'] = self.error_class([
+                'Minimum of 10 characters required'])
         # title must not have just empty characters and must be
         # > 50 characters long
-        if intro is None:
-            self._errors['intro'] = self.error_class([
-                'Please enter valid text'])
-        elif len(intro) < 5:
-            self._errors['intro'] = self.error_class([
-                'Minimum 5 characters required'])
-        # title must not have just empty characters and must be
-        # > 50 characters long
-        if content_one is None:
+        if not content_one:
             self._errors['content_one'] = self.error_class([
-                'Please enter valid text'])
+                'Please enter valid text - this field must not be blank'])
         elif len(content_one) < 50:
-            self._errors['content One'] = self.error_class([
-                'Minimum 50 characters required'])
-
-        if content_two is None:
-            self._errors['content_two'] = self.error_class([
-                'Please enter valid text'])
-
-        if content_three is None:
-            self._errors['content_three'] = self.error_class([
-                'Please enter valid text'])
+            self._errors['content_one'] = self.error_class([
+                'Minimum of 50 characters required'])
 
         # return errors in form
         return self.cleaned_data
@@ -73,13 +64,13 @@ class BlogForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-full'
 
 
 class CommentForm(forms.ModelForm):
     """ Comment form for blog comments """
     class Meta:
+        """ Blog comment form fields """
+
         model = BlogComment
         fields = (
             'comment_title',
