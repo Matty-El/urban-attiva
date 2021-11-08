@@ -3,8 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from checkout.models import OrderLineItem
-from profiles.models import UserProfile
 from .models import Product, Category, ProductReview
 from .forms import ProductForm, ReviewForm
 
@@ -116,14 +114,22 @@ def add_product(request):
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            messages.success(request, 'Successfully added product!')
-            return redirect(reverse('product_detail', args=[product.id]))
+        name = form['name'].data
+        description = form['description'].data
+        if name.isspace() or description.isspace() is True:
+            messages.error(request, ('Failed to add product. '
+                                     'Please do not enter only blank spaces in'
+                                     ' product name or description '
+                                     '  form fields.'))
         else:
-            messages.error(request,
-                           ('Failed to add product. '
-                            'Please ensure the form is valid.'))
+            if form.is_valid():
+                product = form.save()
+                messages.success(request, 'Successfully added product!')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request,
+                               ('Failed to add product. '
+                                'Please ensure the form content is valid.'))
     else:
         form = ProductForm()
 
@@ -145,13 +151,22 @@ def edit_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Product successfully updated!')
-            return redirect(reverse('product_detail', args=[product.id]))
+        name = form['name'].data
+        description = form['description'].data
+        if name.isspace() or description.isspace() is True:
+            messages.error(request, ('Failed to add product. '
+                                     'Please do not enter only blank spaces in'
+                                     ' product name or description '
+                                     '  form fields.'))
         else:
-            messages.error(request, ('Failed to update product. '
-                                     'Please ensure the form is valid.'))
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Product successfully updated!')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request, ('Failed to update product. '
+                                         'Please ensure the form content '
+                                         'is valid.'))
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -186,20 +201,26 @@ def add_review(request, product_id):
 
     if request.method == 'POST':
         form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.user = request.user
-            review.product = product
-            review.save()
-            # Update average product rating
-            product.save_average_product_rating()
-
-            messages.success(request, 'Thank you for your Review !')
-            return redirect(reverse('product_detail', args=[product.id]))
+        review_comment = form['review_comment'].data
+        if review_comment.isspace() is True:
+            messages.error(request, ('Failed to add review comment. '
+                                     'Please do not enter only blank spaces in'
+                                     ' review form field.'))
         else:
-            messages.error(request,
-                           'Oops something went wrong. \
-                            Please try again.')
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.user = request.user
+                review.product = product
+                review.save()
+                # Update average product rating
+                product.save_average_product_rating()
+
+                messages.success(request, 'Thank you for your Review !')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request,
+                               'Failed to add review comment. '
+                               'Please ensure the form content is valid.')
     else:
         form = ReviewForm(instance=product)
     template = 'products/add_review.html'
@@ -221,16 +242,23 @@ def edit_review(request, review_id):
     if request.user == review.user or request.user.is_superuser:
         if request.method == 'POST':
             form = ReviewForm(request.POST, instance=review)
-            if form.is_valid():
-                form.save()
-                messages.success(
-                            request,
-                            'Your review has been successfully updated')
-                return redirect(reverse('product_detail', args=[product.id]))
+            review_comment = form['review_comment'].data
+            if review_comment.isspace() is True:
+                messages.error(request, ('Failed to add review comment. '
+                                         'Please do not enter only blank'
+                                         ' spaces in review form field.'))
             else:
-                messages.error(request,
-                               'Failed to update your review. \
-                                Please ensure the form is valid.')
+                if form.is_valid():
+                    form.save()
+                    messages.success(
+                                request,
+                                'Your review has been successfully updated')
+                    return redirect(reverse('product_detail',
+                                            args=[product.id]))
+                else:
+                    messages.error(request,
+                                   'Failed to update your review. '
+                                   'Please ensure the form content is valid.')
         else:
             form = ReviewForm(instance=review)
         template = 'products/edit_review.html'

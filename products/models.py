@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.db.models import Avg
 from django.db import models
+from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
 
@@ -54,20 +55,31 @@ SIZE_OPTIONS = (
 class Product(models.Model):
     """ Product model """
 
-    category = models.ForeignKey('Category', null=True, blank=True,
-                                 on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
+    category = models.ForeignKey(
+                'Category', null=True, blank=True,
+                on_delete=models.SET_NULL)
+    sku = models.CharField(max_length=7, null=True, blank=True)
+    name = models.CharField(
+            max_length=254, help_text='Minimum of 10 characters required',
+            validators=[RegexValidator(
+                regex=r'^[a-zA-Z0-9,!?\.\(\)"\' -]+$',
+                message='Please only use text and numbers '
+                        'and common punctuation characters')])
+    description = models.TextField(
+                    max_length=2000, null=True, blank=False,
+                    help_text='Minimum of 50 characters required',
+                    validators=[RegexValidator(
+                        regex=r'^[a-zA-Z0-9,!?\.\(\)@"\'# -]+$',
+                        message='Please only use text and numbers '
+                                'and common punctuation characters')])
     price = models.DecimalField(max_digits=6, decimal_places=2)
     on_sale = models.BooleanField(default=False)
     discount_percent = models.DecimalField(
-        max_digits=4, decimal_places=2, null=True, blank=True)
+        max_digits=4, decimal_places=2, null=True, blank=True, default='0.00')
     rating = models.DecimalField(
         max_digits=4, decimal_places=2, null=True, blank=True)
     size = MultiSelectField(
         choices=SIZE_OPTIONS, null=True, blank=True)
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 

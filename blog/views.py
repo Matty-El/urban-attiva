@@ -61,14 +61,22 @@ def add_blog_post(request):
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
-        if form.is_valid():
-            blog_post = form.save()
-            messages.success(request, 'Blog post successfully created.')
-            return redirect(reverse('blog_detail', args=[blog_post.id]))
+        content_two = form['content_two'].data
+        content_three = form['content_three'].data
+        if content_two.isspace() or content_three.isspace() is True:
+            messages.error(request, ('Failed to update blog post. '
+                                     'Please do not enter only blank spaces in'
+                                     ' content form fields.'))
         else:
-            messages.error(
-                request,
-                'Failed to create blog post. Please ensure the form is valid.')
+            if form.is_valid():
+                blog_post = form.save()
+                messages.success(request, 'Blog post successfully created.')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(
+                    request,
+                    'Failed to create blog post. '
+                    'Please ensure the form is valid.')
     else:
         form = BlogForm()
 
@@ -90,13 +98,21 @@ def edit_blog_post(request, blog_post_id):
     blog_post = get_object_or_404(BlogPost, pk=blog_post_id)
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog_post)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Blog post successfully updated!')
-            return redirect(reverse('blog_detail', args=[blog_post.id]))
-        else:
+        content_two = form['content_two'].data
+        content_three = form['content_three'].data
+        if content_two.isspace() or content_three.isspace() is True:
             messages.error(request, ('Failed to update blog post. '
-                                     'Please ensure the form is valid.'))
+                                     'Please do not enter only blank spaces in'
+                                     ' content form fields.'))
+
+        else:
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Blog post successfully updated!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, ('Failed to update blog post. '
+                                         'Please ensure the form is valid.'))
     else:
         form = BlogForm(instance=blog_post)
         messages.info(request, f'You are editing {blog_post.title}')
@@ -140,8 +156,8 @@ def add_comment(request, blog_post_id):
             return redirect(reverse('blog_detail', args=[blog_post.id]))
         else:
             messages.error(request,
-                           'Oops something went wrong. \
-                            Please try again.')
+                           'Failed to add comment. \
+                            Please ensure the form is valid.')
     else:
         form = CommentForm(instance=blog_post)
     template = 'blog/add_comment.html'
@@ -172,7 +188,7 @@ def edit_comment(request, comment_id):
             else:
                 messages.error(request,
                                'Failed to update your comment. \
-                                Please ensure the form is valid.')
+                                Please ensure the form content is valid.')
         else:
             form = CommentForm(instance=comment)
         template = 'blog/edit_comment.html'

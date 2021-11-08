@@ -47,7 +47,7 @@ class BlogForm(forms.ModelForm):
         elif len(intro) < 10:
             self._errors['intro'] = self.error_class([
                 'Minimum of 10 characters required'])
-        # title must not have just empty characters and must be
+        # Blog content must not have just empty characters and must be
         # > 50 characters long
         if not content_one:
             self._errors['content_one'] = self.error_class([
@@ -76,3 +76,21 @@ class CommentForm(forms.ModelForm):
             'comment_title',
             'comment',
             )
+
+    def clean(self):
+
+        # Fetch data from comment form
+        super(CommentForm, self).clean()
+
+        # extract the field data
+        comment = self.cleaned_data.get('comment')
+
+        # Blog comment must not have just empty characters and must be
+        # > 5 characters long
+        if not comment:
+            self._errors['comment'] = self.error_class([
+                'Please enter valid text - this field must not be blank '
+                'or just contain blank spaces'])
+        elif len(comment) < 5:
+            self._errors['comment'] = self.error_class([
+                'Minimum of 5 characters required'])

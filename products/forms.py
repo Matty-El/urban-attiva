@@ -7,8 +7,48 @@ class ProductForm(forms.ModelForm):
     """ Products form """
 
     class Meta:
+        """ Product form fields """
         model = Product
         exclude = ('rating',)
+
+    # to validate the form data
+    def clean(self):
+
+        # fetch data from form
+        super(ProductForm, self).clean()
+
+        # extract the field data
+        name = self.cleaned_data.get('name')
+        description = self.cleaned_data.get('description')
+        on_sale = self.cleaned_data.get('on_sale')
+        discount_percent = self.cleaned_data.get('discount_percent')
+
+        # Product name must not have just empty characters and must be
+        # > 10 characters long
+        if not name:
+            self._errors['name'] = self.error_class([
+                'Please enter valid text - this field must not be blank or '
+                'contain just blank spaces'])
+        elif len(name) < 10:
+            self._errors['name'] = self.error_class([
+                'Minimum of 10 characters required'])
+        # Product description must not have just empty characters and must be
+        # > 50 characters long
+        if not description:
+            self._errors['description'] = self.error_class([
+                'Please enter valid text - this field must not be blank or '
+                'contain just blank spaces'])
+        elif len(description) < 50:
+            self._errors['description'] = self.error_class([
+                'Minimum of 50 characters required'])
+
+        if on_sale is True and not discount_percent:
+            self._errors['discount_percent'] = self.error_class([
+                'Discount percentage must be included for a product that '
+                'is on sale'])
+
+        # return errors in form
+        return self.cleaned_data
 
     image = forms.ImageField(label='image', required=False,
                              widget=CustomClearableFileInput)
@@ -19,33 +59,15 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black'
 
 
 class ReviewForm(forms.ModelForm):
     """ Review form """
 
     class Meta:
+        """ Review form fields """
         model = ProductReview
         fields = (
             'review_rating',
             'review_comment'
         )
-
-    def clean(self):
-
-        # fetch data from form
-        super(ReviewForm, self).clean()
-
-        # extract the field data
-        review_comment = self.cleaned_data.get('review_comment')
-
-        # title must not have just empty characters and must be >
-        # 10 characters long
-        if review_comment is None:
-            self._errors['review_comment'] = self.error_class([
-                'Please enter valid text'])
-        elif len(review_comment) < 10:
-            self._errors['review_comment'] = self.error_class([
-                'Minimum 10 characters required'])
