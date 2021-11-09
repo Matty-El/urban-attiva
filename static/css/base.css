@@ -573,14 +573,14 @@ a.category-badge>span.badge:hover {
 }
 
 .to-top-btn {
-  height: 42px;
-  width: 42px;
+  height: 60px;
+  width: 60px;
   position: fixed;
   color: #FF834F !important;
-  font-size: 42px;
+  font-size: 60px;
   bottom: 20px;
   right: 10px;
-  z-index: 9999999;
+  z-index: 9999999999;
   display: none;
 }
 

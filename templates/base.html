@@ -320,6 +320,7 @@
     <script type="text/javascript">
         // Adapted from https://www.markuptag.com/jquery-back-to-top-button-with-smooth-scroll/
         $(document).ready(function () {
+            $('.to-top-btn').hide();
             // Show and hide button after scroll down and up
             $(window).on("scroll", function () {
                 if ($(this).scrollTop() > 200) {
