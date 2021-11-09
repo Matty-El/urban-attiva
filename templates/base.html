@@ -7,6 +7,8 @@
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
+    <meta name="description"
+    content="Urban Attiva - find the best running, cycling and swimming products to enhance your training, racing and recovery" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
@@ -79,7 +81,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-lg-3">
                                             <h5>All Products</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item"><a
                                                         href="{% url 'products' %}?sort=price&direction=asc"
                                                         class="nav-link">By Price</a></li>
@@ -95,7 +97,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-3">
                                             <h5>Run</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item"><a
                                                         href="{% url 'products' %}?category=running_wear"
                                                         class="nav-link">Running Wear</a></li>
@@ -115,7 +117,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-3">
                                             <h5>Cycle</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item"><a
                                                         href="{% url 'products' %}?category=cycling_wear"
                                                         class="nav-link">Cycling Wear</a></li>
@@ -132,7 +134,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-3">
                                             <h5>Swim</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=swimwear"
                                                         class="nav-link">Swimwear</a></li>
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=wetsuits"
@@ -147,7 +149,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-3">
                                             <h5>Nutrition</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=energy"
                                                         class="nav-link">Energy</a></li>
                                                 <li class="nav-item"><a href="{% url 'products' %}?category=protein"
@@ -161,7 +163,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-3">
                                             <h5 class="text-danger font-weight-bold">Sale</h5>
-                                            <ul class="list-unstyled mb-3">
+                                            <ul class="mb-3">
                                                 <li class="nav-item">
                                                     <a href="{% url 'products_on_sale' %}" class="nav-link">All Sale
                                                         Items</a>
@@ -176,8 +178,8 @@
                         <li class="nav-item dropdown account-menu"><a data-toggle="dropdown" data-hover="dropdown"
                                 data-delay="200" class="dropdown-toggle nav-link">My Account<b class="caret"></b></a>
                             <ul class="dropdown-menu account-menu-contained">
-                                <h5>My Account</h5>
-                                <ul class="list-unstyled mb-3">
+                                <p class="text-uppercase">My Account</p>
+                                <ul class="mb-3">
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                     <li class="nav-item"><a href="{% url 'add_product' %}" class="nav-link">Product
@@ -268,14 +270,14 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Information</h5>
-                    <ul class="list-unstyled">
+                    <ul>
                         <li><a href="{% url 'terms_conditions' %}">Terms & Conditions</a></li>
                         <li><a href="{% url 'returns' %}">Returns and Refunds</a></li>
                         <li><a href="{% url 'faq' %}">FAQs</a></li>
                     </ul>
                     <hr>
                     <h5 class="mb-3">Customers</h5>
-                    <ul class="list-unstyled">
+                    <ul>
                         <li><a href="{% url 'account_login' %}">Login</a></li>
                         <li><a href="{% url 'account_signup' %}">Register</a></li>
                     </ul>
@@ -289,11 +291,11 @@
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Social Media</h5>
                     <p class="social-media"><a href="https://www.facebook.com/urbanattiva" target="_blank"
-                            class="facebook external"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/"
-                            target="_blank" class="twitter"><i class="fa fa-twitter"></i></a><a
-                            href="https://www.instagram.com/urban_attiva/" target="_blank" class="instagram"><i
+                        rel="noopener noreferrer" class="facebook"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/"
+                            target="_blank" rel="noopener noreferrer" class="twitter"><i class="fa fa-twitter"></i></a><a
+                            href="https://www.instagram.com/urban_attiva/" target="_blank" rel="noopener noreferrer" class="instagram"><i
                                 class="fa fa-instagram"></i></a><a href="https://www.youtube.com/" target="_blank"
-                            class="youtube"><i class="fa fa-youtube"></i></a></p>
+                                rel="noopener noreferrer" class="youtube"><i class="fa fa-youtube"></i></a></p>
                     <hr>
                     <div class="row">
                         <div class="col-lg-12 mb-2 mb-lg-0">

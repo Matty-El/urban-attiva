@@ -22,9 +22,10 @@ The HTML code was validated using the [W3C CSS validation service](https://jigsa
 
 ### HTML Code Validation
 
-The HTML code was validated using the [W3C Markup validation service](https://validator.w3.org/).
+The HTML code was validated using the [W3C Markup validation service](https://validator.w3.org/). The validation was completed inputting the relevant page URLs into the w3 validator.
 
-** THIS SECTION IS INCOMPLETE AS RAN OUT OF TIME TO FULLY VALIDATE ALL HTML **
+-   Minor issues on base HTML - H5 heading used in a list - corrected, and minor error where ul as a child element of ul - left as is not considered significant.
+-   The products page has repeated duplicate ID errors and warnings for deleteProductLabel and multiple aria-labelledby errors (must point to element in the same document) - this is due to multiple products and link to modal for deletion - left as not a significant issue.
 
 ### jQuery Code Validation
 
@@ -32,13 +33,13 @@ The jQuery code was validated using the [JSHint validation service](https://jshi
 
 ![JSHint Validator](testing-files/urban-attiva-jshint-validation.png)
 
-A couple of warnings but no errors found.
+A couple of minor warnings but no errors found.
 
 ### Python Code Validation
 
 The Python code was validated using the [PEP 8 Online Validation Service](http://pep8online.com/).
 
-All errors were resolved.
+Only minor errors were found and all were resolved.
 
 ---
 
@@ -56,7 +57,8 @@ Resonsiveness was good across all device sizes. Responsiveness of the site has b
 
 The site has been tested on the following devices:
 
--   Desktop: 1024px, > 1200px. 
+-   Desktop: 1600x900, 1920x1200.
+-   Notebook: 1366x768 
 -   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
 
 [Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.pdf)
@@ -65,7 +67,7 @@ The site has been tested on the following devices:
 
 ## Lighthouse Reports
 
-Lighthouse reports were run for all pages of the website. A significant improvement was seen following code validation and user story testing that resulted in issues being addressed such as a lack of a meta tag and missing alt attributes. The second run was not as high as the 95% mark that I initially set for all performance measures. In some cases 95% was exceeded and in others the performance was not optimal but there were no alarmingly low scores. This is something i would address at a future stage. As a result I have marked these as failed in the user story testing summary.
+Lighthouse reports were run for all pages of the website. A significant improvement was seen following code validation and user story testing that resulted in issues being addressed such as a lack of a meta tag, improving text contrast in the footer, and missing alt attributes. 
 
 --- 
 
@@ -130,24 +132,36 @@ The user stories below have all been tested through two test cycles. The full te
 
  ** INCOMPLETE AS RAN OUT OF TIME TO FULLY DOCUMENT **
 
-1. Tested in user story testing
-2. Validation has been included on all form fields as listed below:
+1. Tested in user story testing.
+2. Validation has been included on all form fields and tested as listed below:
 
-Product form:
+Product management form:
 
--   ** INCOMPLETE **
+-   SKU - optional field restricted to 7 characters.
+-   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Price - required field with a maximum of 4 digits
+-   Discount % - this field is required when the on_sale flag is selected. Users are prevented from submitting the product form until a discount percentage has been added and an error is displayed below the field stating the discount percentage must be added for a product that is on sale.
+-   Image URL - django model URLField to ensure only a valid URL is added.
+
+Blog management form:
+
+-   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Image URL - django model URLField to ensure only a valid URL is added.
 
 Product review form:
 
--   ** INCOMPLETE **
-
-Blog form:
-
--   ** INCOMPLETE **
+-   Rating - required field with dropdown select option
+-   Review comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the review form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
 
 Blog comment form:
 
--   ** INCOMPLETE **
+-   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
 
 ---
 
@@ -157,6 +171,7 @@ Blog comment form:
 
 1.  Defect Ref DEF001: It was discovered during testing that users could delete the quantity of a product form the quantity field prior to adding to the cart which resulted in a 500 error. Solved by adding 'or' 1 in the add to cart view quantity variable. This is not an ideal solution but the user can then adjust the quantity in their cart prior to submitting the order. Would need a more satisfactory solution if developed further.
 2.  Defect Ref DEF002: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref DEF001, this is not the most elegant solution but avoids 500 errors for the user.
+3.  
 
 ### Unresolved
 

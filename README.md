@@ -133,7 +133,7 @@ The following changes were made after the initial design.
 
 ### Surface
 
-The Urban Attiva website features a clean and simple design with #4B5657 used for dark backgrounds and text and #F6F7F7 for light backgrounds and text to provide good contrast. The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
+The Urban Attiva website features a clean and simple design with #4B5657 used for dark backgrounds and text and #F6F7F7 for light backgrounds and text to provide a good contrast.
 
 #### Branding
 
@@ -145,9 +145,7 @@ A simple Urban Attiva logo has been developed aligned to the branding for an exi
 
 Full details of the Urban Attiva colour template can be found in the [Urban Attiva Branding Guidelines](readme-files/urban-attiva-branding-guidelines.pdf)
 
-#FFFFFF for navigation backgrounds
-
-The footer section is #DEE3E3 and is on the same monochromtic scale as #4B5657 as used for the dark text and dark backgrounds. 
+The footer section is #DEE3E3 and is on the same monochromatic scale as #4B5657 as used for the dark text and dark backgrounds. 
 
 The product and blog listing cards are #FFFFFF so that they pop from the page against the #F6F7F7 background. The product detail page utilises #FFFFFF for the background to match the image background.
 
@@ -218,8 +216,6 @@ Blog comment form:
 
 ### Existing Features
 
-** THIS SECTION IS INCOMPLETE - IMAGES NEED TO BE ADDED **
-
 #### Home Page (navigation all pages)
 
 -   Urban Attiva logo with a link to the home page.
@@ -229,6 +225,8 @@ Blog comment form:
 -   Section two of the home page images for each of the core product categories which when clicked link through to the product pages pre filtered by category.
 -   Section three of the home page includes some customer reviews.
 -   Section four of the home page cconatins some information highlighting free shipping thresholds, secure payments and registered user discounts.
+
+
 
 #### Register
 

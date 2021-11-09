@@ -232,11 +232,13 @@ html {
 #top-banner .offer .btn {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 #top-banner a {
   color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* -------------------- Product Form ---------------------- */
@@ -846,7 +848,7 @@ input[name=q]::placeholder {
 }
 
 #footer ul a {
-  color: #999;
+  color: #4B5657;
 }
 
 #footer .social-media {
