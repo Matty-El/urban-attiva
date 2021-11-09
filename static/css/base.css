@@ -52,6 +52,13 @@
 
 .btn-ua-grey {
   background: #4B5657;
+  color: white;
+  border: 1px solid #4B5657;
+  border-radius: 25px;
+}
+
+.auth-btn-ua-grey {
+  background: #4B5657;
   color: white !important;
   /* to override allauth style */
   border: 1px solid #4B5657 !important;
@@ -63,20 +70,23 @@
 .btn-ua-grey-increment {
   background: #4B5657;
   color: white;
-  border: 1px solid #4B5657;
+  border: 0px;
   border-radius: 0px 25px 25px 0px !important;
 }
 
 .btn-ua-grey-decrement {
   background: #4B5657;
   color: white !important;
-  border: 1px solid #4B5657 !important;
+  border: 0px;
   border-radius: 25px 0px 0px 25px !important;
 }
 
 .btn-ua-grey:hover,
 .btn-ua-grey:active,
 .btn-ua-grey:focus,
+.auth-btn-ua-grey:hover,
+.auth-btn-ua-grey:active,
+.auth-btn-ua-grey:focus,
 .search-btn:hover,
 .search-btn:active,
 .search-btn:focus,
@@ -88,7 +98,7 @@
 .btn-ua-grey-decrement:focus {
   background: #000000;
   color: #FFFFFF !important;
-  border: 1px solid #000000;
+  border: 0px;
 }
 
 .shop-now-button-hero:hover,
@@ -107,9 +117,19 @@
   border-radius: 25px;
 }
 
+.auth-btn-outline-ua-grey {
+  background: white;
+  color: #4B5657 !important;
+  border: 1px solid #4B5657;
+  border-radius: 25px;
+}
+
 .btn-outline-ua-grey:hover,
 .btn-outline-ua-grey:active,
-.btn-outline-ua-grey:focus {
+.btn-outline-ua-grey:focus,
+.auth-btn-outline-ua-grey:hover,
+.auth-btn-outline-ua-grey:active,
+.auth-btn-outline-ua-grey:focus {
   background: #4B5657;
   color: #FFFFFF !important;
   border: 1px solid #4B5657;
@@ -684,8 +704,8 @@ input[name=q]::placeholder {
     font-size: 2rem;
   }
 
-  .btn.btn-outline-ua-grey,
-  .btn.btn-ua-grey {
+  .btn-outline-ua-grey,
+  .btn-ua-grey {
     padding: .375rem .375rem;
     font-size: .75rem;
   }
