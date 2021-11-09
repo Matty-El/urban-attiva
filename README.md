@@ -237,7 +237,7 @@ Blog comment form:
 #### Register
 
 -   A simple registration page for a user to register with Urban Attiva by entering and confirming their email address, choosing a user name, and entering their chosen password.
--   Once the user is registered they will be directed to verify your email address page and will receive an email with a link to verify their email address.
+-   Once the user is registered they will be directed to the verify your email address page and will receive an email with a link to verify their email address.
 -   When the email address has been verified the user will be directed to the log in page to log in.
 
 ![Urban Attiva](readme-files/urban-attiva-register.png)
@@ -259,23 +259,26 @@ Blog comment form:
 
 #### Shop
 
--   The shop navigation menu enables users to link to the product page with products displayed filtered by core product categories and sub categories.
+-   The shop navigation menu enables users to link to the product page with products displayed and filtered by core product categories and sub-categories.
 -   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
--   Clicking on a product images navigates the user to the product details page where information about the product is displayed
--   The user can add a product to their shopping cart from the product detail page and select the quantity and chosen size.
--   Registered users can leave product reviews which are displayed below the product details.
--   Admin users can edit or delete inappropriate product reviews via links in the product review when logged in.
 
 ![Urban Attiva](readme-files/urban-attiva-products-page.png)
 
+-   Clicking on a product images navigates the user to the product details page where information about the product is displayed.
+
 ![Urban Attiva](readme-files/urban-attiva-products-detail-page.png)
+
+-   The user can add a product to their shopping cart from the product detail page and select the quantity and chosen size.
 
 ![Urban Attiva](readme-files/urban-attiva-add-to-cart.png)
 
+-   Registered users can leave product reviews which are displayed below the product details.
+-   Admin users can edit or delete inappropriate product reviews via links in the product review when logged in.
+
 #### Shopping Cart
 
--   Once the user has selected products and added them to their shopping cart a toast with a confirmation message and a summary of what is in their cart is displayed on the top right of the screen. The cart icon on the top right of the page will display an updated number of products and when clicks navigates the user to the cart page where details of the products are listed with the functionality to allow the cart items to be updated or deleted from the cart.
--   Registered users are eligible for an additional discount which is subtracted from their order total and displayed
+-   Once the user has selected products and added them to their shopping cart a toast with a confirmation message and a summary of what is in their cart is displayed on the top right of the screen. The cart icon on the top right of the page will display an updated number of products and when clicked navigates the user to the cart page where details of the products are listed with the functionality to allow the cart items to be updated or deleted from the cart.
+-   Registered users are eligible for an additional discount which is subtracted from their order total and displayed in the shopping cart summary.
 -   On selecting the secure checkout button the customer is navigated to the checkout page.
 
 ![Urban Attiva](readme-files/urban-attiva-shopping-cart.png)
@@ -295,8 +298,6 @@ Blog comment form:
 
 ![Urban Attiva](readme-files/urban-attiva-blog.png)
 
-![Urban Attiva](readme-files/urban-attiva-blog-management.png)
-
 #### Product Management
 
 -   Admin users have a product management menu option under their account menu when logged into the site. This allows the admin user to add new products to the site via the product management page.
@@ -307,7 +308,7 @@ Blog comment form:
 #### Blog Management
 
 -   Admin users have a blog management menu option under their account menu when logged into the site. This allows the admin user to add new blog posts to the site via the blog management page.
--   Admin users can edit or delete existing blog by selecting the relevant links that are displyed on the blog detail page when the user is logged in.
+-   Admin users can edit or delete existing blog posts by selecting the relevant links that are displyed on the blog detail page when the user is logged in.
 
 ![Urban Attiva](readme-files/urban-attiva-blog-management.png)
 
@@ -372,34 +373,90 @@ Full details of testing are contained in the [testing document](TESTING.md).
 
 ### Deployment on Heroku
 
-1. Log in to [Heroku.com](https://id.heroku.com/login) or create an account.
-2. On your personal dashboard click the 'New' button on the top-right of the screen.
-3. Enter your app name.
-4. Select the region closest to you and click 'Create app'.
-5. Install 'dj_database_url' and 'psycopg2' via the CLI using pip3 install
+1.  Log in to [Heroku.com](https://id.heroku.com/) or create an account.
+2.  On your personal dashboard click the 'New' button on the top-right of the screen.
+3.  Enter your app name using hyphens instead of spaces or underscores.
+4.  Select the region closest to you and click 'Create app'.
+5.  Provision a new Postgres database.
+
+-   Navigate to the 'Resources' tab
+-   Search for Postgres in 'Add-ons'
+-   Choose the plan type and click 'Provision'
+
+6.  Using pip3 install dj_database_url and psycopg2-binary via your IDE CLI
+
 -   pip3 install dj_database_url
--   pip3 install psycopg2
-6. Log in to Heroku via the CLI using your Heroku credentials 
--   'heroku login -i'
-7. Run migration on the Heroku Postgres
--   'heroku run python manage.py migrate'
-8. Create a new super user for this deployed version
--   'heroku python manage.py migrate'
-9. Install 'gunicorn' and then freeze to your requirments.txt
-10. Create the 'Procfile' and add the following:
+-   pip3 install psycopg2-binary
+-   freeze your requirements
+
+7.  Navigate to your settings.py file and import dj_database_url. Comment out the default DATABASES configuration and replace the default database with a call to dj_database_url.parse and provide the Heroku database URL, which can be found in your Heroku app config variables in the settings tab.
+
+8. Run migrations to the Heroku Postgres database.
+
+-   python3 manage.py migrate
+
+9.  If you used fixtures to load your product data these can now be loaded to the Postgres database.
+
+-   python3 manage.py loaddata 'name of relevant fixtures file' - repeat for each file and ensure they are loaded in the correct order based on dependencies.
+
+Alternatively you can download your data from your local mysql database:
+
+-   Ensure your manage.py file is connected to your mysql database
+-   Backup your current database and load it into a db.json file using the following command:
+
+        python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+
+-   Connect your manage.py file to your postgres database
+-   Load your data from the db.json file into postgres using the following command:
+
+        python3 manage.py loaddata db.json          
+
+10. Create a super user for the deployed version.
+
+-   python3 manage.py createsuperuser
+
+11. Remove the Heroku database configuration from your settings.py file and uncomment the original so that your Postgres database URL is not in your version control.
+12. Add an if statement to connect to the Postgress database if DATABASE_URL is in os.environ else connect to local database.
+13. Install gunicorn and freeze to your requirments file.
+14. Create the Procfile and add the following to the file:
 
 -   web: gunicorn `your-app-name`.wsgi:application
 
-11. Disable Heroku from collecting static files - 
--   'heroku config:set DISABLE_COLLECTSTATIC=1 --app `app-name`
+15. Log in to Heroku via the CLI:
+
+-   heroku login -i and enter your Heroku credentials
+
+16. Disable Heroku from collecting static files:
+
+-   heroku config:set DISABLE_COLLECTSTATIC=1 --app `app-name`
+
 or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings config vars
-12. Add the host name to your settings.py file, under ALLOWED_HOSTS
+
+17. Add the host name to your settings.py file:
+
 -   ALLOWED_HOSTS = ['`app-name`.herokuapp.com', 'localhost']
-13. To set the environment variables open the Heroku app settings tab and select 'Reveal Config Vars'
-14. Add the following variable keys and the values that have been included in your django app settings file:
-    - AWS_ACCESS_KEY_ID
-    - AWS_SECRET_ACCESS_KEY
-    - DATABASE_URL
+
+18. Navigate to the Deploy tab.
+
+19. Add, commit and push your changes in your CLI and to deploy to Heroku:
+
+-   git push heroku main
+
+20. Connect your GitHub repository - select the Deploy tab and for deployment method select 'Connect to GitHub'. Connect your GitHub repository.
+22. Enable automatic deploys.
+23. Generate a new django secret key and enter this in your app settings config vars.
+24. Go to settings.py and change the SECRET_KEY to be sourced from os.evniron.get('SECRET_KEY', '')
+25. Set DEBUG = 'DEVELOPMENT' in os.environ
+26. Add, commit and push your changes.
+27. Your app can now be opened via the Heroku dashboard by clicking the 'Open app' button. The app is now deployed without static files.
+
+
+** TO MOVE **
+
+18. Set the environment variables in your Heroku app settings tab - select Reveal Config Vars:
+
+Add the keys and the values that have been included in your django app settings file:
+
     - DISABLE_COLLECT_STATIC = 1
     - EMAIL_HOST_PASS
     - EMAIL_HOST_USER
@@ -410,18 +467,13 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
     - STRIPE_WH_SECRET
     - USE_AWS = True
 
-15. Select Hide Config Vars and reopen the Deploy tab.
-16. Add and commit your changes in the CLI, then use the below to to deploy to Heroku :
--   git push Heroku main
-17. To connect your GitHub repository - select the Deploy tab and for Deployment method select "Connect to GitHub". Connect your GitHub account, ensure the correct profile name is displayed. Then add your repository name, search and select the correct repository.
-18. Under Automatic deploys enable automatic deployment.
-19. You can now open your app via the Heroku dashboard by clicking the 'Open app' button. Your site is now deployed but without static files.
+** TO MOVE **
 
 ### Amazon Web Services S3 Bucket 
-1. If you don't already have an Amazon Web Services account create one.
-2. Log into your AWS account and search for S3 and create a new bucket, select 'allow public access'
-3. Under Properties go to static website hosting. Select enable typle index.html as index.html and save.
-4. In Permissions, under CORS use :
+1.  Create Amazon Web Services account if you don't already have one one.
+2.  Navigate to AWS Management Console search for S3 and create a new bucket ensuring you uncheck 'Block all public access'.
+3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website and enter index.html and error.html in the respecitve document fields.
+4.  On the permissions tab under CORS configuration enter:
 -   [
   {
       "AllowedHeaders": [
@@ -436,22 +488,19 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
       "ExposeHeaders": []
   }
 ]
-5. Under permissions, select bucket policy:
--   Generate bucket policy and copy the bucket ARN
->* Choose S3 Bucket Policy as type of policy
->* For Principle enter *
->* Paste ARN copied from above
->* Add Statement
->* Generate Policy
->* Copy Policy JSON Document
->* Paste policy into Edit Bucket policy on the previous tab
->* Save 
-6. Under Access Control List (ACL):
->* For Everyone (public access), tick List
->* Accept that everyone in the world may access the Bucket
->* Save
+5. Navigate to bucket policy and select policy generator to create a security policy for the bucket.
 
-### AWS IAM
+-   Select Type of Policy - S3 bucket policy
+-   For Principle enter *
+-   For Action select get object
+-   Copy the ARN from teh bucket policy tab and paste into teh Amazon Resource Name field
+-   Click Generate Policy and copy the policy into the Bucket policy editor
+-   To enable access to all resources in the bucket add /* to the end of the resource key after your app name
+-   Click save
+6. Navigate to the Access Control List tab and slect the List objects permission for everyone in the Public access section. Click save after confirming you understand the implication of providing access to everyone.
+
+
+### Amazon Web Services Identity and Access Management
 1. From the IAM dashboard within AWS, select User Groups:
 >* Create a new group
 >* Click through and create group
