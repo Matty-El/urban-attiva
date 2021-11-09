@@ -219,14 +219,20 @@ Blog comment form:
 #### Home Page (navigation all pages)
 
 -   Urban Attiva logo with a link to the home page.
--   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with aa expanding sidenav menu on smaller devices.
+-   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with an expanding sidenav menu on smaller devices.
 -   A search button in the navbar which when clicked drops down to reveal a field to enter search criteria. Once the search term has been entered the user can click on the serach button and products with details matching the search term will be displayed.
 -   Section one of the home page includes a hero image, header text and a shop now button.
+
+![Urban Attiva](readme-files/urban-attiva-home-page-hero.png)
+
 -   Section two of the home page images for each of the core product categories which when clicked link through to the product pages pre filtered by category.
+
+![Urban Attiva](readme-files/urban-attiva-home-page-categories.png)
+
 -   Section three of the home page includes some customer reviews.
--   Section four of the home page cconatins some information highlighting free shipping thresholds, secure payments and registered user discounts.
+-   Section four of the home page has some information highlighting free shipping thresholds, secure payments and registered user discounts.
 
-
+![Urban Attiva](readme-files/urban-attiva-testimonials-footer.png)
 
 #### Register
 
@@ -234,24 +240,37 @@ Blog comment form:
 -   Once the user is registered they will be directed to verify your email address page and will receive an email with a link to verify their email address.
 -   When the email address has been verified the user will be directed to the log in page to log in.
 
+![Urban Attiva](readme-files/urban-attiva-register.png)
+
 #### Log In
 
 -   Simple log in page where the user can log in by entering their user name and password. Once logged in they will be directed to the home page.
 -   A link to the registration page if the user has not yet registered.
 -   A forgot password link to direct the user to the forgot password page where they can enter their email address to reset their password.
 
+![Urban Attiva](readme-files/urban-attiva-login.png)
+
 #### Profile Page
 
 -   Contains a form where the user can enter their default shipping information. This information will be populated from an order if they have placed an order and have not input their shipping information. The shipping information can be updated on this page.
 -   The customer's order history is displayed on the right of the page with a truncated order number link to allow the user view previously placed order details.
 
+![Urban Attiva](readme-files/urban-attiva-profile.png)
+
 #### Shop
 
 -   The shop navigation menu enables users to link to the product page with products displayed filtered by core product categories and sub categories.
 -   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
--   Clicking on a product images navigates the user to the product details page where information about the product is displayed. The user can add a product to their shopping cart from the product detail page and select the quantity and chosen size.
+-   Clicking on a product images navigates the user to the product details page where information about the product is displayed
+-   The user can add a product to their shopping cart from the product detail page and select the quantity and chosen size.
 -   Registered users can leave product reviews which are displayed below the product details.
 -   Admin users can edit or delete inappropriate product reviews via links in the product review when logged in.
+
+![Urban Attiva](readme-files/urban-attiva-products-page.png)
+
+![Urban Attiva](readme-files/urban-attiva-products-detail-page.png)
+
+![Urban Attiva](readme-files/urban-attiva-add-to-cart.png)
 
 #### Shopping Cart
 
@@ -259,10 +278,14 @@ Blog comment form:
 -   Registered users are eligible for an additional discount which is subtracted from their order total and displayed
 -   On selecting the secure checkout button the customer is navigated to the checkout page.
 
+![Urban Attiva](readme-files/urban-attiva-shopping-cart.png)
+
 #### Checkout
 
 -   The checkout page provides a form for the user to enter their details and credit card information with an order summary detailing the products in the order.
 -   When the user selects the complete order button the order is processed securely via a Stripe integration and the customer is directed to the ckeckout success page with details of the order they have just placed. An email confirmation is also sent to the user.
+
+![Urban Attiva](readme-files/urban-attiva-checkout.png)
 
 #### Blog
 
@@ -270,15 +293,23 @@ Blog comment form:
 -   Clicking on the read more button directs the user to the blog detail page where the full blog article is diaplayed.
 -   Registered users can leave comments which are displayed below the blog article.
 
+![Urban Attiva](readme-files/urban-attiva-blog.png)
+
+![Urban Attiva](readme-files/urban-attiva-blog-management.png)
+
 #### Product Management
 
 -   Admin users have a product management menu option under their account menu when logged into the site. This allows the admin user to add new products to the site via the product management page.
 -   Admin users can edit or delete existing products by selecting the relevant links that are displyed on the product cards and products detail pages when the user is logged in.
 
+![Urban Attiva](readme-files/urban-attiva-product-management.png)
+
 #### Blog Management
 
 -   Admin users have a blog management menu option under their account menu when logged into the site. This allows the admin user to add new blog posts to the site via the blog management page.
 -   Admin users can edit or delete existing blog by selecting the relevant links that are displyed on the blog detail page when the user is logged in.
+
+![Urban Attiva](readme-files/urban-attiva-blog-management.png)
 
 #### Footer Section - all pages
 
@@ -506,21 +537,17 @@ All text content included in this project is my own.
 
 ### Media
 
-All images are my own, have been licensed from Adobe Stock or are freely available on Unsplash. Credits are listed below.
+All images are my own, have been licensed from Adobe Stock, or are freely available on Unsplash. Credits are listed below.
 
 **Home Page Images**
 
-** THIS SECTION IS INCOMPLETE **
+The home page images below are the only images that have not been licensed from Adobe Stock or are not my own images.
 
--   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-- Running category image
-- Cycling category image
-- Swimming category image
-- Nutrition category image
-- Customer review 1 image
-- Customer review 2 image
-- Customer review 3 image
+-   The hero image is sourced from Unsplash and is by [Todd Quackenbush](https://unsplash.com/photos/E9PJO_vL3E8)
+-   Running category image is sourced from Unsplash and is by [Alexander Redl](https://unsplash.com/photos/d3bYmnZ0ank)
+-   Cycling category image is sourced from Unsplash and is by [Angel Santos](https://unsplash.com/photos/96rlfzZ6LwY)
+-   Swimming category image is sourced from Unsplash and is by [Gentrit Sylejmani](https://unsplash.com/photos/JjUyjE-oEbM)
+-   Nutrition category image is sourced from Unsplash and is by [Munbaik Cycling Clothing](https://unsplash.com/photos/QPrPGq8yAyo)
 
 **Product Images**
 
