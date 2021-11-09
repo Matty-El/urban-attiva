@@ -159,8 +159,6 @@ Images are used to add some additional colour to the website home page and for t
 
 ### Defensive Design
 
-** THIS SECTION IS INCOMPLETE ** 
-
 The website has been developed incorporating the following defensive design aspects.
 
 #### Error Handling
@@ -186,19 +184,31 @@ Data validation on custom forms is incorporated on all data input fields with th
 
 Product management form:
 
--   ** THIS SECTION IS INCOMPLETE **
+-   SKU - optional field restricted to 7 characters.
+-   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Price - required field with a maximum of 4 digits
+-   Discount % - this field is required when the on_sale flag is selected. Users are prevented from submitting the product form until a discount percentage has been added and an error is displayed below the field stating the discount percentage must be added for a product that is on sale.
+-   Image URL - django model URLField to ensure only a valid URL is added.
 
 Blog management form:
 
--   ** THIS SECTION IS INCOMPLETE **
+-   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Image URL - django model URLField to ensure only a valid URL is added.
 
 Product review form:
 
--   ** THIS SECTION IS INCOMPLETE **
+-   Rating - required field with dropdown select option
+-   Review comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the review form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
 
 Blog comment form:
 
--   ** THIS SECTION IS INCOMPLETE **
+-   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
 
 ---
 

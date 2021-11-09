@@ -130,7 +130,12 @@ class ProductReview(models.Model):
         Product, related_name='reviews', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='reviews',
                              on_delete=models.CASCADE)
-    review_comment = models.TextField(max_length=250, blank=True, null=True)
+    review_comment = models.TextField(
+                    max_length=250, blank=True, null=True,
+                    validators=[RegexValidator(
+                        regex=r'^[a-zA-Z0-9,!?\.\(\)@"\'#€¥£¢$ -]+$',
+                        message='Please only use text and numbers \
+                        and common punctuation characters and @, or #')])
     review_rating = models.IntegerField(choices=RATING)
     date = models.DateTimeField(auto_now_add=True)
 

@@ -60,8 +60,18 @@ class BlogComment(models.Model):
                                   on_delete=models.CASCADE,
                                   related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment_title = models.CharField(max_length=50, null=False, blank=False)
-    comment = models.TextField(max_length=2000, null=False, blank=False)
+    comment_title = models.CharField(
+                    max_length=50, null=False, blank=False,
+                    validators=[RegexValidator(
+                        regex=r'^[a-zA-Z0-9,!?\.\(\)@"\'#€¥£¢$ -]+$',
+                        message='Please only use text and numbers \
+                        and common punctuation characters and @, or #')])
+    comment = models.TextField(
+                    max_length=2000, null=False, blank=False,
+                    validators=[RegexValidator(
+                        regex=r'^[a-zA-Z0-9,!?\.\(\)@"\'#€¥£¢$ -]+$',
+                        message='Please only use text and numbers \
+                        and common punctuation characters and @, or #')])
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -147,17 +147,24 @@ def add_comment(request, blog_post_id):
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user
-            comment.blog_post = blog_post
-            comment.save()
-            messages.success(request, 'Thank you for your comment !')
-            return redirect(reverse('blog_detail', args=[blog_post.id]))
+        comment_title = form['comment_title'].data
+        comment = form['comment'].data
+        if comment_title.isspace() or comment.isspace() is True:
+            messages.error(request, ('Failed to add review comment. '
+                                     'Please do not enter only blank spaces in'
+                                     ' comment form field.'))
         else:
-            messages.error(request,
-                           'Failed to add comment. \
-                            Please ensure the form is valid.')
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.author = request.user
+                comment.blog_post = blog_post
+                comment.save()
+                messages.success(request, 'Thank you for your comment!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request,
+                               'Failed to add comment. '
+                               'Please ensure the form is valid.')
     else:
         form = CommentForm(instance=blog_post)
     template = 'blog/add_comment.html'
@@ -187,8 +194,8 @@ def edit_comment(request, comment_id):
                 return redirect(reverse('blog_detail', args=[blog_post.id]))
             else:
                 messages.error(request,
-                               'Failed to update your comment. \
-                                Please ensure the form content is valid.')
+                               'Failed to update your comment. '
+                               'Please ensure the form content is valid.')
         else:
             form = CommentForm(instance=comment)
         template = 'blog/edit_comment.html'
