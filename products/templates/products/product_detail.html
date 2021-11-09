@@ -50,7 +50,7 @@
                 </a>
             </p>
             {% endif %}
-            {% if product.rating != 0 %}
+            {% if product.rating %}
             <small class="text-muted"><i class="fas fa-star mr-1 text-warning fa-lg"></i>{{ product.rating }} /
                 5</small>
             {% else %}
@@ -162,8 +162,8 @@
         </div>
         {% if not user.is_authenticated %}
         <div class="col-md-6">
-            <p class="ms-lg-3 lead">Please <a class="link-secondary" href="{% url 'account_login' %}">login</a> or <a
-                    class="link-secondary" href="{% url 'account_signup' %}">register</a> to add a review.</p>
+            <p class="ms-lg-3 lead">Please <a class="text-info" href="{% url 'account_login' %}">log in</a> or <a
+                    class="text-info" href="{% url 'account_signup' %}">register</a> to add a review.</p>
         </div>
         {% endif %}
     </div>
@@ -174,9 +174,13 @@
                 <i class="fas fa-user text-muted"></i> Posted {{ blog_post.date|date:"d-m-Y" }} by
                 {{ review.user}}
             </p>
+            {% if product.rating %}
             <p class="text-muted">
                 Rating: {{ review.review_rating }} <i class="fas fa-star mr-1 text-warning fa-lg"></i>
             </p>
+            {% else %}
+            <small class="text-muted">No Rating</small>
+            {% endif %}
             <p>{{ review.review_comment }}</p>
             {% if request.user.is_authenticated %}
             {% if user.id == review.user.id or request.user.is_superuser %}

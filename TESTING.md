@@ -99,7 +99,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a shopper, I want to enter my payment information so that I can quickly check out and pay for my items.
 -   As a shopper, I want to view an order confirmation after checkout so that I can verify that I haven't made any mistakes when entering my information.
 -   As a shopper, I want to receive an order confirmation after checkout so that I can keep a proof of purchase.
--   As a shopper, I want to read item reviews from verified shoppers so that I can see how other shoppers rate the products.
+-   As a shopper, I want to read item reviews from registered shoppers so that I can see how other shoppers rate the products.
 -   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics or events.
 -   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
 -   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.

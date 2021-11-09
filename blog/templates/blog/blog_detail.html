@@ -106,8 +106,8 @@
             </div>
             {% if not user.is_authenticated %}
             <div class="col-8">
-                <p class="ms-lg-3 lead">Please <a class="link-secondary" href="{% url 'account_login' %}">login</a> or
-                    <a class="link-secondary" href="{% url 'account_signup' %}">register</a> to add a comment.</p>
+                <p class="ms-lg-3 lead">Please <a class="text-info" href="{% url 'account_login' %}">log in</a> or
+                    <a class="text-info" href="{% url 'account_signup' %}">register</a> to add a comment.</p>
             </div>
             {% endif %}
         </div>
