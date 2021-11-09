@@ -73,7 +73,7 @@ Lighthouse reports were run for all pages of the website. A significant improvem
 
 The user stories below have all been tested through two test cycles. The full test results for all user stories are detailed in the attached [testing report](testing-files/urban-attiva-user-story-testing.pdf).
 
-### Website Owner
+#### Website Owner
 
 -   As the website owner, I want to ensure the branding is clear and consistent across the website so that the user has a consistent experience.
 -   As the website owner, I want to ensure the website is search engine optimised so that users can easily find our website.
@@ -82,12 +82,12 @@ The user stories below have all been tested through two test cycles. The full te
 -   As the website owner, I want to ensure the website is compatible with different browsers so that users have a consistent experience no matter which browser they use.
 -   As the website owner, I want to ensure the website is secure so that only authorised users can access store management functionality.
 
-### Shoppers
+#### Shoppers
 
 -   As a shopper, I want to understand what the store sells and to be able to navigate the website easily so that I can so that I can decide if I want to purchase any products.
 -   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
 -   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
--   As a shopper, I want to see products matching that I have searched for and the number of results returned so that I can see whether the product I searched for is available.
+-   As a shopper, I want to see products matching what I have searched for and the number of results returned so that I can see whether the product I searched for is available.
 -   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
 -   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
 -   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
@@ -104,7 +104,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
 -   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.
 
-### Registered Users
+#### Registered Users
 
 -   As a registered user, I want to receive a confirmation email after registering so that I can verify that my account was successfully registered.
 -   As a registered user, I want to have a personal user profile so that I can view my account information, order history and order confirmations.
@@ -113,7 +113,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a registered user, I want to recover my password if I have forgotten it so that I can reaccess my account.
 -   As a registered user, I want to leave comments on blog posts so that I can express my views on the blog content.
 
-### Administrator
+#### Administrator
 
 -   As an administrator, I want to add a blog post so that I can publish blog posts for users to read.
 -   As an administrator, I want to add a product so that I can add new items to the store.
@@ -121,6 +121,8 @@ The user stories below have all been tested through two test cycles. The full te
 -   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
 -   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
 -   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
+-   As an administrator, I want to delete blog posts so that I can remove old blog entries.
+-   As an administrator, I want to delete blog post comments so that I can remove inappropriate comments.
 
 ---
 

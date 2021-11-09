@@ -91,6 +91,8 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
 -   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
 -   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
+-   As an administrator, I want to delete blog posts so that I can remove old blog entries.
+-   As an administrator, I want to delete blog post comments so that I can remove inappropriate comments.
 
 ### Structure
 
