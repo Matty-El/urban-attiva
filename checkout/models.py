@@ -86,6 +86,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Order line item model """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
