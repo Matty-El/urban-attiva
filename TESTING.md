@@ -45,7 +45,7 @@ Only minor errors were found and all were resolved.
 
 ## Browser Compatibility
 
-Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome browsers.
+Browser compatibility was good across Safari, Opera, Edge, Firefox, and Chrome browsers.
 
 [Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.pdf)
 
@@ -53,7 +53,7 @@ Browser compatibility was good across Safari, Opera, Edge, Firefox and Chrome br
 
 ## Responsiveness
 
-Resonsiveness was good across all device sizes. Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+Responsiveness was good across all device sizes. Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 
 The site has been tested on the following devices:
 
@@ -90,9 +90,9 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
 -   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
 -   As a shopper, I want to see products matching what I have searched for and the number of results returned so that I can see whether the product I searched for is available.
--   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
--   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
--   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
+-   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating, or category across parent categories e.g. 'nutrition' or 'cycling'.
+-   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name, or rating.
+-   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating, or category from the full list of products.
 -   As a shopper, I want to view individual product details so that I can see the price, description, product rating, product image and available sizes of products.
 -   As a shopper, I want to be able to select the quantity and size of product so that I can purchase the product quantity I want and in the correct size.
 -   As a shopper, I want to view products that have been added to my shopping bag so that I can see the items I have selected and the total cost of the items in my shopping cart.
@@ -102,7 +102,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a shopper, I want to view an order confirmation after checkout so that I can verify that I haven't made any mistakes when entering my information.
 -   As a shopper, I want to receive an order confirmation after checkout so that I can keep a proof of purchase.
 -   As a shopper, I want to read item reviews from registered shoppers so that I can see how other shoppers rate the products.
--   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics or events.
+-   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics, or events.
 -   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
 -   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.
 
@@ -112,7 +112,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As a registered user, I want to have a personal user profile so that I can view my account information, order history and order confirmations.
 -   As a registered user, I want to log in and log out once I have registered so that I can access my personal account information.
 -   As a registered user, I want to add a product review so that I can provide a review of the product that I have purchased.
--   As a registered user, I want to recover my password if I have forgotten it so that I can reaccess my account.
+-   As a registered user, I want to recover my password if I have forgotten it so that I can gain access to my account.
 -   As a registered user, I want to leave comments on blog posts so that I can express my views on the blog content.
 
 #### Administrator
@@ -122,7 +122,7 @@ The user stories below have all been tested through two test cycles. The full te
 -   As an administrator, I want to delete a product so that I can remove items that are no longer sold.
 -   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
 -   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
--   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
+-   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images, and other product attributes.
 -   As an administrator, I want to delete blog posts so that I can remove old blog entries.
 -   As an administrator, I want to delete blog post comments so that I can remove inappropriate comments.
 
@@ -138,30 +138,30 @@ The user stories below have all been tested through two test cycles. The full te
 Product management form:
 
 -   SKU - optional field restricted to 7 characters.
--   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 -   Price - required field with a maximum of 4 digits
 -   Discount % - this field is required when the on_sale flag is selected. Users are prevented from submitting the product form until a discount percentage has been added and an error is displayed below the field stating the discount percentage must be added for a product that is on sale.
 -   Image URL - django model URLField to ensure only a valid URL is added.
 
 Blog management form:
 
--   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 -   Image URL - django model URLField to ensure only a valid URL is added.
 
 Product review form:
 
 -   Rating - required field with dropdown select option
--   Review comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the review form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Review comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the review form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 
 Blog comment form:
 
--   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 
 ---
 

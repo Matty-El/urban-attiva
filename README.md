@@ -6,7 +6,7 @@
 
 This website has been developed as the first iteration of an eCommerce store for Urban Attiva, a sports equipment retailer. The website provides shoppers with the ability to browse and securely purchase products, add product reviews and to read the company blog to find out what is new with Urban Attiva and to leave comments on blog articles.
 
-The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development, Backend Development and Full STack Frameworks modules.
+The site was developed using knowledge gained from the Code Institute HTML Essentials, CSS Essentials, User Centric Frontend Development, Interactive Frontend Development, Backend Development and Full Stack Frameworks modules.
 
 View the live website [here.](https://urban-attiva.herokuapp.com/)
 
@@ -30,7 +30,7 @@ View the live website [here.](https://urban-attiva.herokuapp.com/)
 The key business goals for developing the website are:
 
 -   To sell both own brand and established brand sports products to generate revenue for the company.
--   To promote the Urban Attiva brand through the website, blog and social media to establish brand recognition, reputation and loyalty.
+-   To promote the Urban Attiva brand through the website, blog, and social media to establish brand recognition, reputation, and loyalty.
 
 The key user goals for the website are:
 
@@ -58,9 +58,9 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As a shopper, I want to be able to access the website on all types of device so that I can use the device that is most convenient to me at the time.
 -   As a shopper, I want to search products by name or description so that I can find specific products that I'd like to purchase.
 -   As a shopper, I want to see products matching what I have searched for and the number of results returned so that I can see whether the product I searched for is available.
--   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating or category across parent categories e.g. 'nutrition' or 'cycling'.
--   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name or rating.
--   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating or category from the full list of products.
+-   As a shopper, I want to view and sort multiple categories of products simultaneously so that I can find the products by price, name, rating, or category across parent categories e.g. 'nutrition' or 'cycling'.
+-   As a shopper, I want to view and sort specific categories of product so that I can find products by specific category e.g. 'running shoes' and sort by price, name, or rating.
+-   As a shopper, I want to view and sort the full list of available products so that I can find products by price, name, rating, or category from the full list of products.
 -   As a shopper, I want to view individual product details so that I can see the price, description, product rating, product image and available sizes of products.
 -   As a shopper, I want to be able to select the quantity and size of product so that I can purchase the product quantity I want and in the correct size.
 -   As a shopper, I want to view products that have been added to my shopping bag so that I can see the items I have selected and the total cost of the items in my shopping cart.
@@ -70,7 +70,7 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As a shopper, I want to view an order confirmation after checkout so that I can verify that I haven't made any mistakes when entering my information.
 -   As a shopper, I want to receive an order confirmation after checkout so that I can keep a proof of purchase.
 -   As a shopper, I want to read item reviews from registered shoppers so that I can see how other shoppers rate the products.
--   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics or events.
+-   As a shopper, I want to see updates in relation to the company or interesting material so that I can find out more about the company, related topics, or events.
 -   As a shopper, I want to search blog posts so that I can find blog posts of interest to me.
 -   As a shopper, I want to register for an account so that I can have a personal account and be able to view my profile.
 
@@ -80,7 +80,7 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As a registered user, I want to have a personal user profile so that I can view my account information, order history and order confirmations.
 -   As a registered user, I want to log in and log out once I have registered so that I can access my personal account information.
 -   As a registered user, I want to add a product review so that I can provide a review of the product that I have purchased.
--   As a registered user, I want to recover my password if I have forgotten it so that I can reaccess my account.
+-   As a registered user, I want to recover my password if I have forgotten it so that I can gain access to my account.
 -   As a registered user, I want to leave comments on blog posts so that I can express my views on the blog content.
 
 #### Administrator
@@ -90,7 +90,7 @@ The requirements for the Urban Attiva website are captured as user stories.
 -   As an administrator, I want to delete a product so that I can remove items that are no longer sold.
 -   As an administrator, I want to delete reviews so that I can remove inappropriate reviews.
 -   As an administrator, I want to edit / update a blog post so that I can amend the content of blog posts.
--   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images and other product attributes.
+-   As an administrator, I want to edit / update a product so that I can change product prices, descriptions, images, and other product attributes.
 -   As an administrator, I want to delete blog posts so that I can remove old blog entries.
 -   As an administrator, I want to delete blog post comments so that I can remove inappropriate comments.
 
@@ -100,8 +100,8 @@ The Urban Attiva website has been designed to provide be intuitive and easy to n
 
 The website has the following key elements:
 
--   A simple landing page design with a main navigation menu with links for the home page, shop, blog and user account. 
--   The home page has a hero image with header and a prominant shop now button, images with links to the product categories, and a footer with links to further information and social media. A dropdown search field allows users to search for  products by entering their own search criteria.
+-   A simple landing page design with a main navigation menu with links for the home page, shop, blog, and user account. 
+-   The home page has a hero image with header and a prominent shop now button, images with links to the product categories, and a footer with links to further information and social media. A dropdown search field allows users to search for  products by entering their own search criteria.
 -   The shop dropdown menu provides access to the main product categories and the product pages enable sorting within categories with a link through to individual product details.
 -   Shopping cart and checkout functionality.
 -   A blog page listing recent blog posts.
@@ -109,7 +109,7 @@ The website has the following key elements:
 
 #### Information Architecture
 
-The Urban Attiva database has nine tables as detaile din the attached data model diagram below.
+The Urban Attiva database has nine tables as detailed in the attached data model diagram below.
 
 Data Model:
 
@@ -170,7 +170,7 @@ The website has been developed incorporating the following defensive design aspe
 
 -   All areas of the website where users can delete data incorporate modals to prompt the user if they really want to permanently delete the data.
 
-#### User Authentication and Priveleges
+#### User Authentication and Privileges
 
 -   Non-registered (anonymous) users can browse the website, purchase products, read the blog and see customer reviews and blog comments.
 -   Registered users can view and update their account profile and view their order history as well as being able to add product reviews and blog comments.
@@ -178,26 +178,26 @@ The website has been developed incorporating the following defensive design aspe
 
 #### Data Input Validation
 
-Django-allauth is utilised for all authentication, registration and account management functionality. This functionality incorporates data validation on these forms.
+Django-allauth is utilised for all authentication, registration, and account management functionality. This functionality incorporates data validation on these forms.
 
 Data validation on custom forms is incorporated on all data input fields with the following validation applied to:
 
 Product management form:
 
 -   SKU - optional field restricted to 7 characters.
--   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Name - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Description - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 -   Price - required field with a maximum of 4 digits
 -   Discount % - this field is required when the on_sale flag is selected. Users are prevented from submitting the product form until a discount percentage has been added and an error is displayed below the field stating the discount percentage must be added for a product that is on sale.
 -   Image URL - django model URLField to ensure only a valid URL is added.
 
 Blog management form:
 
--   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Title - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Intro - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content one - users are prevented from adding just blank spaces and an error message informs the user that valid text is required and the field must not be blank. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content two - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Content three - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the product name or description fields. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 -   Image URL - django model URLField to ensure only a valid URL is added.
 
 Product review form:
@@ -207,8 +207,8 @@ Product review form:
 
 Blog comment form:
 
--   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
--   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers and common punctuation characters.
+-   Comment title - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
+-   Comment - users are prevented from adding just blank spaces and an error message toast informs the user that they should not enter just blank spaces in the comment form. A regex pattern has been applied to the comments field to restrict the users to entering only text, numbers, and common punctuation characters.
 
 ---
 
@@ -220,7 +220,7 @@ Blog comment form:
 
 -   Urban Attiva logo with a link to the home page.
 -   A navigation menu that allows the user to navigate the website by clicking the navigation links. The navigation menu collapses to a burger icon with an expanding sidenav menu on smaller devices.
--   A search button in the navbar which when clicked drops down to reveal a field to enter search criteria. Once the search term has been entered the user can click on the serach button and products with details matching the search term will be displayed.
+-   A search button in the navbar which when clicked drops down to reveal a field to enter search criteria. Once the search term has been entered the user can click on the search button and products with details matching the search term will be displayed.
 -   Section one of the home page includes a hero image, header text and a shop now button.
 
 ![Urban Attiva](readme-files/urban-attiva-home-page-hero.png)
@@ -230,7 +230,7 @@ Blog comment form:
 ![Urban Attiva](readme-files/urban-attiva-home-page-categories.png)
 
 -   Section three of the home page includes some customer reviews.
--   Section four of the home page has some information highlighting free shipping thresholds, secure payments and registered user discounts.
+-   Section four of the home page has some information highlighting free shipping thresholds, secure payments, and registered user discounts.
 
 ![Urban Attiva](readme-files/urban-attiva-testimonials-footer.png)
 
@@ -260,7 +260,7 @@ Blog comment form:
 #### Shop
 
 -   The shop navigation menu enables users to link to the product page with products displayed and filtered by core product categories and sub-categories.
--   The product page provides the shopper with the ability to sort the product listing by price, rating, name or category.
+-   The product page provides the shopper with the ability to sort the product listing by price, rating, name, or category.
 
 ![Urban Attiva](readme-files/urban-attiva-products-page.png)
 
@@ -286,14 +286,14 @@ Blog comment form:
 #### Checkout
 
 -   The checkout page provides a form for the user to enter their details and credit card information with an order summary detailing the products in the order.
--   When the user selects the complete order button the order is processed securely via a Stripe integration and the customer is directed to the ckeckout success page with details of the order they have just placed. An email confirmation is also sent to the user.
+-   When the user selects the complete order button the order is processed securely via a Stripe integration and the customer is directed to the checkout success page with details of the order they have just placed. An email confirmation is also sent to the user.
 
 ![Urban Attiva](readme-files/urban-attiva-checkout.png)
 
 #### Blog
 
 -   The blog page lists recent Urban Attiva blog articles with a brief introduction displayed. Users can search the blog page to display articles containing their search criteria.
--   Clicking on the read more button directs the user to the blog detail page where the full blog article is diaplayed.
+-   Clicking on the read more button directs the user to the blog detail page where the full blog article is displayed.
 -   Registered users can leave comments which are displayed below the blog article.
 
 ![Urban Attiva](readme-files/urban-attiva-blog.png)
@@ -301,20 +301,20 @@ Blog comment form:
 #### Product Management
 
 -   Admin users have a product management menu option under their account menu when logged into the site. This allows the admin user to add new products to the site via the product management page.
--   Admin users can edit or delete existing products by selecting the relevant links that are displyed on the product cards and products detail pages when the user is logged in.
+-   Admin users can edit or delete existing products by selecting the relevant links that are displayed on the product cards and products detail pages when the user is logged in.
 
 ![Urban Attiva](readme-files/urban-attiva-product-management.png)
 
 #### Blog Management
 
 -   Admin users have a blog management menu option under their account menu when logged into the site. This allows the admin user to add new blog posts to the site via the blog management page.
--   Admin users can edit or delete existing blog posts by selecting the relevant links that are displyed on the blog detail page when the user is logged in.
+-   Admin users can edit or delete existing blog posts by selecting the relevant links that are displayed on the blog detail page when the user is logged in.
 
 ![Urban Attiva](readme-files/urban-attiva-blog-management.png)
 
 #### Footer Section - all pages
 
--   This section has information links for terms and conditions, returns policy, FAQs, cookies, log in and register, the registerd company address, social media links and copyright wording.
+-   This section has information links for terms and conditions, returns policy, FAQs, cookies, log in and register, the registered company address, social media links and copyright wording.
 
 _Note: Some of the social media links currently link to the social media websites and not Urban Attiva specific pages_
 
@@ -340,7 +340,7 @@ The following technologies have been used to in the development of the Urban Att
 
 ### Frameworks - Libraries - Other
 
--   [Django](https://www.djangoproject.com) - web framework used to develop a secure, scalable and maintainable website for Urban Attiva
+-   [Django](https://www.djangoproject.com) - web framework used to develop a secure, scalable, and maintainable website for Urban Attiva
 -   [Bootstrap](https://getbootstrap.com) - utilised for the front-end design framework.
 -   [SQLite3](https://www.sqlite.org) - used as the development database for the project.
 -   [PostgresSQL](https://www.postgresql.org) - used for the production database.
@@ -349,12 +349,12 @@ The following technologies have been used to in the development of the Urban Att
 -   [Google Fonts](https://fonts.google.com/) - used to source the font used throughout the website.
 -   [Font Awesome](https://fontawesome.com/) - used to source icons for use throughout website.
 -   [Balsamiq](https://balsamiq.com/) - utilised for the development of the website wireframes.
--   [Amazon Web Sevices S3](https://aws.amazon.com) - used to host the live static and media files.
+-   [Amazon Web Services S3](https://aws.amazon.com) - used to host the live static and media files.
 -   [Favicon.io](https://favicon.io) - used to create the favicon.
 
 ### Testing Tools Used
 
--   [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used to edit changes prior to implementing the code changes, to diagnose problems and for performance, accessibility, best practice and search engine optimisation testing.
+-   [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used to edit changes prior to implementing the code changes, to diagnose problems and for performance, accessibility, best practice, and search engine optimisation testing.
 -   [Autoprefixer](https://autoprefixer.github.io/) - Autoprefixer is used to parse the CSS and to add vendor prefixes to CSS rules. 
 -   [Markup validation service](https://validator.w3.org/) - for the validation of HTML5 code.
 -   [CSS validation service](https://jigsaw.w3.org/css-validator/) - for the validation of the CSS3 code.
@@ -438,7 +438,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 
 18. Navigate to the Deploy tab.
 
-19. Add, commit and push your changes in your CLI and to deploy to Heroku:
+19. Add, commit, and push your changes in your CLI and to deploy to Heroku:
 
 -   git push heroku main
 
@@ -447,14 +447,14 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 23. Generate a new django secret key and enter this in your app settings config vars.
 24. Go to settings.py and change the SECRET_KEY to be sourced from os.evniron.get('SECRET_KEY', '')
 25. Set DEBUG = 'DEVELOPMENT' in os.environ
-26. Add, commit and push your changes.
+26. Add, commit, and push your changes.
 27. Your app can now be opened via the Heroku dashboard by clicking the 'Open app' button. The app is now deployed without static files.
 
 ### Amazon Web Services S3 Bucket
 
-1.  Create Amazon Web Services account if you don't already have one one.
+1.  Create Amazon Web Services account if you don't already have an account.
 2.  Navigate to AWS Management Console search for S3 and create a new bucket ensuring you uncheck 'Block all public access'.
-3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website' and enter index.html and error.html in the respecitive document fields.
+3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website' and enter index.html and error.html in the respective document fields.
 4.  On the permissions tab under CORS configuration enter:
 [
   {
@@ -480,7 +480,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 -   To enable access to all resources in the bucket add /* to the end of the resource key after your app name
 -   Click save
 
-6. Navigate to the Access Control List tab and slect the List objects permission for everyone in the Public access section. Click save after confirming you understand the implication of providing access to everyone.
+6. Navigate to the Access Control List tab and select the List objects permission for everyone in the Public access section. Click save after confirming you understand the implication of providing access to everyone.
 
 
 ### Amazon Web Services Identity and Access Management (IAM)
@@ -497,7 +497,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 -   Select the JSON tab
 -   Select import managed policy
 -   Search for S3 and import the S3 Full Access policy
--   Edit the JSON "Resource" and paste in the bucket ARN from the bucket policy tab as accessessed previously. Paste in twice as a list and /* after the second list item.
+-   Edit the JSON "Resource" and paste in the bucket ARN from the bucket policy tab accessed previously. Paste in twice as a list and /* after the second list item.
 -   Select the next step and Review policy
 -   Name the policy and add a description
 -   Click Create policy
@@ -566,7 +566,7 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-7.  Add, commit and push the changes which will trigger an automatic deployment to Heroku and you should see that the static files have been collected. Go to your AWS account and find the S3 bucket and there will be a static folder containing the static files.
+7.  Add, commit, and push the changes which will trigger an automatic deployment to Heroku and you should see that the static files have been collected. Go to your AWS account and find the S3 bucket and there will be a static folder containing the static files.
 8.  In your settings.py file add the following above your Bucket config settings.
 
     #  Cache control
@@ -600,7 +600,7 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-9.  Add, commit and push these final changes.
+9.  Add, commit, and push these final changes.
 
 ### Add Media files to S3
 
@@ -620,7 +620,7 @@ if 'USE_AWS' in os.environ:
 -   STRIPE_PUBLIC_KEY
 -   STRIPE_SECRET_KEY
 
-2.  Create a new Stripe webhook endpoint in webhooks in Stripe devloper menu - click add endpoint and add the heroku app URL followed by checkout/WH and select the relevant payment events and add endpoint.
+2.  Create a new Stripe webhook endpoint in webhooks in Stripe developer menu - click add endpoint and add the heroku app URL followed by checkout/WH and select the relevant payment events and add endpoint.
 3.  Get the webhook signing secret for Stripe dashboard and go to Heroku settings and input the following key and the webhook signing secret.
 
 -   STRIPE_WH_SECRET
@@ -651,16 +651,6 @@ if 'USE_AWS' in os.environ:
     python3 manage.py createsuperuser
 
 11. Run the app by typing python3 manage.py runserver and press enter.
-
----
-
-## Challenges
-
-** THIS SECTION IS INCOMPLETE **
-
-1.  
-
-2.  
 
 ---
 
