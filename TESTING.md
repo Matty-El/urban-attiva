@@ -47,7 +47,7 @@ Only minor errors were found and all were resolved.
 
 Browser compatibility was good across Safari, Opera, Edge, Firefox, and Chrome browsers.
 
-[Browser compatibility](testing-files/urban-attiva-browser-compatibility-testing.pdf)
+[Browser compatibility](testing-files/urban-attiva-browser-compatibility.pdf)
 
 ---
 
@@ -55,11 +55,13 @@ Browser compatibility was good across Safari, Opera, Edge, Firefox, and Chrome b
 
 Responsiveness was good across all device sizes. Responsiveness of the site has been tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 
-The site has been tested on the following devices:
+The site has been tested on the following devices on Responsive Design Checker although full responsiveness testing could not be carried out using this site due to csrf token issues preventing access to certain pages.
 
 -   Desktop: 1600x900, 1920x1200.
 -   Notebook: 1366x768 
 -   Mobile and Tablet: Galaxy S5/S6/S7, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad, iPad Pro, Kindle Fire and Nexus 9
+
+In addition to the above the app has also been tested on actual iPhone X, iPhone SE, 11" MacBook Air, 13" MacBook Pro, iPad touch, and iPad Pro devices.
 
 [Responsiveness testing](testing-files/urban-attiva-responsiveness-testing.pdf)
 
@@ -130,8 +132,6 @@ The user stories below have all been tested through two test cycles. The full te
 
 ## Defensive Design Testing
 
- ** INCOMPLETE AS RAN OUT OF TIME TO FULLY DOCUMENT **
-
 1. Tested in user story testing.
 2. Validation has been included on all form fields and tested as listed below:
 
@@ -171,11 +171,15 @@ Blog comment form:
 
 1.  Defect Ref DEF001: It was discovered during testing that users could delete the quantity of a product form the quantity field prior to adding to the cart which resulted in a 500 error. Solved by adding 'or' 1 in the add to cart view quantity variable. This is not an ideal solution but the user can then adjust the quantity in their cart prior to submitting the order. Would need a more satisfactory solution if developed further.
 2.  Defect Ref DEF002: It was noticed during testing that the validation was not working on the cart quantity field allowing the user to type negative, decimals or delete the quantity value resulting in a 500 error. Implemented a HTML5 constraint and added (Max 50) to the Quantity label <a href="https://stackoverflow.com/questions/30948387/number-only-input-box-with-range-restriction/30948674"></a> as with Defect Ref DEF001, this is not the most elegant solution but avoids 500 errors for the user.
-3.  
+3.  Defect Ref DEF003: Defect fixed to ensure 'No rating' is displayed when no ratings have been submitted by users.
+4.  Defect Ref DEF004: Register and log in link wording changed to ensure consistency across the site.
+5.  Defect Ref DEF005: Update wording and link text colours for log in and register links in product review and blog comments sections.
+6.  Defect Ref DEF007: Modals for deleting product, product reviews, blog entries and blog comments were not appearing consistently centred on screen. Changed from absolute to fixed positioning and issue resolved.
 
 ### Unresolved
 
-- No significant defects were left unresolved.
+1.  Defect Ref DEF006: Sorting by rating is failing as products with no rating appear at the top when filter by rating high to low.
+2.  Defect Ref DEF008: The add product review and blog comments buttons are not rendering correctly on Safari browser. Also affecting other buttons - looks like a CSS issue but only affects Safari.
 
 ---
 
