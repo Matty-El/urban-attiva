@@ -171,7 +171,7 @@
         {% for review in product.reviews.all %}
         <div class="product-review shadow rounded p-4">
             <p class="text-muted">
-                <i class="fas fa-user text-muted"></i> Posted {{ blog_post.date|date:"d-m-Y" }} by
+                <i class="fas fa-user text-muted"></i> Posted {{ review.date|date:"d-m-Y" }} by
                 {{ review.user}}
             </p>
             {% if product.rating %}

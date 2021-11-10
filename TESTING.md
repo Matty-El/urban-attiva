@@ -178,7 +178,7 @@ Blog comment form:
 
 ### Unresolved
 
-1.  Defect Ref DEF006: Sorting by rating is failing as products with no rating appear at the top when filter by rating high to low.
+1.  Defect Ref DEF006: Sorting by rating is failing as products with no rating appear at the top when filter by rating high to low - needs to be resolved.
 2.  Defect Ref DEF008: The add product review and blog comments buttons are not rendering correctly on Safari browser. Also affecting other buttons - looks like a CSS issue but only affects Safari.
 
 ---
