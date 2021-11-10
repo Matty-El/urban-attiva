@@ -109,11 +109,11 @@ The website has the following key elements:
 
 #### Information Architecture
 
+The Urban Attiva database has nine tables as detaile din the attached data model diagram below.
+
 Data Model:
 
-The Urban Attiva database has ** INCOMPLETE AS RAN OUT OF TIME TO FULLY DOCUMENT **
-
-![Urban Attiva Data Model](readme-files/velo-route-data-model.png)
+![Urban Attiva Data Model](readme-files/urban-attiva-data-model.png)
 
 ### Skeleton
 
@@ -450,31 +450,13 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 26. Add, commit and push your changes.
 27. Your app can now be opened via the Heroku dashboard by clicking the 'Open app' button. The app is now deployed without static files.
 
+### Amazon Web Services S3 Bucket
 
-** TO MOVE **
-
-18. Set the environment variables in your Heroku app settings tab - select Reveal Config Vars:
-
-Add the keys and the values that have been included in your django app settings file:
-
-    - DISABLE_COLLECT_STATIC = 1
-    - EMAIL_HOST_PASS
-    - EMAIL_HOST_USER
-    - SECRET_KEY
-    - STRIPE_PRICE_ID
-    - STRIPE_PUBLIC_KEY
-    - STRIPE_SECRET_KEY
-    - STRIPE_WH_SECRET
-    - USE_AWS = True
-
-** TO MOVE **
-
-### Amazon Web Services S3 Bucket 
 1.  Create Amazon Web Services account if you don't already have one one.
 2.  Navigate to AWS Management Console search for S3 and create a new bucket ensuring you uncheck 'Block all public access'.
-3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website and enter index.html and error.html in the respecitve document fields.
+3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website' and enter index.html and error.html in the respecitive document fields.
 4.  On the permissions tab under CORS configuration enter:
--   [
+[
   {
       "AllowedHeaders": [
           "Authorization"
@@ -493,78 +475,182 @@ Add the keys and the values that have been included in your django app settings 
 -   Select Type of Policy - S3 bucket policy
 -   For Principle enter *
 -   For Action select get object
--   Copy the ARN from teh bucket policy tab and paste into teh Amazon Resource Name field
+-   Copy the ARN from the bucket policy tab and paste into the Amazon Resource Name field
 -   Click Generate Policy and copy the policy into the Bucket policy editor
 -   To enable access to all resources in the bucket add /* to the end of the resource key after your app name
 -   Click save
+
 6. Navigate to the Access Control List tab and slect the List objects permission for everyone in the Public access section. Click save after confirming you understand the implication of providing access to everyone.
 
 
-### Amazon Web Services Identity and Access Management
-1. From the IAM dashboard within AWS, select User Groups:
->* Create a new group
->* Click through and create group
-2. Select Policies:
->* Create policy
->* Under JSON tab, click Import managed policy
->* Choose AmazongS3FullAccess
->* Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
->* Click next step and go to Review policy
->* Give the policy a name and description of your choice
->* Create policy
-3. Go back to User Groups and choose the group created earlier
->* Under Permissions > Add permissions, choose Attach Policies and select the one just created
->* Add permissions
-4. Under Users::
->* Choose a user name
->* Selecet programmatic access as the access type
->* Click through next
->* Add the user to the group just created
->* Click next and creat user
-5. Download the ``.csv` containing the access key and secret access key.
->* The `.csv` file is onlu available once and cannot be downloaded again
+### Amazon Web Services Identity and Access Management (IAM)
 
-### Connecting Heroku to AWS S3
-1. Install boto3 and django-storages and freeze your requirements
-2. Add the values from the `.csv` you downloaded to the Heroku configvars
-3. Delete 'DISABLE_COLLECT_STATIC = 1' from the config vars
-4. Create a custom storage python file in your development environment with the following
+1. Navigate to the AWS services menu and open IAM
 
->* from django.conf import settings
->* from storages.backends.s3boto3 import S3Boto3Storage
+-   Select User groups
+-   Create a new group - manage-`app-name`
+-   Click through the screens and click Create group
+
+2. Select Policies
+
+-   Click Create policy
+-   Select the JSON tab
+-   Select import managed policy
+-   Search for S3 and import the S3 Full Access policy
+-   Edit the JSON "Resource" and paste in the bucket ARN from the bucket policy tab as accessessed previously. Paste in twice as a list and /* after the second list item.
+-   Select the next step and Review policy
+-   Name the policy and add a description
+-   Click Create policy
+
+3. Navigate back to User groups and select the user group that you created earlier
+
+-   Select the permissions tab and select Attach policy and search for the policy that has just been created
+-   Select the policy and click Attach policy
+
+4. Navigate to Users
+
+-   Click Add user
+-   Type the user name
+-   Select Programmatic access for the Access type
+-   Click next and add the user to the group that was created earlier
+-   Click through and finally click Create user
+
+5. Download the csv containing the access key and secret access key. Ensure this is saved securely as you will not be able to download this again.
+
+### Connect django to AWS S3
+
+1. Install boto3 and django-storages and freeze the requirements
+
+-   pip3 install boto3
+-   pip3 install django-storages
+-   add storages to the installed apps in your settings.py file
+
+2. Add the following settings to your settings.py file.
+
+    if 'USE_AWS' in os.environ:
+        # Bucket config
+        AWS_STORAGE_BUCKET_NAME = `your-bucket-name`
+        AWS_S3_REGION_NAME = `your S3 region name`
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        
+3.  Go to Heroku and add AWS keys to the Heroku Config Vars in settings - from the csv file downloaded from AWS and add USE_AWS and set to True.
+4.  Remove the 'DISABLE_COLLECT_STATIC' variable from the Config Vars
+5.  Back in your settings.py file add the following to the Bucket config
+
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 
->* class StaticStorage(S3Boto3Storage):
+5.  Create a custom_storages.py file in your main app folder and add the following.
+
+    from django.conf import settings
+    from storages.backends.s3boto3 import S3Boto3Storage
+
+
+    class StaticStorage(S3Boto3Storage):
     location = settings.STATICFILES_LOCATION
 
 
->* class MediaStorage(S3Boto3Storage):
+    class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
 
+6.  In settings.py add the following under the Bucket config above.
 
-5. Deploy the app
-6. In the S3 bucket, set up a new media folder at the same level as the tatic folder and upload any required files. Both files need to be publicly accessible.
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
-### Make a clone on GitPod
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-1. Select the repository you wish to clone in GitHub
+7.  Add, commit and push the changes which will trigger an automatic deployment to Heroku and you should see that the static files have been collected. Go to your AWS account and find the S3 bucket and there will be a static folder containing the static files.
+8.  In your settings.py file add the following above your Bucket config settings.
+
+    #  Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+The full AWS settings should now be as follows.
+
+if 'USE_AWS' in os.environ:
+    #  Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    # Bucket config
+    AWS_STORAGE_BUCKET_NAME = 'urban-attiva'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+9.  Add, commit and push these final changes.
+
+### Add Media files to S3
+
+1.  Go to S3 and create a new folder called Media. Upload your media files.
+2.  Click next and under Mange public permissions select Grant public read access to these object(s).
+3.  Click through and click Upload.
+
+### Confirm Email Address for Superuser
+
+1.  Log in to django admin and navigate to Email addresses
+2.  Locate the email address and mark as Verified and Primary
+
+### Add Stripe Keys to Heroku Config Vars
+
+1.  Go to Heroku settings and input the following keys and their related values (from Stripe developers are on your Stripe account).
+
+-   STRIPE_PUBLIC_KEY
+-   STRIPE_SECRET_KEY
+
+2.  Create a new Stripe webhook endpoint in webhooks in Stripe devloper menu - click add endpoint and add the heroku app URL followed by checkout/WH and select the relevant payment events and add endpoint.
+3.  Get the webhook signing secret for Stripe dashboard and go to Heroku settings and input the following key and the webhook signing secret.
+
+-   STRIPE_WH_SECRET
+
+4.  Send a test webhook from Stripe to ensure the webhook listener is working.
+
+### Cloning This Repository on GitPod
+
+1. Select the repository in Gtthub
 2. Click on the code dropdown button
 3. Copy the https link to your clipboard
 4. Open your gitpod workspace
-5. In the terminal type "git clone" and paste the copied link
-6. Hit enter to create the clone
-7. To install the required packages type pip install -r requirements.txt into the command line
-8. Set up an env.py and add the env.py to your gitignore file. Include:
->* import os
->* os.environ.setdefault("STRIPE_SECRET_KEY", "`YOUR STRIPE KEY`")
->* os.environ.setdefault("STRIPE_PUBLIC_KEY", "`YOUR STRIPE KEY`")
->* os.environ.setdefault("STRIPE_WH_SECRET", "`YOUR STRIPE KEY`")
-9. add the following to your settings.py 
->* if os.path.exists("env.py"): import env
-10. Apply migrations
-11. Create a super user
-12. To view what the website in a browser from here type "python3 manage.py runserver" into the console and hit enter or replace "manage.py" with which ever you have named the app
-13. A pop-up will appear stating "A service is available on Port 8000" select Open Browser
+5. In the CLI type "git clone" and paste the copied link - press enter
+7. Install the required packages - pip3 install -r requirements.txt - press enter
+8. In the Gitpod settings for the workspace enter:
+    'DEVELOPMENT', 'True'
+    'SECRET_KEY', 'your secret key'
+    'STRIPE_PUBLIC_KEY', 'your stripe public key'
+    'STRIPE_SECRET_KEY', 'your stripe secret key'
+    'STRIPE_WH_SECRET', 'your stripe webhook secret'
+9. Migrate the database models
+
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+
+10. Create a super user and verify the email address
+
+    python3 manage.py createsuperuser
+
+11. Run the app by typing python3 manage.py runserver and press enter.
 
 ---
 
