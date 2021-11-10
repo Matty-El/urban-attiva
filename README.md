@@ -636,13 +636,13 @@ The full AWS settings should now be as follows.
 5. In the CLI type "git clone" and paste the copied link - press enter
 7. Install the required packages - pip3 install -r requirements.txt - press enter
 8. In the Gitpod settings for the workspace enter:
-
-    'DEVELOPMENT', 'True'
-    'SECRET_KEY', 'your secret key'
-    'STRIPE_PUBLIC_KEY', 'your stripe public key'
-    'STRIPE_SECRET_KEY', 'your stripe secret key'
-    'STRIPE_WH_SECRET', 'your stripe webhook secret'
-
+```
+        'DEVELOPMENT', 'True'
+        'SECRET_KEY', 'your secret key'
+        'STRIPE_PUBLIC_KEY', 'your stripe public key'
+        'STRIPE_SECRET_KEY', 'your stripe secret key'
+        'STRIPE_WH_SECRET', 'your stripe webhook secret'
+```
 9. Migrate the database models
 
     python3 manage.py makemigrations
