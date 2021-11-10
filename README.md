@@ -121,8 +121,8 @@ Data Model:
 
 The wireframes were developed using [Balsamiq](https://balsamiq.com/).
 
--   Small device [wireframes](design/urban-attiva-small-device.png).
--   Large device [wireframes](design/urban-attiva-large-device.png).
+-   Small device [wireframes](readme-files/urban-attiva-small-device.png).
+-   Large device [wireframes](readme-files/urban-attiva-large-device.png).
 
 The following changes were made after the initial design.
 
