@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* --------------- General -----------------*/
 
 .text-uppercase {
@@ -28,7 +35,8 @@
   top: 30%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
 }
 
 .table {
@@ -41,9 +49,15 @@ html {
 
 /* from Bulma */
 .icon {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -232,7 +246,8 @@ html {
   max-width: 2000px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
   margin-top: -1px;
 }
 
@@ -508,18 +523,26 @@ html {
 html,
 body {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: 'Roboto', sans-serif;
   color: #4B5657;
 }
 
 .page-content {
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .footer {
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 /* -- Home page product categories and customer reviews -- */
@@ -561,6 +584,22 @@ body {
 a.category-badge>span.badge:hover {
   background: #4B5657 !important;
   color: #FFFFFF !important;
+}
+
+input[name=q]::-webkit-input-placeholder {
+  color: #96A4A5;
+}
+
+input[name=q]::-moz-placeholder {
+  color: #96A4A5;
+}
+
+input[name=q]:-ms-input-placeholder {
+  color: #96A4A5;
+}
+
+input[name=q]::-ms-input-placeholder {
+  color: #96A4A5;
 }
 
 input[name=q]::placeholder {
@@ -708,14 +747,22 @@ input[name=q]::placeholder {
 
 .home-image-container img {
   display: block;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  -o-transition: transform .4s;
   transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
   /* smoother zoom */
   opacity: 0.75;
 }
 
 .home-image-container:hover img {
-  transform: scale(1.1);
-  transform-origin: 50% 50%;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   opacity: 1.0;
 }
 
@@ -741,9 +788,15 @@ input[name=q]::placeholder {
 }
 
 .loading-spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
   height: 100%;
 }
@@ -771,6 +824,22 @@ input[name=q]::placeholder {
   display: none;
 }
 
+.allauth-form-inner-content input::-webkit-input-placeholder {
+  color: #aab7c4;
+}
+
+.allauth-form-inner-content input::-moz-placeholder {
+  color: #aab7c4;
+}
+
+.allauth-form-inner-content input:-ms-input-placeholder {
+  color: #aab7c4;
+}
+
+.allauth-form-inner-content input::-ms-input-placeholder {
+  color: #aab7c4;
+}
+
 .allauth-form-inner-content input::placeholder {
   color: #aab7c4;
 }
@@ -795,7 +864,11 @@ input[name=q]::placeholder {
   border-radius: 5px;
 
   /* standard bootstrap btn transitions */
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  -o-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
@@ -843,6 +916,7 @@ input[name=q]::placeholder {
   font-size: 15px;
   text-align: center;
   -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   vertical-align: bottom;
   background-color: #566465;
@@ -934,7 +1008,6 @@ input[name=q]::placeholder {
 .err-orange {
   color: #FF834F;
 }
-
 
 .err {
   padding-top: 50px;
