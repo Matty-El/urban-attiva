@@ -114,8 +114,8 @@
             {% for comment in blog_post.comments.all %}
             <div class="blog-comment shadow rounded p-4">
                 <p class="text-muted font-italic">
-                    <i class="fas fa-user"></i> Posted {{ blog_post.date|date:"d-m-Y" }} by
-                    {{ blog_post.author}}
+                    <i class="fas fa-user"></i> Posted {{ comment.date|date:"d-m-Y" }} by
+                    {{ comment.author}}
                 </p>
                 <p>{{ comment.comment }}</p>
                 {% if request.user.is_authenticated %}
