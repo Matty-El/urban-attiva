@@ -20,7 +20,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-12 mx-auto">
                 <div class="card shadow">
                     <div class="card-header blog-header pt-4 pb-4">
                         <h1 class="fw-bolder mb-1">{{ blog_post.title }}</h1>
@@ -89,7 +89,7 @@
     <div class="container px-4 px-lg-5 my-5">
         <hr>
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-12 mx-auto">
                 <h4 class="mb-4">Comments ({{ blog_post.comments.count }})
                     {% if user.is_authenticated %}
                     <div class="rounded p-4 mb-4 clearfix">
@@ -104,7 +104,7 @@
                 </h4>
             </div>
             {% if not user.is_authenticated %}
-            <div class="col-8">
+            <div class="col-lg-8 mx-auto">
                 <p class="ms-lg-3 lead">Please <a class="text-info" href="{% url 'account_login' %}">log in</a> or
                     <a class="text-info" href="{% url 'account_signup' %}">register</a> to add a comment.</p>
             </div>

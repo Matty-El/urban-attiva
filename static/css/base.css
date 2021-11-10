@@ -592,7 +592,7 @@ input[name=q]::placeholder {
 .message-container {
   position: absolute;
   top: 72px;
-  right: 150px;
+  right: 72px;
   z-index: 99999999999;
 }
 
@@ -657,7 +657,7 @@ input[name=q]::placeholder {
 
 /* ------------ Media queries -------------- */
 
-/* Larger container on xl screens */
+/* Resize container on xl screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 60%;
@@ -746,6 +746,10 @@ input[name=q]::placeholder {
   justify-content: center;
   margin: 0;
   height: 100%;
+}
+
+.checkout-success {
+  margin-top: 48px !important;
 }
 
 /* ------------ Allauth styling ------------ */
@@ -894,10 +898,6 @@ input[name=q]::placeholder {
   margin-top: 48px !important;
 }
 
-.checkout-success {
-  margin-top: 48px !important;
-}
-
 .card-img-top {
   padding-left: 10px;
   padding-right: 10px;
@@ -910,11 +910,11 @@ input[name=q]::placeholder {
 }
 
 .blog-intro {
-  font-size: 2.0rem;
+  font-size: 1.5rem;
 }
 
 .blog-content {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .blog-comment {
@@ -922,12 +922,12 @@ input[name=q]::placeholder {
   margin-bottom: 20px;
 }
 
-@media (max-width: 1008px) {
+/*@media (max-width: 1008px) {
 
   .blog-img {
     max-width: 80%;
   }
-}
+}*/
 
 /*------------- 404 / 500 error ------------ */
 
