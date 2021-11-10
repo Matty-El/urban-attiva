@@ -456,20 +456,22 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 2.  Navigate to AWS Management Console search for S3 and create a new bucket ensuring you uncheck 'Block all public access'.
 3.  Under Properties turn on static website hosting - selecting 'Use this bucket to host a website' and enter index.html and error.html in the respective document fields.
 4.  On the permissions tab under CORS configuration enter:
-[
-  {
-      "AllowedHeaders": [
-          "Authorization"
-      ],
-      "AllowedMethods": [
-          "GET"
-      ],
-      "AllowedOrigins": [
-          "*"
-      ],
-      "ExposeHeaders": []
-  }
-]
+```
+        [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+        ]
+```
 5. Navigate to bucket policy and select policy generator to create a security policy for the bucket.
 
 -   Select Type of Policy - S3 bucket policy
@@ -526,80 +528,79 @@ or enter key DISABLE_COLLECTSTATIC and value 1 in your Heroku app settings confi
 -   add storages to the installed apps in your settings.py file
 
 2. Add the following settings to your settings.py file.
-
-    if 'USE_AWS' in os.environ:
-        # Bucket config
-        AWS_STORAGE_BUCKET_NAME = `your-bucket-name`
-        AWS_S3_REGION_NAME = `your S3 region name`
-        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-        
+```
+        if 'USE_AWS' in os.environ:
+            # Bucket config
+            AWS_STORAGE_BUCKET_NAME = `your-bucket-name`
+            AWS_S3_REGION_NAME = `your S3 region name`
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+ ```       
 3.  Go to Heroku and add AWS keys to the Heroku Config Vars in settings - from the csv file downloaded from AWS and add USE_AWS and set to True.
 4.  Remove the 'DISABLE_COLLECT_STATIC' variable from the Config Vars
 5.  Back in your settings.py file add the following to the Bucket config
-
+```
         AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-
+```
 5.  Create a custom_storages.py file in your main app folder and add the following.
-
-    from django.conf import settings
-    from storages.backends.s3boto3 import S3Boto3Storage
-
-
-    class StaticStorage(S3Boto3Storage):
-    location = settings.STATICFILES_LOCATION
+```
+        from django.conf import settings
+        from storages.backends.s3boto3 import S3Boto3Storage
 
 
-    class MediaStorage(S3Boto3Storage):
-    location = settings.MEDIAFILES_LOCATION
+        class StaticStorage(S3Boto3Storage):
+        location = settings.STATICFILES_LOCATION
 
+
+        class MediaStorage(S3Boto3Storage):
+        location = settings.MEDIAFILES_LOCATION
+```
 6.  In settings.py add the following under the Bucket config above.
+```
+        # Static and media files
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
 
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
+        # Override static and media URLs in production
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
 7.  Add, commit, and push the changes which will trigger an automatic deployment to Heroku and you should see that the static files have been collected. Go to your AWS account and find the S3 bucket and there will be a static folder containing the static files.
 8.  In your settings.py file add the following above your Bucket config settings.
-
-    #  Cache control
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
-
+```
+        #  Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+        }
+```
 The full AWS settings should now be as follows.
+```
+        if 'USE_AWS' in os.environ:
+            #  Cache control
+            AWS_S3_OBJECT_PARAMETERS = {
+                'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                'CacheControl': 'max-age=94608000',
+            }
+            # Bucket config
+            AWS_STORAGE_BUCKET_NAME = 'urban-attiva'
+            AWS_S3_REGION_NAME = 'eu-west-2'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-if 'USE_AWS' in os.environ:
-    #  Cache control
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
-    # Bucket config
-    AWS_STORAGE_BUCKET_NAME = 'urban-attiva'
-    AWS_S3_REGION_NAME = 'eu-west-2'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+            # Static and media files
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
 
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
+            # Override static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
 9.  Add, commit, and push these final changes.
 
 ### Add Media files to S3
@@ -636,11 +637,13 @@ if 'USE_AWS' in os.environ:
 5. In the CLI type "git clone" and paste the copied link - press enter
 7. Install the required packages - pip3 install -r requirements.txt - press enter
 8. In the Gitpod settings for the workspace enter:
+
     'DEVELOPMENT', 'True'
     'SECRET_KEY', 'your secret key'
     'STRIPE_PUBLIC_KEY', 'your stripe public key'
     'STRIPE_SECRET_KEY', 'your stripe secret key'
     'STRIPE_WH_SECRET', 'your stripe webhook secret'
+
 9. Migrate the database models
 
     python3 manage.py makemigrations
