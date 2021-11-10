@@ -1,4 +1,74 @@
-/* -------------- Hero image ------------- */
+/* --------------- General -----------------*/
+
+.text-uppercase {
+  letter-spacing: .2em;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.product-menu {
+  position: static !important;
+}
+
+.logo-lg {
+  width: 240px;
+  height: 58px;
+}
+
+.logo-sm {
+  width: 161px;
+  height: 39px;
+}
+
+.modal {
+  max-width: 400px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.table {
+  color: #4B5657;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* from Bulma */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.std-background {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: #F6F7F7;
+  z-index: -1;
+}
+
+.white-background {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: #FFFFFF;
+  z-index: -1;
+}
+
+/* --------------- Hero image -------------- */
 
 .jumbotron {
   color: white;
@@ -7,7 +77,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 70vh;
-  /*margin-top: -48px;*/
   margin-bottom: 0px;
 }
 
@@ -48,6 +117,7 @@
   font-weight: bold;
   border: 1px solid #FFFFFF;
   border-radius: 5px;
+  font-size: 1.2rem;
 }
 
 .btn-ua-grey {
@@ -148,44 +218,13 @@
   border: 1px solid #000000 !important;
 }
 
-/* --------------- Profile -----------------*/
+/* --------------- Profile ----------------- */
 
 .table thead th {
   color: #4B5657;
 }
 
-/* --------------- General -----------------*/
-
-.text-uppercase {
-  letter-spacing: .2em;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.product-menu {
-  position: static !important;
-}
-
-.modal {
-  max-width: 400px;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.table {
-  color: #4B5657;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* ------------ Navigation ----------- */
+/* -------------- Navigation --------------- */
 
 .product-menu .product-menu-contained {
   padding: 20px;
@@ -208,17 +247,7 @@ html {
   margin-top: -1px;
 }
 
-.logo-lg {
-  width: 240px;
-  height: 58px;
-}
-
-.logo-sm {
-  width: 161px;
-  height: 39px;
-}
-
-/* ------------------- Top Banner ----------------------- */
+/* -------------- Top Banner --------------- */
 
 #top-banner {
   background: #4B5657;
@@ -241,7 +270,7 @@ html {
   font-weight: bold;
 }
 
-/* -------------------- Product Form ---------------------- */
+/* -------------- Product Form ------------- */
 
 .btn-file {
   position: relative;
@@ -268,6 +297,9 @@ html {
   background-color: #DC3545;
   border-color: #DC3545;
 }
+
+
+/* Adapted from menu in template https://bootstrapious.com/p/obaju-e-commerce-template */
 
 /* -------------------- Navbar ---------------------- */
 
@@ -334,7 +366,7 @@ html {
 }
 
 .navbar .product-menu h5 {
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -362,7 +394,7 @@ html {
 
 .navbar .product-menu ul .nav-item a {
   color: #889899;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   display: block;
   padding: 0 !important;
 }
@@ -380,7 +412,9 @@ html {
   color: #4B5657;
 }
 
-/* ------------ Account Menu ------------*/
+/* Adapted from menu in template https://bootstrapious.com/p/obaju-e-commerce-template */
+
+/* -------------- Account Menu --------------*/
 
 .navbar .account-menu-contained {
   padding-right: 20px !important;
@@ -400,7 +434,7 @@ html {
 }
 
 .navbar .account-menu h5 {
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -427,8 +461,8 @@ html {
 }
 
 .navbar .account-menu ul .nav-item a {
-  color: #999;
-  font-size: 0.8rem;
+  color: #889899;
+  font-size: 1.0rem;
   display: block;
   padding: 0 !important;
 }
@@ -447,7 +481,7 @@ html {
   margin-right: 10px;
 }
 
-/* ------------ Search ------------------ */
+/* --------------- Search ------------------ */
 
 #search {
   background: #FFFFFF;
@@ -467,29 +501,9 @@ html {
   width: 500px;
 }
 
-/* -------------- Droprown items ------------- */
+/* Sticky footer adapted from https://css-tricks.com/couple-takes-sticky-footer/ */
 
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
-  font-weight: 400;
-  color: #4B5657;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  color: #343a40;
-  background-color: #f8f9fa;
-}
-
-.dropdown-item.active,
-.dropdown-item:active {
-  color: #343a40;
-  background-color: #4FCBFF;
-}
-
-/* Sticky footer https://css-tricks.com/couple-takes-sticky-footer/ */
-
-/* ---------- Footer --------- */
+/* ---------------- Footer ----------------- */
 
 html,
 body {
@@ -508,19 +522,7 @@ body {
   flex-shrink: 0;
 }
 
-.logo-lg {
-  width: 240px;
-  height: 58px;
-}
-
-.logo-sm {
-  width: 161px;
-  height: 39px;
-}
-
-/* Sticky footer end */
-
-/* ---------- Home page product categories ---------- */
+/* -- Home page product categories and customer reviews -- */
 
 .product-categories .product-categories-text {
   padding: 5rem;
@@ -547,15 +549,6 @@ body {
   max-height: 150px;
 }
 
-/* from Bulma */
-.icon {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
 .social-media {
   font-size: 20px;
   color: white;
@@ -565,34 +558,16 @@ body {
   text-transform: uppercase;
 }
 
-.main-logo-link {
-  width: fit-content;
-}
-
-.std-background {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: #F6F7F7;
-  z-index: -1;
-}
-
-.white-background {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: #FFFFFF;
-  z-index: -1;
-}
-
 a.category-badge>span.badge:hover {
   background: #4B5657 !important;
-  color: #fff !important;
+  color: #FFFFFF !important;
 }
+
+input[name=q]::placeholder {
+  color: #96A4A5;
+}
+
+/* ----------- To top button ------------ */
 
 .to-top-btn {
   height: 60px;
@@ -610,10 +585,6 @@ a.category-badge>span.badge:hover {
 .update-link,
 .remove-item {
   cursor: pointer;
-}
-
-input[name=q]::placeholder {
-  color: #aab7c4;
 }
 
 /* ----------- Bootstrap toasts ------------ */
@@ -684,12 +655,12 @@ input[name=q]::placeholder {
   overflow-y: auto;
 }
 
-/* --------------------------------- Media queries */
+/* ------------ Media queries -------------- */
 
 /* Larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 80%;
+    max-width: 60%;
   }
 }
 
@@ -700,7 +671,7 @@ input[name=q]::placeholder {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
 
   .display-4.logo-font {
     font-size: 2rem;
@@ -718,7 +689,7 @@ input[name=q]::placeholder {
   }
 }
 
-/* ----------- Home page categories images -------- */
+/* ------ Home page categories images ------ */
 
 /* Contain image on hover / zoom */
 .image-contained {
@@ -756,7 +727,7 @@ input[name=q]::placeholder {
   width: 94%;
 }
 
-/* ----------- Checkout ---------- */
+/* --------------- Checkout ---------------- */
 
 #loading-overlay {
   display: none;
@@ -777,7 +748,7 @@ input[name=q]::placeholder {
   height: 100%;
 }
 
-/* Allauth styling */
+/* ------------ Allauth styling ------------ */
 
 .allauth-form-inner-content {
   margin-bottom: 2.5rem;
@@ -834,6 +805,8 @@ input[name=q]::placeholder {
   color: #17a2b8;
   /* text-info */
 }
+
+/* Adapted from https://demo.bootstrapious.com/obaju/2-1-1/ */
 
 /* ----------------- Footer --------------- */
 
@@ -903,7 +876,7 @@ input[name=q]::placeholder {
   margin: 0;
 }
 
-/* ---------- Information pages ---------- */
+/* ----------- Information pages ----------- */
 
 .information {
   color: #4B5657;
@@ -914,7 +887,7 @@ input[name=q]::placeholder {
   background-color: #FFFFFF;
 }
 
-/* ------------------- Product detail page --------------- */
+/* ------ Product / blog detail page ------- */
 
 .product-detail,
 .blog-detail {
@@ -930,7 +903,7 @@ input[name=q]::placeholder {
   padding-right: 10px;
 }
 
-/* ----------- Blog ----------- */
+/* ----------------- Blog ------------------ */
 
 .blog-header {
   background-color: #FFFFFF;
@@ -952,11 +925,11 @@ input[name=q]::placeholder {
 @media (max-width: 1008px) {
 
   .blog-img {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
 
-/*------------- 404 / 500 error ------------- */
+/*------------- 404 / 500 error ------------ */
 
 .err-orange {
   color: #FF834F;
